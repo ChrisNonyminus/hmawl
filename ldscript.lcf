@@ -2,15 +2,17 @@ _SDA_BASE_ = 0x8034E9C0;
 _SDA2_BASE_ = 0x80351E40;
 SECTIONS
 {
-    .text0 BIND(0x80003100) : { *(.text0) }
-    .text1 BIND(0x80005980) : { *(.text1) }
-    .data0 BIND(0x800056C0) : { *(.data0) }
-    .data1 BIND(0x800057E0) : { *(.data1) }
-    .data2 BIND(0x8023DD80) : { *(.data2) }
-    .data3 BIND(0x8023DF00) : { *(.data3) }
-    .data4 BIND(0x8023DF20) : { *(.data4) }
-    .data5 BIND(0x80297080) : { *(.data5) }
-    .data6 BIND(0x803469C0) : { *(.data6) }
-    .data7 BIND(0x80349E40) : { *(.data7) }
+    .init BIND(0x80003100) : { *(.init) }
+    .text BIND(0x80005980) : { *(.text) }
+    .extab BIND(0x800056C0) : { *(.extab) }
+    .extabindex BIND(0x800057E0) : { *(.extabindex) }
+    .ctors BIND(0x8023DD80) : { *(.ctors) }
+    .dtors BIND(0x8023DF00) : { *(.dtors) }
+    .rodata BIND(0x8023DF20) : { *(.rodata) }
+    .data BIND(0x80297080) : { *(.data) }
     .bss BIND(0x802E8E00) : { *(.bss) }
+    .sdata BIND(0x803469C0) : { *(.sdata) }
+    .sbss BIND(0x80348FE0) : { *(.sbss) }
+    .sdata2 BIND(0x80349E40) : { *(.sdata2) }
+    .sbss2 BIND(0x8034CC20) : { *(.sbss2) }
 }
