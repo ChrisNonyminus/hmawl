@@ -1,0 +1,1 @@
+MAIN_O_FILES := $(BUILD_DIR)/asm/main.o

@@ -1,0 +1,120 @@
+#TODO: Update this Makefile to be consistent with the Makefiles in the latest commits of the doldecomp projects
+
+# If defined, wine is not used.
+NOWINE ?= 0
+
+ifneq ($(findstring MINGW,$(shell uname)),)
+  WINDOWS := 1
+endif
+ifneq ($(findstring MSYS,$(shell uname)),)
+  WINDOWS := 1
+endif
+
+# FILES
+
+# Used for elf2dol
+USES_SBSS2 := yes
+
+TARGET := hmawl_us_r0
+
+BUILD_DIR := build/$(TARGET)
+
+SRC_DIRS := src
+ASM_DIRS := asm
+
+# Input files
+S_FILES := $(wildcard $(ASM_DIRS)/*.s)
+C_FILES := $(wildcard $(SRC_DIRS)/*.c)
+CPP_FILES := $(wildcard $(SRC_DIRS)/*.cpp)
+LDSCRIPT := $(BUILD_DIR)/ldscript.lcf
+
+# Output files
+DOL := $(BUILD_DIR)/main.dol
+ELF := $(DOL:.dol=.elf)
+MAP := $(BUILD_DIR)/$(TARGET).map
+
+include obj_files.mk
+
+O_FILES := $(MAIN_O_FILES)
+
+# TOOLS
+
+MWCC_VERSION = GC/2.6
+
+# Programs
+ifeq ($(WINDOWS),1)
+  WINE :=
+else
+  WINE := wine
+endif
+
+ifeq ($(NOWINE),1)
+  WINE :=
+endif
+
+AS      := $(DEVKITPPC)/bin/powerpc-eabi-as
+OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
+CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
+CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
+# 
+LD      := $(WINE) tools/mwcc_compiler/GC/1.1/mwldeppc.exe
+ELF2DOL := tools/elf2dol
+SHA1SUM := sha1sum
+PYTHON  := python
+POSTPROC := tools/postprocess.py
+
+# Options
+INCLUDES := -i . -I- -i include
+
+ASFLAGS := -mgekko -I include
+LDFLAGS := -map $(MAP) -fp hard
+CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES)
+
+# for postprocess.py
+PROCFLAGS := -fsymbol-fixup -fprologue-fixup=old_stack
+
+# elf2dol needs to know these in order to calculate sbss correctly.
+SDATA_PDHR := 9
+SBSS_PDHR := 10
+
+# RECIPES
+
+# Default target #
+default: all
+
+all: $(DOL)
+
+ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+
+# Make sure build directory exists before compiling anything
+DUMMY != mkdir -p $(ALL_DIRS)
+
+.PHONY: tools
+
+$(LDSCRIPT): ldscript.lcf
+	$(CPP) -MMD -MP -MT $@ -MF $@.d -I include/ -I . -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
+
+$(DOL): $(ELF) | tools
+	$(ELF2DOL) $< $@ $(SDATA_PHDR) $(SBSS_PHDR) $(USES_SBSS2)
+	#(SHA1SUM) -c $(TARGET).sha1
+
+clean:
+	rm -fdr build
+	$(MAKE) -C tools clean
+
+tools:
+	$(MAKE) -C tools
+
+$(ELF): $(O_FILES) $(LDSCRIPT)
+	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)
+# The Metrowerks linker doesn't generate physical addresses in the ELF program headers. This fixes it somehow.
+	$(OBJCOPY) $@ $@
+
+$(BUILD_DIR)/%.o: %.s
+	$(AS) $(ASFLAGS) -o $@ $<
+
+$(BUILD_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
+
+print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
