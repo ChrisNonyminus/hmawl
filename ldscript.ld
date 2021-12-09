@@ -4,9 +4,9 @@ _SDA2_BASE_ = 0x80351E40;
 PHDRS
 {
     init PT_LOAD;
-    text PT_LOAD;
     extab PT_LOAD;
     extabindex PT_LOAD;
+    text PT_LOAD;
     ctors PT_LOAD;
     dtors PT_LOAD;
     rodata PT_LOAD;
@@ -20,9 +20,9 @@ PHDRS
 SECTIONS
 {
     .init 0x80003100 : { *(.init) } : init
-    .text 0x80005980 : { *(.text) } : text
     .extab 0x800056C0 : { *(.extab) } : extab
     .extabindex 0x800057E0 : { *(.extabindex) } : extabindex
+    .text 0x80005980 : { *(.text) } : text
     .ctors 0x8023DD80 : { *(.ctors) } : ctors
     .dtors 0x8023DF00 : { *(.dtors) } : dtors
     .rodata 0x8023DF20 : { *(.rodata) } : rodata

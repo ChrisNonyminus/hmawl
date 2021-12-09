@@ -29,5 +29,17 @@ SECTIONS
 }
 FORCEFILES 
 { 
-    main.o 
+    bss.o
+    ctors.o
+    data.o
+    dtors.o
+    extab.o
+    extabindex.o
+    init.o
+    rodata.o
+    sbss.o
+    sbss2.o
+    sdata.o
+    sdata2.o
+    text.o
 }
