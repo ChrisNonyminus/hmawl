@@ -95,7 +95,7 @@ $(LDSCRIPT): ldscript.lcf
 	$(CPP) -MMD -MP -MT $@ -MF $@.d -I include/ -I . -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
 
 $(DOL): $(ELF) | tools
-	$(ELF2DOL) $< $@ $(SDATA_PHDR) $(SBSS_PHDR) $(USES_SBSS2)
+	$(ELF2DOL) $< $@
 	#(SHA1SUM) -c $(TARGET).sha1
 
 clean:
