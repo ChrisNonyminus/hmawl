@@ -2,8 +2,6 @@ MEMORY
 {
     text : origin = 0x80003100
 }
-_SDA_BASE_ = 0x8034E9C0;
-_SDA2_BASE_ = 0x80351E40;
 SECTIONS
 {
     GROUP :

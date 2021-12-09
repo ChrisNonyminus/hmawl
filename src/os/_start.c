@@ -22,7 +22,7 @@ u8 __get_debug_bba(void)
 __declspec (weak) asm void __start(void)
 {
     nofralloc
-	bl __init_registers
+	  bl __init_registers
     bl __init_hardware
     li r0, -1
     stwu r1, -8(r1)
