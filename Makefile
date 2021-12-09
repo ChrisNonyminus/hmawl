@@ -70,8 +70,7 @@ POSTPROC := tools/postprocess.py
 INCLUDES := -i . -I- -i include -i include/dolphin/ -i include/init
 
 ASFLAGS := -mgekko -I asm -I include
-# if I don't set the entry point to __start, the linker will set it to __check_pad3
-LDFLAGS := -map $(MAP) -fp hard -main __start
+LDFLAGS := -map $(MAP) -fp hard
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES)
 
 # for postprocess.py
