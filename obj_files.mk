@@ -4,7 +4,8 @@ DATA_O_FILES := $(BUILD_DIR)/asm/data.o
 DTORS_O_FILES := $(BUILD_DIR)/asm/dtors.o
 EXTAB_O_FILES := $(BUILD_DIR)/asm/extab.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex.o
-INIT_O_FILES := $(BUILD_DIR)/asm/init.o
+INIT_O_FILES := $(BUILD_DIR)/asm/init.o \
+				$(BUILD_DIR)/src/os/_start.o
 RODATA_O_FILES := $(BUILD_DIR)/asm/rodata.o
 SBSS_O_FILES := $(BUILD_DIR)/asm/sbss.o
 SBSS2_O_FILES := $(BUILD_DIR)/asm/sbss2.o

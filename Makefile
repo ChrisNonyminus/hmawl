@@ -15,11 +15,12 @@ endif
 # Used for elf2dol
 USES_SBSS2 := yes
 
-TARGET := hmawl_us_r0
+TARGET := hmawl
+VERSION := us_r0
 
-BUILD_DIR := build/$(TARGET)
+BUILD_DIR := build/$(TARGET)_$(VERSION)
 
-SRC_DIRS := src
+SRC_DIRS := src src/os
 ASM_DIRS := asm
 
 # Input files
@@ -31,7 +32,7 @@ LDSCRIPT := $(BUILD_DIR)/ldscript.lcf
 # Output files
 DOL := $(BUILD_DIR)/main.dol
 ELF := $(DOL:.dol=.elf)
-MAP := $(BUILD_DIR)/$(TARGET).map
+MAP := $(BUILD_DIR)/$(TARGET)_$(VERSION).map
 
 include obj_files.mk
 
@@ -40,6 +41,8 @@ O_FILES := $(BSS_O_FILES) $(CTORS_O_FILES) $(DATA_O_FILES) $(DTORS_O_FILES) $(EX
 # TOOLS
 
 MWCC_VERSION = GC/2.6
+MWLD_VERSION = GC/1.1
+OS_MWCC_VERSION = GC/1.2.5 #version used by _start.c for the compiler
 
 # Programs
 ifeq ($(WINDOWS),1)
@@ -57,17 +60,18 @@ OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
 CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
 # 
-LD      := $(WINE) tools/mwcc_compiler/GC/1.1/mwldeppc.exe
+LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
 SHA1SUM := sha1sum
 PYTHON  := python
 POSTPROC := tools/postprocess.py
 
 # Options
-INCLUDES := -i . -I- -i include
+INCLUDES := -i . -I- -i include -i include/dolphin/ -i include/init
 
-ASFLAGS := -mgekko -I asm
-LDFLAGS := -map $(MAP) -fp hard
+ASFLAGS := -mgekko -I asm -I include
+# if I don't set the entry point to __start, the linker will set it to __check_pad3
+LDFLAGS := -map $(MAP) -fp hard -main __start
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES)
 
 # for postprocess.py
@@ -96,7 +100,8 @@ $(LDSCRIPT): ldscript.lcf
 
 $(DOL): $(ELF) | tools
 	$(ELF2DOL) $< $@
-	#(SHA1SUM) -c $(TARGET).sha1
+#	./asmdiff.sh 0 256
+	$(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 clean:
 	rm -fdr build
@@ -115,6 +120,6 @@ $(BUILD_DIR)/%.o: %.s
 
 $(BUILD_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-#	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
+	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true

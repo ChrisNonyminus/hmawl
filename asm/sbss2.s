@@ -1,6 +1,6 @@
 .include "macros.inc"
 
-.section .sbss2, "", @nobits # 0x8034CC20-0x8034CFA0
+.section .sbss2, "", @nobits # 0x8034CC20 - 0x8034CFA0
 .global lbl_8034CC20
 lbl_8034CC20:
 	.skip 0x4

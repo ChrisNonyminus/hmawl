@@ -25,3 +25,4 @@ clean.bat
 calcprogress.bat
 !clang-format.exe
 in
+*.dump

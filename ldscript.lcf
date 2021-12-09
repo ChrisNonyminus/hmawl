@@ -9,7 +9,7 @@ SECTIONS
     GROUP :
     {
 
-        .init       ALIGN(0x20) : {}
+        .init BIND(0x80003100) ALIGN(0x20) : {}
         _extab      ALIGN(0x20) : { *(.extab) }
         _extabindex ALIGN(0x20) : { *(.extabindex) }
         .text       ALIGN(0x20) : {}
@@ -42,4 +42,5 @@ FORCEFILES
     sdata.o
     sdata2.o
     text.o
+    _start.o
 }
