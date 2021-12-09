@@ -1,4 +1,4 @@
-
+.include "macros.inc"
 
 .section .sdata2, "wa"  # 0x80349E40 - 0x8034CC20
 .global lbl_80349E40
