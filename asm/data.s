@@ -4370,4 +4370,4 @@ lbl_802E8CD8:
 	.incbin "baserom.dol", 0x2E5CD8, 0xE0
 .global lbl_802E8DB8
 lbl_802E8DB8:
-	.incbin "baserom.dol", 0x2E5DB8, 0x48
+	.incbin "baserom.dol", 0x2E5DB8, 0x44

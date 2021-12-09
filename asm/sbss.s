@@ -2331,4 +2331,4 @@ lbl_80349E20:
 	.skip 0x8
 .global lbl_80349E28
 lbl_80349E28:
-	.skip 0x2DF8
+	.skip 0x7

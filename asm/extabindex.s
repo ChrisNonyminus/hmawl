@@ -3,4 +3,4 @@
 	.incbin "baserom.dol", 0x23ABE0, 0x174
 .global lbl_80005954
 lbl_80005954:
-	.incbin "baserom.dol", 0x23AD54, 0x2C
+	.incbin "baserom.dol", 0x23AD54, 0x20

@@ -6447,4 +6447,4 @@ lbl_8034CC00:
 	.incbin "baserom.dol", 0x2EB1E0, 0x8
 .global lbl_8034CC08
 lbl_8034CC08:
-	.incbin "baserom.dol", 0x2EB1E8, 0x18
+	.incbin "baserom.dol", 0x2EB1E8, 0x8

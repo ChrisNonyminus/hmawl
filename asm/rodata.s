@@ -1503,4 +1503,4 @@ lbl_80296F78:
 	.incbin "baserom.dol", 0x293F78, 0x68
 .global lbl_80296FE0
 lbl_80296FE0:
-	.incbin "baserom.dol", 0x293FE0, 0xA0
+	.incbin "baserom.dol", 0x293FE0, 0x98
