@@ -42,7 +42,8 @@ O_FILES := $(INIT_O_FILES) $(EXTAB_O_FILES) $(EXTABINDEX_O_FILES) $(BSS_O_FILES)
 
 MWCC_VERSION = GC/2.6
 MWLD_VERSION = GC/1.1
-OS_MWCC_VERSION = GC/1.2.5 #version used by _start.c for the compiler
+#version used by _start.c for the compiler
+OS_MWCC_VERSION = GC/1.2.5
 
 # Programs
 ifeq ($(WINDOWS),1)
@@ -58,7 +59,7 @@ endif
 AS      := $(DEVKITPPC)/bin/powerpc-eabi-as
 OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
-CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
+CC      := $(WINE) tools/mwcc_compiler/$(OS_MWCC_VERSION)/mwcceppc.exe
 # 
 LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
@@ -71,7 +72,7 @@ INCLUDES := -i . -I- -i include -i include/dolphin/ -i include/init
 
 ASFLAGS := -mgekko -I asm -I include
 LDFLAGS := -map $(MAP) -fp hard
-CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES)
+CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
 
 # for postprocess.py
 PROCFLAGS := -fsymbol-fixup -fprologue-fixup=old_stack
