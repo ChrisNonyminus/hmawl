@@ -35,7 +35,7 @@ MAP := $(BUILD_DIR)/$(TARGET).map
 
 include obj_files.mk
 
-O_FILES := $(MAIN_O_FILES)
+O_FILES := $(BSS_O_FILES) $(CTORS_O_FILES) $(DATA_O_FILES) $(DTORS_O_FILES) $(EXTAB_O_FILES) $(EXTABINDEX_O_FILES) $(INIT_O_FILES) $(RODATA_O_FILES) $(SBSS2_O_FILES) $(SBSS_O_FILES) $(SDATA_O_FILES) $(SDATA2_O_FILES) $(TEXT_O_FILES)
 
 # TOOLS
 
@@ -57,7 +57,7 @@ OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
 CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
 # 
-LD      := $(WINE) tools/mwcc_compiler/GC/1.1/mwldeppc.exe
+LD      := $(WINE) tools/mwcc_compiler/GC/3.0/mwldeppc.exe
 ELF2DOL := tools/elf2dol
 SHA1SUM := sha1sum
 PYTHON  := python
@@ -66,7 +66,7 @@ POSTPROC := tools/postprocess.py
 # Options
 INCLUDES := -i . -I- -i include
 
-ASFLAGS := -mgekko -I include
+ASFLAGS := -mgekko -I asm
 LDFLAGS := -map $(MAP) -fp hard
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -nodefaults -msgstyle gcc $(INCLUDES)
 
@@ -106,7 +106,7 @@ tools:
 	$(MAKE) -C tools
 
 $(ELF): $(O_FILES) $(LDSCRIPT)
-	$(LD) $(LDFLAGS) -o $@ -lcf $(LDSCRIPT) $(O_FILES)
+	$(LD) $(LDFLAGS) $(O_FILES) -o $@ -lcf $(LDSCRIPT)
 # The Metrowerks linker doesn't generate physical addresses in the ELF program headers. This fixes it somehow.
 	$(OBJCOPY) $@ $@
 
@@ -115,6 +115,6 @@ $(BUILD_DIR)/%.o: %.s
 
 $(BUILD_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
+#	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
