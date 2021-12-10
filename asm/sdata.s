@@ -9653,4 +9653,3 @@ lbl_80348FD8:
 lbl_80348FDC:
 	# ROM: 0x2E841C
 	.byte 0x7F, 0x80, 0x00, 0x00
-

@@ -98,4 +98,3 @@ lbl_8023DD80:
 	.4byte 0x801A8C0C  ;# ptr
 	.4byte 0x801A9660  ;# ptr
 	.4byte 0
-

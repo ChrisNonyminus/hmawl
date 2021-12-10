@@ -1,4 +1,4 @@
-#include "__start.h"
+#include "init/__start.h"
 #pragma section code_type ".init"
 void __check_pad3(void) {
   unsigned short* pad3Button = (unsigned short*)PAD3_BUTTON_ADDR;

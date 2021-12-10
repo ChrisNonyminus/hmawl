@@ -1,6 +1,6 @@
 .include "macros.inc"
 
-.section .sdata2, "wa"  # 0x80349E40 - 0x8034CC20
+.section .sdata2, "a"  # 0x80349E40 - 0x8034CC20
 .global lbl_80349E40
 lbl_80349E40:
 	# ROM: 0x2E8420
@@ -11548,4 +11548,3 @@ lbl_8034CC08:
 	# ROM: 0x2EB1E8
 	.4byte 0
 	.4byte 0
-
