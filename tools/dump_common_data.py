@@ -61,8 +61,17 @@ def is_all_zero(arr):
 def hex_bytes(data):
     return ', '.join('0x%02X' % n for n in data)
 
-def convert_data(data, offset):
+def convert_data(data, offset, incsize):
     text = ''
+    if incsize <= 0x1:
+        text += '\t.byte 0x%02X\n' % data[0]
+        return text
+    elif incsize == 2:
+        text += '\t.byte 0x%02X, 0x%02X\n' % (data[0], data[1])
+        return text
+    elif incsize == 3:
+        text += '\t.byte 0x%02X, 0x%02X, 0x%02X\n' % (data[0], data[1], data[2])
+        return text
     size = len(data)
     pos = 0
     while pos < size:
@@ -83,8 +92,11 @@ def convert_data(data, offset):
             text += '\t.asciz "%s"\n' % escape_string(string) 
             pos += len(string) + 1
             continue
+        if incsize == 0x1:
+            continue
+        else:
+            assert(is_aligned(offset + pos))
 
-        assert(is_aligned(offset + pos))
 
         if pos + 4 <= size:
             val = read_u32(data, pos)
@@ -94,7 +106,7 @@ def convert_data(data, offset):
                 text += '\t.4byte 0\n'
             else:
                 text += '\t.byte %s\n' % hex_bytes(data[pos:pos+4])
-            pos += 4
+            pos += 4  
     return text
 
 currSection = ''
@@ -115,6 +127,6 @@ with open(sys.argv[1], 'rt') as f:
                 size = int(g[1], 0)
                 data = read_baserom(start, size)
                 print('\t# ROM: 0x%X' % start)
-                print(convert_data(data, start))
+                print(convert_data(data, start, size))
                 continue
         print(line)
