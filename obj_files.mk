@@ -1,5 +1,4 @@
-INIT_O_FILES := $(BUILD_DIR)/src/os/_start.o\
-				$(BUILD_DIR)/asm/init.o 
+INIT_O_FILES := $(BUILD_DIR)/asm/init.o 
 EXTAB_O_FILES := $(BUILD_DIR)/asm/extab.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex.o
 TEXT_O_FILES := $(BUILD_DIR)/asm/text.o
