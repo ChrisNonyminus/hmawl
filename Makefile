@@ -64,10 +64,10 @@ SHA1SUM := sha1sum
 PYTHON  := python3
 
 # Options
-INCLUDES := -i . -I- -i include -i include/dolphin/ -i include/init
+INCLUDES := -i include/
 
 ASFLAGS := -mgekko -I asm -I include
-LDFLAGS := -map $(MAP) -fp hard
+LDFLAGS := -map $(MAP) -fp hard -nodefaults
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
 
 # RECIPES
@@ -101,14 +101,11 @@ tools:
 
 $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(LD) $(LDFLAGS) $(O_FILES) -o $@ -lcf $(LDSCRIPT)
-# The Metrowerks linker doesn't generate physical addresses in the ELF program headers. This fixes it somehow.
-	$(OBJCOPY) $@ $@
 
 $(BUILD_DIR)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-	$(PYTHON) $(POSTPROC) $(PROCFLAGS) $@
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
