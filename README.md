@@ -1,6 +1,7 @@
 # Harvest Moon: A Wonderful Life
 A WIP disassembly/decompilation of Harvest Moon: A Wonderful Life (US version only) for Nintendo GameCube.
 It builds the following DOL:
+
 main.dol: ``sha1: 1ccfd9dfb5c250c2f45c70c74cc45e5d88d22374``
 
 # Building
