@@ -1730,6 +1730,35 @@ ctor_MapItemDataManager:
 /* 800070B0 00003DF0  38 21 00 10 */	addi r1, r1, 0x10
 /* 800070B4 00003DF4  4E 80 00 20 */	blr 
 
+.section .rodata, "a"  # 0x8023DF20 - 0x80297080
+.global lbl_8023DF20
+lbl_8023DF20:
+	# ROM: 0x23AF20
+	.byte 0x0A, 0x0B, 0x04, 0x04
+	.byte 0x09, 0x0A, 0x03, 0x02
+	.byte 0x08, 0x09, 0x02, 0x02
+	.byte 0x03, 0x08, 0x00, 0x03
+	.byte 0x02, 0x08, 0x00, 0x03
+	.byte 0x01, 0x08, 0x00, 0x03
+	.byte 0x00, 0x08, 0x00, 0x03
+	.byte 0x07, 0x08, 0x0C, 0x05
+	.byte 0x06, 0x08, 0x0C, 0x05
+	.byte 0x05, 0x08, 0x0C, 0x05
+	.byte 0x04, 0x08, 0x0C, 0x05
+
+.global lbl_8023DF4C
+lbl_8023DF4C:
+	# ROM: 0x23AF4C
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+	.4byte 0
+
 .section .data, "wa"  # 0x80297080 - 0x802E8E00
 
 .global lbl_80297080
@@ -1857,3 +1886,21 @@ lbl_80297208:
 	.4byte 0
 	.4byte 0x800064C0  ;# ptr
 	.4byte 0x800065A4  ;# ptr
+
+.section .bss, "wa"  # 0x802E8E00 - 0x8034CFA0
+.global lbl_802E8E00
+lbl_802E8E00:
+	.skip 0xC
+.global lbl_802E8E0C
+lbl_802E8E0C:
+	.skip 0x30
+.global lbl_802E8E3C
+lbl_802E8E3C:
+	.skip 0x24
+
+.section .sdata2, "a"  # 0x80349E40 - 0x8034CC20
+.global lbl_80349E40
+lbl_80349E40:
+	# ROM: 0x2E8420
+	.4byte 0
+	.4byte 0

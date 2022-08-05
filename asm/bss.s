@@ -1,15 +1,7 @@
 .include "macros.inc"
 
 .section .bss, "wa"  # 0x802E8E00 - 0x8034CFA0
-.global lbl_802E8E00
-lbl_802E8E00:
-	.skip 0xC
-.global lbl_802E8E0C
-lbl_802E8E0C:
-	.skip 0x30
-.global lbl_802E8E3C
-lbl_802E8E3C:
-	.skip 0x24
+
 .global lbl_802E8E60
 lbl_802E8E60:
 	.skip 0xC
