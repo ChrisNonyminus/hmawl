@@ -18,7 +18,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/os
-ASM_DIRS := asm
+ASM_DIRS := asm asm/code
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)

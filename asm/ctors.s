@@ -5,7 +5,7 @@
 lbl_8023DD80:
 	# ROM: 0x23AD80
 	.4byte 0x80236514  ;# ptr
-	.4byte 0x8000705C  ;# ptr
+	.4byte ctor_MapItemDataManager  ;# ptr
 	.4byte 0x80007978  ;# ptr
 	.4byte 0x80009938  ;# ptr
 	.4byte 0x80011468  ;# ptr
