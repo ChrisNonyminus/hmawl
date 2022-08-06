@@ -7985,12 +7985,12 @@ lbl_8034BC10:
 .global lbl_8034BC18
 lbl_8034BC18:
 	# ROM: 0x2EA1F8
-	.4byte 0x80180FF0  ;# ptr
+	.4byte func_80180FF0  ;# ptr
 
 .global lbl_8034BC1C
 lbl_8034BC1C:
 	# ROM: 0x2EA1FC
-	.4byte 0x8018101C  ;# ptr
+	.4byte func_8018101C  ;# ptr
 
 .global lbl_8034BC20
 lbl_8034BC20:

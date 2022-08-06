@@ -11088,7 +11088,7 @@ lbl_80248B40:
 	.4byte 0x8029D4A8  ;# ptr
 	.4byte 0x8029D4B8  ;# ptr
 	.4byte 0x8029D4CC  ;# ptr
-	.4byte 0x8029BECC  ;# ptr
+	.4byte lbl_8029BECC  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029D4E0  ;# ptr
 	.4byte 0x8029D4F0  ;# ptr
@@ -11373,82 +11373,82 @@ lbl_80248B40:
 	.4byte 0x8029E118  ;# ptr
 	.4byte 0x8029E124  ;# ptr
 	.4byte 0x8029E134  ;# ptr
-	.4byte 0x8029C724  ;# ptr
+	.4byte lbl_8029C724  ;# ptr
 	.4byte 0
 	.4byte 0x8029E144  ;# ptr
 	.4byte 0x8029E154  ;# ptr
 	.4byte 0x8029E164  ;# ptr
-	.4byte 0x8029C3F4  ;# ptr
+	.4byte lbl_8029C3F4  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E174  ;# ptr
 	.4byte 0x8029E184  ;# ptr
 	.4byte 0x8029E194  ;# ptr
-	.4byte 0x8029C43C  ;# ptr
+	.4byte lbl_8029C43C  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E1A4  ;# ptr
 	.4byte 0x8029E1B0  ;# ptr
 	.4byte 0x8029E1C0  ;# ptr
-	.4byte 0x8029D374  ;# ptr
+	.4byte lbl_8029D374  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E1D0  ;# ptr
 	.4byte 0x8029E1E0  ;# ptr
 	.4byte 0x8029E1F4  ;# ptr
-	.4byte 0x8029CDC0  ;# ptr
+	.4byte lbl_8029CDC0  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E208  ;# ptr
 	.4byte 0x8029E218  ;# ptr
 	.4byte 0x8029E22C  ;# ptr
-	.4byte 0x8029C3AC  ;# ptr
+	.4byte lbl_8029C3AC  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E240  ;# ptr
 	.4byte 0x8029E250  ;# ptr
 	.4byte 0x8029E264  ;# ptr
-	.4byte 0x8029C578  ;# ptr
+	.4byte lbl_8029C578  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E278  ;# ptr
 	.4byte 0x8029E288  ;# ptr
 	.4byte 0x8029E298  ;# ptr
-	.4byte 0x8029C508  ;# ptr
+	.4byte lbl_8029C508  ;# ptr
 	.4byte 0
 	.4byte 0x8029E2A8  ;# ptr
 	.4byte 0x8029E2B8  ;# ptr
 	.4byte 0x8029E2C8  ;# ptr
-	.4byte 0x8029C508  ;# ptr
+	.4byte lbl_8029C508  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E2D8  ;# ptr
 	.4byte 0x8029E2E4  ;# ptr
 	.4byte 0x8029E2F4  ;# ptr
-	.4byte 0x8029C338  ;# ptr
+	.4byte lbl_8029C338  ;# ptr
 	.byte 0x3F, 0x00, 0x00, 0x00
 	.4byte 0x8029E304  ;# ptr
 	.4byte 0x8029E314  ;# ptr
 	.4byte 0x8029E328  ;# ptr
-	.4byte 0x8029CA54  ;# ptr
+	.4byte lbl_8029CA54  ;# ptr
 	.4byte 0
 	.4byte 0x8029E33C  ;# ptr
 	.4byte 0x8029E34C  ;# ptr
 	.4byte 0x8029E35C  ;# ptr
-	.4byte 0x8029D324  ;# ptr
+	.4byte lbl_8029D324  ;# ptr
 	.4byte 0
 	.4byte 0x8029E36C  ;# ptr
 	.4byte 0x8029E37C  ;# ptr
 	.4byte 0x8029E38C  ;# ptr
-	.4byte 0x8029C844  ;# ptr
+	.4byte lbl_8029C844  ;# ptr
 	.4byte 0
 	.4byte 0x8029E39C  ;# ptr
 	.4byte 0x8029E3A8  ;# ptr
 	.4byte 0x8029E3B8  ;# ptr
-	.4byte 0x8029CBA0  ;# ptr
+	.4byte lbl_8029CBA0  ;# ptr
 	.4byte 0
 	.4byte 0x8029E3C8  ;# ptr
 	.4byte 0x8029E3D8  ;# ptr
 	.4byte 0x8029E3EC  ;# ptr
-	.4byte 0x8029C4D4  ;# ptr
+	.4byte lbl_8029C4D4  ;# ptr
 	.4byte 0
 	.4byte 0x8029E400  ;# ptr
 	.4byte 0x8029E410  ;# ptr
 	.4byte 0x8029E424  ;# ptr
-	.4byte 0x8029CAF0  ;# ptr
+	.4byte lbl_8029CAF0  ;# ptr
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -12039,7 +12039,7 @@ lbl_80249A10:
 	.4byte 0
 	.4byte 0
 	.4byte 0
-	.4byte 0x8029EA78  ;# ptr
+	.4byte lbl_8029EA78  ;# ptr
 	.byte 0x3F, 0x80, 0x00, 0x00
 	.byte 0x3F, 0xC0, 0x00, 0x00
 	.byte 0x3F, 0x88, 0xF5, 0xC3
@@ -18114,13 +18114,13 @@ lbl_8024F5E8:
 .global lbl_8024F600
 lbl_8024F600:
 	# ROM: 0x24C600
-	.4byte 0x8000FC14  ;# ptr
+	.4byte func_8000FC14  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x09
-	.4byte 0x8000FC38  ;# ptr
+	.4byte func_8000FC38  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x08
-	.4byte 0x8000FC6C  ;# ptr
+	.4byte func_8000FC6C  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x0A
-	.4byte 0x8000FC90  ;# ptr
+	.4byte func_8000FC90  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x11
 
 .global lbl_8024F620
@@ -18799,7 +18799,7 @@ lbl_8024FDE8:
 	.byte 0x00, 0x00, 0x00, 0x07
 	.byte 0x00, 0x00, 0x00, 0x07
 	.byte 0x00, 0x00, 0x00, 0x01
-	.4byte 0x802B2058  ;# ptr
+	.4byte lbl_802B2058  ;# ptr
 	.4byte 0x802B2064  ;# ptr
 	.4byte 0x802B2070  ;# ptr
 	.4byte 0x802B2080  ;# ptr
@@ -89694,7 +89694,7 @@ lbl_80293F50:
 	.4byte 0x80118012  ;# ptr
 	.4byte 0x80138014  ;# ptr
 	.4byte 0x80158016  ;# ptr
-	.4byte 0x80178018  ;# ptr
+	.4byte func_80178018  ;# ptr
 	.4byte 0x8019801A  ;# ptr
 	.4byte 0x801B801C  ;# ptr
 	.4byte 0x801D801E  ;# ptr

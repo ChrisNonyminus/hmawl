@@ -8734,7 +8734,7 @@ lbl_80348B78:
 .global lbl_80348B80
 lbl_80348B80:
 	# ROM: 0x2E7FC0
-	.4byte 0x802DFC88  ;# ptr
+	.4byte lbl_802DFC88  ;# ptr
 
 .global lbl_80348B84
 lbl_80348B84:
@@ -8837,7 +8837,7 @@ lbl_80348BE8:
 .global lbl_80348BF0
 lbl_80348BF0:
 	# ROM: 0x2E8030
-	.4byte 0x802E1088  ;# ptr
+	.4byte lbl_802E1088  ;# ptr
 
 .global lbl_80348BF4
 lbl_80348BF4:
@@ -8874,7 +8874,7 @@ lbl_80348C10:
 .global lbl_80348C14
 lbl_80348C14:
 	# ROM: 0x2E8054
-	.4byte 0x801C0F24  ;# ptr
+	.4byte lbl_801C0F24  ;# ptr
 
 .global lbl_80348C18
 lbl_80348C18:
@@ -8907,7 +8907,7 @@ lbl_80348C30:
 .global lbl_80348C38
 lbl_80348C38:
 	# ROM: 0x2E8078
-	.4byte 0x802E1588  ;# ptr
+	.4byte lbl_802E1588  ;# ptr
 	.4byte 0
 
 .global lbl_80348C40
@@ -8936,7 +8936,7 @@ lbl_80348C52:
 .global lbl_80348C58
 lbl_80348C58:
 	# ROM: 0x2E8098
-	.4byte 0x802E1940  ;# ptr
+	.4byte lbl_802E1940  ;# ptr
 	.4byte 0
 
 .global lbl_80348C60
@@ -9036,7 +9036,7 @@ lbl_80348CD0:
 .global lbl_80348CD8
 lbl_80348CD8:
 	# ROM: 0x2E8118
-	.4byte 0x802E5FA0  ;# ptr
+	.4byte lbl_802E5FA0  ;# ptr
 	.4byte 0
 
 .global lbl_80348CE0
