@@ -18,7 +18,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/os
-ASM_DIRS := asm asm/code asm/code/game asm/code/libraries
+ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dolphin
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)

@@ -20,6 +20,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/ObjectBoxStorage.o \
 				$(BUILD_DIR)/asm/code/game.o \
 				$(BUILD_DIR)/asm/code/libraries/PPCArch.o \
+				$(BUILD_DIR)/asm/code/libraries/dolphin/os.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
 DTORS_O_FILES := $(BUILD_DIR)/asm/dtors.o
