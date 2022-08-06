@@ -82459,7 +82459,7 @@ lbl_802E6330:
 .global _ResetFunctionInfo
 _ResetFunctionInfo:
 	# ROM: 0x2E3338
-	.4byte lbl_801FBBA8  ;# ptr
+	.4byte OnReset  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x7F
 	.4byte 0
 	.4byte 0
