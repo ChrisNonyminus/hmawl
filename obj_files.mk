@@ -15,7 +15,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/MapChangePoint.o \
 				$(BUILD_DIR)/asm/code/game/cls_80023A04.o \
 				$(BUILD_DIR)/asm/code/game/CharDesignData.o \
-				$(BUILD_DIR)/asm/text.o \
+				$(BUILD_DIR)/asm/code/game/unk_8002F2DC.o \
+				$(BUILD_DIR)/asm/code/game.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
 DTORS_O_FILES := $(BUILD_DIR)/asm/dtors.o
