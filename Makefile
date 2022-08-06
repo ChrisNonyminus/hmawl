@@ -17,7 +17,7 @@ VERSION := us_r0
 
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
-SRC_DIRS := src src/os
+SRC_DIRS := src src/os src/game
 ASM_DIRS := asm asm/code
 
 # Input files
@@ -37,7 +37,7 @@ O_FILES := $(INIT_O_FILES) $(EXTAB_O_FILES) $(EXTABINDEX_O_FILES) $(TEXT_O_FILES
 
 # TOOLS
 
-MWCC_VERSION = GC/2.6
+MWCC_VERSION = GC/1.3.2
 MWLD_VERSION = GC/1.1
 #version used by _start.c for the compiler
 OS_MWCC_VERSION = GC/1.2.5
@@ -56,7 +56,7 @@ endif
 AS      := $(DEVKITPPC)/bin/powerpc-eabi-as
 OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
-CC      := $(WINE) tools/mwcc_compiler/$(OS_MWCC_VERSION)/mwcceppc.exe
+CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
 # 
 LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
@@ -64,11 +64,12 @@ SHA1SUM := sha1sum
 PYTHON  := python3
 
 # Options
-INCLUDES := -i include/
+INCLUDES := -i include/ -i src/
 
 ASFLAGS := -mgekko -I asm -I include
 LDFLAGS := -map $(MAP) -fp hard -nodefaults
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
+CPPFLAGS := -lang=c++ -nodefaults -Cpp_exceptions off -RTTI off -fp hard -fp_contract on -rostr -use_lmw_stmw on -enum int -inline auto -sdata 8 -sdata2 8 -O4,p -msgstyle gcc $(INCLUDES)
 
 # RECIPES
 
@@ -93,7 +94,7 @@ $(DOL): $(ELF) | tools
 	$(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 clean:
-	rm -fdr build
+	rm -fdr $(BUILD_DIR)
 	$(MAKE) -C tools clean
 
 tools:
@@ -107,5 +108,8 @@ $(BUILD_DIR)/%.o: %.s
 
 $(BUILD_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(BUILD_DIR)/%.o: %.cpp
+	$(CC) $(CPPFLAGS) -c -o $@ $<
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true

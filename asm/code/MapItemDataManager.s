@@ -2,34 +2,8 @@
 
 .section .text, "ax"  # 0x80005980 - 0x8023DD80
 
-.global func_80005980
-func_80005980:
-/* 80005980 000026C0  94 21 FF F0 */	stwu r1, -0x10(r1)
-/* 80005984 000026C4  7C 08 02 A6 */	mflr r0
-/* 80005988 000026C8  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_1@ha
-/* 8000598C 000026CC  3C 80 80 29 */	lis r4, vtable_MapItemDataManager_4@ha
-/* 80005990 000026D0  90 01 00 14 */	stw r0, 0x14(r1)
-/* 80005994 000026D4  3C C0 80 29 */	lis r6, vtable_MapItemDataManager_2@ha
-/* 80005998 000026D8  38 06 71 E0 */	addi r0, r6, vtable_MapItemDataManager_2@l
-/* 8000599C 000026DC  38 A5 71 B8 */	addi r5, r5, vtable_MapItemDataManager_1@l
-/* 800059A0 000026E0  93 E1 00 0C */	stw r31, 0xc(r1)
-/* 800059A4 000026E4  38 84 71 D4 */	addi r4, r4, vtable_MapItemDataManager_4@l
-/* 800059A8 000026E8  7C 7F 1B 78 */	mr r31, r3
-/* 800059AC 000026EC  90 03 00 00 */	stw r0, 0(r3)
-/* 800059B0 000026F0  38 00 00 00 */	li r0, 0
-/* 800059B4 000026F4  90 A3 00 00 */	stw r5, 0(r3)
-/* 800059B8 000026F8  90 83 00 68 */	stw r4, 0x68(r3)
-/* 800059BC 000026FC  90 03 00 64 */	stw r0, 0x64(r3)
-/* 800059C0 00002700  48 00 00 1D */	bl func_800059DC
-/* 800059C4 00002704  80 01 00 14 */	lwz r0, 0x14(r1)
-/* 800059C8 00002708  7F E3 FB 78 */	mr r3, r31
-/* 800059CC 0000270C  83 E1 00 0C */	lwz r31, 0xc(r1)
-/* 800059D0 00002710  7C 08 03 A6 */	mtlr r0
-/* 800059D4 00002714  38 21 00 10 */	addi r1, r1, 0x10
-/* 800059D8 00002718  4E 80 00 20 */	blr 
-
-.global func_800059DC
-func_800059DC:
+.global func_800059DC__18MapItemDataManagerFv
+func_800059DC__18MapItemDataManagerFv:
 /* 800059DC 0000271C  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800059E0 00002720  7C 08 02 A6 */	mflr r0
 /* 800059E4 00002724  38 80 00 00 */	li r4, 0
@@ -694,20 +668,20 @@ func_800062F0:
 /* 800062FC 0000303C  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 80006300 00003040  7C 7F 1B 79 */	or. r31, r3, r3
 /* 80006304 00003044  41 82 00 48 */	beq lbl_8000634C
-/* 80006308 00003048  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_1@ha
+/* 80006308 00003048  3C 60 80 29 */	lis r3, __vt__18MapItemDataManager@ha
 /* 8000630C 0000304C  34 1F 00 64 */	addic. r0, r31, 0x64
-/* 80006310 00003050  38 03 71 B8 */	addi r0, r3, vtable_MapItemDataManager_1@l
+/* 80006310 00003050  38 03 71 B8 */	addi r0, r3, __vt__18MapItemDataManager@l
 /* 80006314 00003054  90 1F 00 00 */	stw r0, 0(r31)
 /* 80006318 00003058  41 82 00 10 */	beq lbl_80006328
-/* 8000631C 0000305C  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_4@ha
-/* 80006320 00003060  38 03 71 D4 */	addi r0, r3, vtable_MapItemDataManager_4@l
+/* 8000631C 0000305C  3C 60 80 29 */	lis r3, __vt__12cls_802971D4@ha
+/* 80006320 00003060  38 03 71 D4 */	addi r0, r3, __vt__12cls_802971D4@l
 /* 80006324 00003064  90 1F 00 68 */	stw r0, 0x68(r31)
 .global lbl_80006328
 lbl_80006328:
 /* 80006328 00003068  28 1F 00 00 */	cmplwi r31, 0
 /* 8000632C 0000306C  41 82 00 10 */	beq lbl_8000633C
-/* 80006330 00003070  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_2@ha
-/* 80006334 00003074  38 03 71 E0 */	addi r0, r3, vtable_MapItemDataManager_2@l
+/* 80006330 00003070  3C 60 80 29 */	lis r3, __vt__23MapItemDataManager_base@ha
+/* 80006334 00003074  38 03 71 E0 */	addi r0, r3, __vt__23MapItemDataManager_base@l
 /* 80006338 00003078  90 1F 00 00 */	stw r0, 0(r31)
 .global lbl_8000633C
 lbl_8000633C:
@@ -732,9 +706,9 @@ func_80006364:
 /* 80006370 000030B0  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 80006374 000030B4  7C 7F 1B 79 */	or. r31, r3, r3
 /* 80006378 000030B8  41 82 00 1C */	beq lbl_80006394
-/* 8000637C 000030BC  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_4@ha
+/* 8000637C 000030BC  3C A0 80 29 */	lis r5, __vt__12cls_802971D4@ha
 /* 80006380 000030C0  7C 80 07 35 */	extsh. r0, r4
-/* 80006384 000030C4  38 05 71 D4 */	addi r0, r5, vtable_MapItemDataManager_4@l
+/* 80006384 000030C4  38 05 71 D4 */	addi r0, r5, __vt__12cls_802971D4@l
 /* 80006388 000030C8  90 1F 00 04 */	stw r0, 4(r31)
 /* 8000638C 000030CC  40 81 00 08 */	ble lbl_80006394
 /* 80006390 000030D0  48 17 2D D9 */	bl func_80179168
@@ -747,17 +721,17 @@ lbl_80006394:
 /* 800063A4 000030E4  38 21 00 10 */	addi r1, r1, 0x10
 /* 800063A8 000030E8  4E 80 00 20 */	blr 
 
-.global func_800063AC
-func_800063AC:
+.global vfunc_800063AC__18MapItemDataManagerFv
+vfunc_800063AC__18MapItemDataManagerFv:
 /* 800063AC 000030EC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800063B0 000030F0  7C 08 02 A6 */	mflr r0
 /* 800063B4 000030F4  90 01 00 14 */	stw r0, 0x14(r1)
 /* 800063B8 000030F8  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 800063BC 000030FC  7C 7F 1B 79 */	or. r31, r3, r3
 /* 800063C0 00003100  41 82 00 1C */	beq lbl_800063DC
-/* 800063C4 00003104  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_2@ha
+/* 800063C4 00003104  3C A0 80 29 */	lis r5, __vt__23MapItemDataManager_base@ha
 /* 800063C8 00003108  7C 80 07 35 */	extsh. r0, r4
-/* 800063CC 0000310C  38 05 71 E0 */	addi r0, r5, vtable_MapItemDataManager_2@l
+/* 800063CC 0000310C  38 05 71 E0 */	addi r0, r5, __vt__23MapItemDataManager_base@l
 /* 800063D0 00003110  90 1F 00 00 */	stw r0, 0(r31)
 /* 800063D4 00003114  40 81 00 08 */	ble lbl_800063DC
 /* 800063D8 00003118  48 17 2D 91 */	bl func_80179168
@@ -797,10 +771,10 @@ lbl_80006424:
 func_8000643C:
 /* 8000643C 0000317C  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 80006440 00003180  7C 08 02 A6 */	mflr r0
-/* 80006444 00003184  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_2@ha
+/* 80006444 00003184  3C A0 80 29 */	lis r5, __vt__23MapItemDataManager_base@ha
 /* 80006448 00003188  3C 80 80 29 */	lis r4, lbl_80297208@ha
 /* 8000644C 0000318C  90 01 00 14 */	stw r0, 0x14(r1)
-/* 80006450 00003190  38 05 71 E0 */	addi r0, r5, vtable_MapItemDataManager_2@l
+/* 80006450 00003190  38 05 71 E0 */	addi r0, r5, __vt__23MapItemDataManager_base@l
 /* 80006454 00003194  38 A4 72 08 */	addi r5, r4, lbl_80297208@l
 /* 80006458 00003198  38 80 00 00 */	li r4, 0
 /* 8000645C 0000319C  93 E1 00 0C */	stw r31, 0xc(r1)
@@ -850,8 +824,8 @@ func_800064C0:
 /* 80006500 00003240  48 17 3B 35 */	bl func_8017A034
 /* 80006504 00003244  28 1E 00 00 */	cmplwi r30, 0
 /* 80006508 00003248  41 82 00 10 */	beq lbl_80006518
-/* 8000650C 0000324C  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_2@ha
-/* 80006510 00003250  38 03 71 E0 */	addi r0, r3, vtable_MapItemDataManager_2@l
+/* 8000650C 0000324C  3C 60 80 29 */	lis r3, __vt__23MapItemDataManager_base@ha
+/* 80006510 00003250  38 03 71 E0 */	addi r0, r3, __vt__23MapItemDataManager_base@l
 /* 80006514 00003254  90 1E 00 00 */	stw r0, 0(r30)
 .global lbl_80006518
 lbl_80006518:
@@ -926,9 +900,9 @@ func_800065D8:
 /* 800065EC 0000332C  3C A0 80 25 */	lis r5, lbl_8025113C@ha
 /* 800065F0 00003330  39 20 00 00 */	li r9, 0
 /* 800065F4 00003334  39 05 11 3C */	addi r8, r5, lbl_8025113C@l
-/* 800065F8 00003338  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_4@ha
+/* 800065F8 00003338  3C A0 80 29 */	lis r5, __vt__12cls_802971D4@ha
 /* 800065FC 0000333C  80 E8 00 00 */	lwz r7, 0(r8)
-/* 80006600 00003340  38 05 71 D4 */	addi r0, r5, vtable_MapItemDataManager_4@l
+/* 80006600 00003340  38 05 71 D4 */	addi r0, r5, __vt__12cls_802971D4@l
 /* 80006604 00003344  80 C8 00 04 */	lwz r6, 4(r8)
 /* 80006608 00003348  7C 7E 1B 78 */	mr r30, r3
 /* 8000660C 0000334C  80 A8 00 08 */	lwz r5, 8(r8)
@@ -1048,8 +1022,8 @@ lbl_8000673C:
 /* 800067A4 000034E4  48 00 9B 2D */	bl func_800102D0
 /* 800067A8 000034E8  28 1D 00 00 */	cmplwi r29, 0
 /* 800067AC 000034EC  41 82 00 10 */	beq lbl_800067BC
-/* 800067B0 000034F0  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_4@ha
-/* 800067B4 000034F4  38 03 71 D4 */	addi r0, r3, vtable_MapItemDataManager_4@l
+/* 800067B0 000034F0  3C 60 80 29 */	lis r3, __vt__12cls_802971D4@ha
+/* 800067B4 000034F4  38 03 71 D4 */	addi r0, r3, __vt__12cls_802971D4@l
 /* 800067B8 000034F8  90 01 00 48 */	stw r0, 0x48(r1)
 .global lbl_800067BC
 lbl_800067BC:
@@ -1070,9 +1044,9 @@ func_800067D4:
 /* 800067E8 00003528  3C A0 80 25 */	lis r5, lbl_8025113C@ha
 /* 800067EC 0000352C  39 20 00 00 */	li r9, 0
 /* 800067F0 00003530  39 05 11 3C */	addi r8, r5, lbl_8025113C@l
-/* 800067F4 00003534  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_4@ha
+/* 800067F4 00003534  3C A0 80 29 */	lis r5, __vt__12cls_802971D4@ha
 /* 800067F8 00003538  80 E8 00 00 */	lwz r7, 0(r8)
-/* 800067FC 0000353C  38 05 71 D4 */	addi r0, r5, vtable_MapItemDataManager_4@l
+/* 800067FC 0000353C  38 05 71 D4 */	addi r0, r5, __vt__12cls_802971D4@l
 /* 80006800 00003540  80 C8 00 04 */	lwz r6, 4(r8)
 /* 80006804 00003544  7C 7E 1B 78 */	mr r30, r3
 /* 80006808 00003548  80 A8 00 08 */	lwz r5, 8(r8)
@@ -1212,8 +1186,8 @@ lbl_8000697C:
 /* 800069E0 00003720  48 00 98 F1 */	bl func_800102D0
 /* 800069E4 00003724  28 1E 00 00 */	cmplwi r30, 0
 /* 800069E8 00003728  41 82 00 10 */	beq lbl_800069F8
-/* 800069EC 0000372C  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_4@ha
-/* 800069F0 00003730  38 03 71 D4 */	addi r0, r3, vtable_MapItemDataManager_4@l
+/* 800069EC 0000372C  3C 60 80 29 */	lis r3, __vt__12cls_802971D4@ha
+/* 800069F0 00003730  38 03 71 D4 */	addi r0, r3, __vt__12cls_802971D4@l
 /* 800069F4 00003734  90 01 00 4C */	stw r0, 0x4c(r1)
 .global lbl_800069F8
 lbl_800069F8:
@@ -1561,8 +1535,8 @@ lbl_80006E2C:
 /* 80006E38 00003B78  28 03 00 00 */	cmplwi r3, 0
 /* 80006E3C 00003B7C  41 82 00 50 */	beq lbl_80006E8C
 /* 80006E40 00003B80  93 63 00 00 */	stw r27, 0(r3)
-/* 80006E44 00003B84  3C 80 80 29 */	lis r4, vtable_MapItemDataManager_4@ha
-/* 80006E48 00003B88  38 04 71 D4 */	addi r0, r4, vtable_MapItemDataManager_4@l
+/* 80006E44 00003B84  3C 80 80 29 */	lis r4, __vt__12cls_802971D4@ha
+/* 80006E48 00003B88  38 04 71 D4 */	addi r0, r4, __vt__12cls_802971D4@l
 /* 80006E4C 00003B8C  93 83 00 04 */	stw r28, 4(r3)
 /* 80006E50 00003B90  80 BD 00 00 */	lwz r5, 0(r29)
 /* 80006E54 00003B94  80 9D 00 04 */	lwz r4, 4(r29)
@@ -1629,10 +1603,10 @@ lbl_80006F14:
 /* 80006F24 00003C64  41 82 00 5C */	beq lbl_80006F80
 /* 80006F28 00003C68  93 7C 00 00 */	stw r27, 0(r28)
 /* 80006F2C 00003C6C  7F 87 E3 78 */	mr r7, r28
-/* 80006F30 00003C70  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_4@ha
+/* 80006F30 00003C70  3C 60 80 29 */	lis r3, __vt__12cls_802971D4@ha
 /* 80006F34 00003C74  38 00 00 00 */	li r0, 0
 /* 80006F38 00003C78  93 BC 00 04 */	stw r29, 4(r28)
-/* 80006F3C 00003C7C  38 83 71 D4 */	addi r4, r3, vtable_MapItemDataManager_4@l
+/* 80006F3C 00003C7C  38 83 71 D4 */	addi r4, r3, __vt__12cls_802971D4@l
 /* 80006F40 00003C80  38 67 00 20 */	addi r3, r7, 0x20
 /* 80006F44 00003C84  80 DE 00 00 */	lwz r6, 0(r30)
 /* 80006F48 00003C88  80 BE 00 04 */	lwz r5, 4(r30)
@@ -1855,8 +1829,8 @@ lbl_80297080:
 	.4byte 0
 	.byte 0xC0, 0xD0, 0x00, 0x00
 
-.global vtable_MapItemDataManager_1
-vtable_MapItemDataManager_1:
+.global __vt__18MapItemDataManager
+__vt__18MapItemDataManager:
 	# ROM: 0x2941B8
 	.4byte 0
 	.4byte 0
@@ -1870,19 +1844,19 @@ vtable_MapItemDataManager_3:
 	.4byte 0
 	.4byte func_800063F4  ;# ptr
 
-.global vtable_MapItemDataManager_4
-vtable_MapItemDataManager_4:
+.global __vt__12cls_802971D4
+__vt__12cls_802971D4:
 	# ROM: 0x2941D4
 	.4byte 0
 	.4byte 0
 	.4byte func_80006364  ;# ptr
 
-.global vtable_MapItemDataManager_2
-vtable_MapItemDataManager_2:
+.global __vt__23MapItemDataManager_base
+__vt__23MapItemDataManager_base:
 	# ROM: 0x2941E0
 	.4byte 0
 	.4byte 0
-	.4byte func_800063AC  ;# ptr
+	.4byte vfunc_800063AC__18MapItemDataManagerFv  ;# ptr
 	.4byte 0
 
 .global lbl_802971F0
