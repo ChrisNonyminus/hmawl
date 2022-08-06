@@ -1924,7 +1924,7 @@ lbl_80297208:
 	# ROM: 0x294208
 	.4byte 0
 	.4byte 0
-	.4byte 0x800064C0  ;# ptr
+	.4byte func_800064C0  ;# ptr
 	.4byte 0x800065A4  ;# ptr
 
 .section .bss, "wa"  # 0x802E8E00 - 0x8034CFA0
