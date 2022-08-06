@@ -1,7 +1,10 @@
 INIT_O_FILES := $(BUILD_DIR)/asm/init.o 
 EXTAB_O_FILES := $(BUILD_DIR)/asm/extab.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex.o
-TEXT_O_FILES := $(BUILD_DIR)/asm/code/MapItemDataManager.o \
+TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
+				$(BUILD_DIR)/asm/code/game/MapItemObjectManager.o \
+				$(BUILD_DIR)/asm/code/game/Main.o \
+				$(BUILD_DIR)/asm/code/game/Reset.o \
 				$(BUILD_DIR)/asm/text.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o

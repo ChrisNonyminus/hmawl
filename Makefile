@@ -18,7 +18,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/os
-ASM_DIRS := asm asm/code
+ASM_DIRS := asm asm/code asm/code/game
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)
@@ -93,7 +93,7 @@ $(DOL): $(ELF) | tools
 	$(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 clean:
-	rm -fdr build
+	rm -fdr $(BUILD_DIR)
 	$(MAKE) -C tools clean
 
 tools:
