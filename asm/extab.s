@@ -1,6 +1,7 @@
 .include "macros.inc"
 
 .section .extab, "wa"  # 0x800056C0 - 0x800057E0
+.global lbl_extab
 lbl_extab:
 	.4byte 0x00080000
 	.4byte 0

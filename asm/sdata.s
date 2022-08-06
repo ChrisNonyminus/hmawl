@@ -8772,7 +8772,7 @@ lbl_80348BA0:
 .global lbl_80348BA8
 lbl_80348BA8:
 	# ROM: 0x2E7FE8
-	.4byte 0x801B69EC  ;# ptr
+	.4byte lbl_801B69EC  ;# ptr
 	.4byte 0
 
 .global lbl_80348BB0
@@ -8805,7 +8805,7 @@ lbl_80348BCC:
 .global lbl_80348BD0
 lbl_80348BD0:
 	# ROM: 0x2E8010
-	.4byte 0x801BADEC  ;# ptr
+	.4byte lbl_801BADEC  ;# ptr
 
 .global lbl_80348BD4
 lbl_80348BD4:

@@ -898,6 +898,8 @@ func_80006574:
 /* 80006598 000032D8  7C 08 03 A6 */	mtlr r0
 /* 8000659C 000032DC  38 21 00 10 */	addi r1, r1, 0x10
 /* 800065A0 000032E0  4E 80 00 20 */	blr 
+.global lbl_800065A4
+lbl_800065A4:
 /* 800065A4 000032E4  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800065A8 000032E8  7C 08 02 A6 */	mflr r0
 /* 800065AC 000032EC  90 01 00 14 */	stw r0, 0x14(r1)
@@ -1925,7 +1927,7 @@ lbl_80297208:
 	.4byte 0
 	.4byte 0
 	.4byte func_800064C0  ;# ptr
-	.4byte 0x800065A4  ;# ptr
+	.4byte lbl_800065A4  ;# ptr
 
 .section .bss, "wa"  # 0x802E8E00 - 0x8034CFA0
 .global lbl_802E8E00

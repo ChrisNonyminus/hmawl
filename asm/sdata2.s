@@ -5081,7 +5081,7 @@ lbl_8034B058:
 .global lbl_8034B060
 lbl_8034B060:
 	# ROM: 0x2E9640
-	.4byte 0x80128124  ;# ptr
+	.4byte lbl_80128124  ;# ptr
 	.byte 0xA7, 0x06, 0xAD, 0x04
 
 .global lbl_8034B068
