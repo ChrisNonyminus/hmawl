@@ -2272,7 +2272,7 @@ lbl_800133DC:
 /* 800133F0 00010130  4E 80 00 20 */	blr
 
 .global ctor_SceneInit
-SceneInit:
+ctor_SceneInit:
 /* 800133F4 00010134  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800133F8 00010138  7C 08 02 A6 */	mflr r0
 /* 800133FC 0001013C  3C 80 80 2F */	lis r4, lbl_802E8F28@ha
