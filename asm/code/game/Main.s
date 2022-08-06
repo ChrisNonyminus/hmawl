@@ -3868,9 +3868,9 @@ lbl_8000AFB8:
 /* 8000AFC8 00007D08  48 16 DE C1 */	bl func_80178E88
 /* 8000AFCC 00007D0C  28 03 00 00 */	cmplwi r3, 0
 /* 8000AFD0 00007D10  41 82 00 40 */	beq lbl_8000B010
-/* 8000AFD4 00007D14  3C A0 80 29 */	lis r5, vtable_MapItemDataManager_4@ha
+/* 8000AFD4 00007D14  3C A0 80 29 */	lis r5, __vt__12cls_802971D4@ha
 /* 8000AFD8 00007D18  3C 80 80 29 */	lis r4, lbl_80297BEC@ha
-/* 8000AFDC 00007D1C  38 05 71 D4 */	addi r0, r5, vtable_MapItemDataManager_4@l
+/* 8000AFDC 00007D1C  38 05 71 D4 */	addi r0, r5, __vt__12cls_802971D4@l
 /* 8000AFE0 00007D20  38 A0 00 00 */	li r5, 0
 /* 8000AFE4 00007D24  90 03 00 04 */	stw r0, 4(r3)
 /* 8000AFE8 00007D28  38 84 7B EC */	addi r4, r4, lbl_80297BEC@l

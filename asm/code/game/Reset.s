@@ -989,8 +989,8 @@ lbl_8000BE58:
 lbl_8000BEA8:
 /* 8000BEA8 00008BE8  28 1F 00 00 */	cmplwi r31, 0
 /* 8000BEAC 00008BEC  41 82 00 10 */	beq lbl_8000BEBC
-/* 8000BEB0 00008BF0  3C 60 80 29 */	lis r3, vtable_MapItemDataManager_4@ha
-/* 8000BEB4 00008BF4  38 03 71 D4 */	addi r0, r3, vtable_MapItemDataManager_4@l
+/* 8000BEB0 00008BF0  3C 60 80 29 */	lis r3, __vt__12cls_802971D4@ha
+/* 8000BEB4 00008BF4  38 03 71 D4 */	addi r0, r3, __vt__12cls_802971D4@l
 /* 8000BEB8 00008BF8  90 1F 00 04 */	stw r0, 4(r31)
 .global lbl_8000BEBC
 lbl_8000BEBC:
