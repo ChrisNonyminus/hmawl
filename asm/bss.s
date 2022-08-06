@@ -791,11 +791,11 @@ lbl_80340C00:
 .global lbl_80340C60
 lbl_80340C60:
 	.skip 0xC0
-.global lbl_80340D20
-lbl_80340D20:
+.global _SecParams
+_SecParams:
 	.skip 0x100
-.global lbl_80340E20
-lbl_80340E20:
+.global __GBA
+__GBA:
 	.skip 0x400
 .global lbl_80341220
 lbl_80341220:

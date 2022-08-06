@@ -82456,8 +82456,8 @@ lbl_802E6330:
 	.byte 0x00, 0x04, 0x01, 0x05
 	.byte 0x02, 0x06, 0x00, 0x00
 
-.global lbl_802E6338
-lbl_802E6338:
+.global _ResetFunctionInfo
+_ResetFunctionInfo:
 	# ROM: 0x2E3338
 	.4byte lbl_801FBBA8  ;# ptr
 	.byte 0x00, 0x00, 0x00, 0x7F

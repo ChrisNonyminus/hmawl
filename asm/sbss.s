@@ -1921,8 +1921,8 @@ lbl_80349B00:
 .global lbl_80349B04
 lbl_80349B04:
 	.skip 0x4
-.global lbl_80349B08
-lbl_80349B08:
+.global __GBAReset
+__GBAReset:
 	.skip 0x18
 .global lbl_80349B20
 lbl_80349B20:

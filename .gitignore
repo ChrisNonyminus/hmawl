@@ -12,6 +12,7 @@
 *.out
 *.elf
 *.dol
+*.rel
 *.a
 *.d
 *.map
@@ -26,5 +27,4 @@ build.bat
 clean.bat
 calcprogress.bat
 !clang-format.exe
-in
-*.dump
+in/
