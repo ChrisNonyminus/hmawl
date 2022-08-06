@@ -9,6 +9,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/SceneInit.o \
 				$(BUILD_DIR)/asm/code/game/SceneWorldMap.o \
 				$(BUILD_DIR)/asm/code/game/MapObject.o \
+				$(BUILD_DIR)/asm/code/game/MapParticle.o \
+				$(BUILD_DIR)/asm/code/game/cls_8001B97C.o \
 				$(BUILD_DIR)/asm/text.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
