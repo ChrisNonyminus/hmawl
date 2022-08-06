@@ -1102,11 +1102,11 @@ lbl_80349670:
 .global lbl_80349674
 lbl_80349674:
 	.skip 0x4
-.global lbl_80349678
-lbl_80349678:
+.global RunQueueBits
+RunQueueBits:
 	.skip 0x4
-.global lbl_8034967C
-lbl_8034967C:
+.global RunQueueHint
+RunQueueHint:
 	.skip 0x4
 .global lbl_80349680
 lbl_80349680:

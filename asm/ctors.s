@@ -1,8 +1,8 @@
 .include "macros.inc"
 
 .section .ctors, "wa"  # 0x8023DD80 - 0x8023DF00
-.global lbl_8023DD80
-lbl_8023DD80:
+.global __init_cpp_exceptions_reference
+__init_cpp_exceptions_reference:
 	# ROM: 0x23AD80
 	.4byte ctor_80236514  ;# ptr
 	.4byte ctor_MapItemDataManager  ;# ptr
