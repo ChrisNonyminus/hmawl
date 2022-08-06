@@ -5,6 +5,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/MapItemObjectManager.o \
 				$(BUILD_DIR)/asm/code/game/Main.o \
 				$(BUILD_DIR)/asm/code/game/Reset.o \
+				$(BUILD_DIR)/asm/code/game/cls_8000D250.o \
+				$(BUILD_DIR)/asm/code/game/SceneInit.o \
 				$(BUILD_DIR)/asm/text.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
