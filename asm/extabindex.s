@@ -2,7 +2,7 @@
 .section .extabindex, "wa"  # 0x800057E0 - 0x80005980
 .global lbl_extabindex
 lbl_extabindex:
-	.4byte func_801770A8
+	.4byte func_LogCallback_maybe
 	.4byte 0x00000050
 	.4byte lbl_extab
 	.4byte func_801782F4
@@ -99,7 +99,7 @@ lbl_extabindex:
 lbl_80005954:
 	.4byte lbl_extabindex
 	.4byte lbl_80005954
-	.4byte func_801770A8
+	.4byte func_LogCallback_maybe
 	.4byte 0x000BEC98
 	.4byte 0
 	.4byte 0

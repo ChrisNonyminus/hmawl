@@ -18,6 +18,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/unk_8002F2DC.o \
 				$(BUILD_DIR)/asm/code/game/cls_8004B26C.o \
 				$(BUILD_DIR)/asm/code/game/ObjectBoxStorage.o \
+				$(BUILD_DIR)/asm/code/game/ObjectNPCManager.o \
+				$(BUILD_DIR)/asm/code/game/CharData.o \
 				$(BUILD_DIR)/asm/code/game.o \
 				$(BUILD_DIR)/asm/code/libraries/PPCArch.o \
 				$(BUILD_DIR)/asm/code/libraries/dolphin/os.o \

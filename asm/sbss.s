@@ -313,8 +313,8 @@ lbl_803491C4:
 .global lbl_803491C8
 lbl_803491C8:
 	.skip 0x4
-.global lbl_803491CC
-lbl_803491CC:
+.global g_cls_8000D250_ptr
+g_cls_8000D250_ptr:
 	.skip 0x4
 .global lbl_803491D0
 lbl_803491D0:
