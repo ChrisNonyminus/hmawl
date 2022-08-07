@@ -10,6 +10,16 @@ ifneq ($(findstring MSYS,$(shell uname)),)
   WINDOWS := 1
 endif
 
+GENERATE_MAP ?= 0
+NON_MATCHING ?= 0
+
+VERBOSE ?= 0
+MAX_ERRORS ?= 0     # 0 = no maximum
+
+ifeq ($(VERBOSE),0)
+  QUIET := @
+endif
+
 # FILES
 
 TARGET := hmawl
@@ -85,12 +95,12 @@ DUMMY != mkdir -p $(ALL_DIRS)
 .PHONY: tools
 
 $(LDSCRIPT): ldscript.lcf
-	$(CPP) -MMD -MP -MT $@ -MF $@.d -I include/ -I . -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
+	$(QUIET) $(CPP) -MMD -MP -MT $@ -MF $@.d -I include/ -I . -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
 
 $(DOL): $(ELF) | tools
-	$(ELF2DOL) $< $@
+	$(QUIET) $(ELF2DOL) $< $@
 #	./asmdiff.sh 0 256
-	$(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
+	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 clean:
 	rm -fdr $(BUILD_DIR)
@@ -100,12 +110,12 @@ tools:
 	$(MAKE) -C tools
 
 $(ELF): $(O_FILES) $(LDSCRIPT)
-	$(LD) $(LDFLAGS) $(O_FILES) -o $@ -lcf $(LDSCRIPT)
+	$(QUIET) $(LD) $(LDFLAGS) $(O_FILES) -o $@ -lcf $(LDSCRIPT)
 
 $(BUILD_DIR)/%.o: %.s
-	$(AS) $(ASFLAGS) -o $@ $<
+	$(QUIET) $(AS) $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(QUIET) $(CC) $(CFLAGS) -c -o $@ $<
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
