@@ -6,10 +6,10 @@
 func_8004B26C:
 /* 8004B26C 00047FAC  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8004B270 00047FB0  7C 08 02 A6 */	mflr r0
-/* 8004B274 00047FB4  3C A0 80 29 */	lis r5, __vt__23MapItemDataManager_base@ha
+/* 8004B274 00047FB4  3C A0 80 29 */	lis r5, BaseObject_vtable@ha
 /* 8004B278 00047FB8  3C 80 80 2A */	lis r4, lbl_802A7AC8@ha
 /* 8004B27C 00047FBC  90 01 00 14 */	stw r0, 0x14(r1)
-/* 8004B280 00047FC0  38 05 71 E0 */	addi r0, r5, __vt__23MapItemDataManager_base@l
+/* 8004B280 00047FC0  38 05 71 E0 */	addi r0, r5, BaseObject_vtable@l
 /* 8004B284 00047FC4  38 A4 7A C8 */	addi r5, r4, lbl_802A7AC8@l
 /* 8004B288 00047FC8  38 80 00 01 */	li r4, 1
 /* 8004B28C 00047FCC  93 E1 00 0C */	stw r31, 0xc(r1)

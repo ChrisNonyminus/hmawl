@@ -7652,8 +7652,8 @@ lbl_8029EA3C:
 	.4byte lbl_8002B5BC  ;# ptr
 	.4byte lbl_8002B5CC  ;# ptr
 
-.global lbl_8029EA6C
-lbl_8029EA6C:
+.global __vt__19CharDesignData_base
+__vt__19CharDesignData_base:
 	# ROM: 0x29BA6C
 	.4byte 0
 	.4byte 0
