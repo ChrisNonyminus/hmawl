@@ -821,14 +821,14 @@ lbl_803413F0:
 .global lbl_80341400
 lbl_80341400:
 	.skip 0x30
-.global lbl_80341430
-lbl_80341430:
+.global HSD_PadLibData
+HSD_PadLibData:
 	.skip 0x34
-.global lbl_80341464
-lbl_80341464:
+.global HSD_PadMasterStatus
+HSD_PadMasterStatus:
 	.skip 0x110
-.global lbl_80341574
-lbl_80341574:
+.global HSD_PadRumbleData
+HSD_PadRumbleData:
 	.skip 0x114
 .global lbl_80341688
 lbl_80341688:
