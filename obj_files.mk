@@ -3,6 +3,7 @@ EXTAB_O_FILES := $(BUILD_DIR)/asm/extab.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex.o
 TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game/MapItemObjectManager.o \
+				$(BUILD_DIR)/asm/code/game/code_800079EC.o \
 				$(BUILD_DIR)/asm/code/game/Main.o \
 				$(BUILD_DIR)/asm/code/game/Reset.o \
 				$(BUILD_DIR)/asm/code/game/cls_8000D250.o \

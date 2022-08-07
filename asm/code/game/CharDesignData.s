@@ -2,7 +2,7 @@
 
 .section .text, "ax"  # 0x80005980 - 0x8023DD80
 
-.global func_8002B9E8
+.global func_8002B9E8 ;# matched: https://decomp.me/scratch/6fOEB
 func_8002B9E8:
 /* 8002B9E8 00028728  3C 80 80 25 */	lis r4, lbl_8024A8BC@ha
 /* 8002B9EC 0002872C  38 84 A8 BC */	addi r4, r4, lbl_8024A8BC@l
