@@ -82473,10 +82473,10 @@ lbl_802E6388:
 	.balign 4
 	.4byte 0
 
-.global lbl_802E63B0
-lbl_802E63B0:
+.global hsdDObj
+hsdDObj:
 	# ROM: 0x2E33B0
-	.4byte lbl_80204280  ;# ptr
+	.4byte DObjInfoInit  ;# ptr
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -83817,8 +83817,8 @@ lbl_802E7AD8:
 	.asciz "unexpected opcode 0x%x.\n"
 	.balign 4
 
-.global lbl_802E7B78
-lbl_802E7B78:
+.global hsdClass
+hsdClass:
 	# ROM: 0x2E4B78
 	.4byte lbl_8021B4E4  ;# ptr
 	.4byte 0

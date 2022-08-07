@@ -1975,11 +1975,11 @@ lbl_80349C30:
 .global lbl_80349C34
 lbl_80349C34:
 	.skip 0x4
-.global lbl_80349C38
-lbl_80349C38:
+.global default_class
+default_class:
 	.skip 0x4
-.global lbl_80349C3C
-lbl_80349C3C:
+.global current_dobj
+current_dobj:
 	.skip 0x4
 .global lbl_80349C40
 lbl_80349C40:
