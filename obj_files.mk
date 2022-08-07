@@ -21,6 +21,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/code/game/MapItemDataManager.o \
 				$(BUILD_DIR)/asm/code/game.o \
 				$(BUILD_DIR)/asm/code/libraries/PPCArch.o \
 				$(BUILD_DIR)/asm/code/libraries/dolphin/os.o \
+				$(BUILD_DIR)/asm/code/libraries/dolphin/code_801B7D0C.o \
+				$(BUILD_DIR)/asm/code/libraries/dolphin/gba.o \
 				$(BUILD_DIR)/asm/code/libraries.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
 DTORS_O_FILES := $(BUILD_DIR)/asm/dtors.o
