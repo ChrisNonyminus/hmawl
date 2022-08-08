@@ -64,7 +64,7 @@ lbl_extab:
 	.4byte 0x00000010
 	.4byte 0
 	.4byte 0x82000008
-	.4byte 0x80235B88
+	.4byte lbl_80235B88
 	.4byte 0x18080000
 	.4byte 0
 	.4byte 0x28080000
@@ -72,4 +72,4 @@ lbl_extab:
 	.4byte 0x00000010
 	.4byte 0
 	.4byte 0x82000008
-	.4byte 0x80235B88
+	.4byte lbl_80235B88
