@@ -7,7 +7,7 @@ SECTIONS
     GROUP :
     {
 
-        .init BIND(0x80003100) ALIGN(0x20) : {}
+        .init ALIGN(0x20) : {}
         _extab      ALIGN(0x20) : { *(.extab) }
         _extabindex ALIGN(0x20) : { *(.extabindex) }
         .text       ALIGN(0x20) : {}
@@ -15,30 +15,13 @@ SECTIONS
         .dtors      ALIGN(0x20) : {}
         .rodata     ALIGN(0x20) : {}
         .data       ALIGN(0x20) : {}
-        .bss BIND(0x802E8E00) ALIGN(0x20) : {}
-        .sdata BIND(0x803469C0) ALIGN(0x20) : {}
-        .sbss BIND(0x80348FE0) ALIGN(0x20) : {}
-        .sdata2 BIND(0x80349E40) ALIGN(0x20) : {}
-        .sbss2 BIND(0x8034CC20) ALIGN(0x20) : {}
+        .bss ALIGN(0x20) : {}
+        .sdata ALIGN(0x20) : {}
+        .sbss ALIGN(0x20) : {}
+        .sdata2 ALIGN(0x20) : {}
+        .sbss2 ALIGN(0x20) : {}
         .stack      ALIGN(0x20) : {}
     } > text
     _stack_base = _f_stack;
     _stack_addr = _f_stack + 0x10000;
-}
-FORCEFILES 
-{ 
-    bss.o
-    ctors.o
-    data.o
-    dtors.o
-    extab.o
-    extabindex.o
-    init.o
-    rodata.o
-    sbss.o
-    sbss2.o
-    sdata.o
-    sdata2.o
-    text.o
-    _start.o
 }
