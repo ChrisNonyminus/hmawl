@@ -8,8 +8,8 @@ SECTIONS
     {
 
         .init ALIGN(0x20) : {}
-        _extab      ALIGN(0x20) : { *(.extab) }
-        _extabindex ALIGN(0x20) : { *(.extabindex) }
+        .extab      ALIGN(0x20) : { *(.extab) }
+        .extabindex ALIGN(0x20) : { *(.extabindex) }
         .text       ALIGN(0x20) : {}
         .ctors      ALIGN(0x20) : {}
         .dtors      ALIGN(0x20) : {}
@@ -22,6 +22,19 @@ SECTIONS
         .sbss2 ALIGN(0x20) : {}
         .stack      ALIGN(0x20) : {}
     } > text
+    sz_init = SIZEOF(.init);
+    szextab_ = SIZEOF(.extab);
+    szextabindex_ = SIZEOF(.extabindex);
+    sz_text = SIZEOF(.text);
+    sz_ctors = SIZEOF(.ctors);
+    sz_dtors = SIZEOF(.dtors);
+    sz_rodata = SIZEOF(.rodata);
+    sz_data = SIZEOF(.data);
+    sz_bss = SIZEOF(.bss);
+    sz_sdata = SIZEOF(.sdata);
+    sz_sbss = SIZEOF(.sbss);
+    sz_sdata2 = SIZEOF(.sdata2);
+    sz_sbss2 = SIZEOF(.sbss2);
     _stack_base = _f_stack;
     _stack_addr = _f_stack + 0x10000;
 }
