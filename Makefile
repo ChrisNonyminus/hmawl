@@ -99,7 +99,6 @@ $(LDSCRIPT): ldscript.lcf
 
 $(DOL): $(ELF) | tools
 	$(QUIET) $(ELF2DOL) $< $@
-#	./asmdiff.sh 0 256
 	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 clean:
