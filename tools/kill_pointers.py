@@ -7,7 +7,7 @@ import sys
 labels = {}
 
 # get addresses from map file
-with open('hmawl_us_r0.map', 'rt') as f:
+with open('build/hmawl_us_r0/hmawl_us_r0.map', 'rt') as f:
     for line in f.readlines():
         if "(entry of " in line:
             m = re.match(r'\s+(\w+)\s+(\w+)\s+(\w+)\s+(\w+)', line)
