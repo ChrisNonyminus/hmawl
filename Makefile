@@ -119,3 +119,17 @@ $(BUILD_DIR)/%.o: %.c
 	$(QUIET) $(CC) $(CFLAGS) -c -o $@ $<
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
+
+
+# Recipe: RUN
+
+EMULATOR ?= dolphin-emu-nogui
+DVD_ROOT := GYWEE9/files
+DVD_SYS  := GYWEE9/sys
+DVD_FILES := $(DVD_SYS)/main.dol
+
+$(DVD_SYS)/main.dol: $(DOL)
+	cp $< $@
+
+run: $(DVD_FILES)
+	$(EMULATOR) $(DVD_SYS)/main.dol
