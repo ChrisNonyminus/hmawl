@@ -31,32 +31,16 @@
 # offset: 0x00000000	length: 0x00000000	flags: 0
 # offset: 0x00000000	length: 0x00000000	flags: 0
 # offset: 0x00000000	length: 0x00000000	flags: 0
-error: symbol for 0x801B679C not found
-error: symbol for 0x801B6804 not found
-error: symbol for 0x801B6940 not found
-error: symbol for 0x801B6804 not found
-error: symbol for 0x801B68D0 not found
 error: symbol for 0x80236358 not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x8034BBAC not found
 error: symbol for 0x8034BBAC not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x801B67C8 not found
-error: symbol for 0x801B6804 not found
-error: symbol for 0x801B68D0 not found
 error: symbol for 0x80236358 not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x801B67C8 not found
 error: symbol for 0x8034BBAC not found
 error: symbol for 0x8034BBAC not found
-error: symbol for 0x801B679C not found
-error: symbol for 0x801B6940 not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x801B67C8 not found
-error: symbol for 0x801B6804 not found
-error: symbol for 0x801B68D0 not found
 error: symbol for 0x80236358 not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x801B67C8 not found
 error: symbol for 0x8018A864 not found
 error: symbol for 0x801DA78C not found
@@ -233,14 +217,10 @@ error: symbol for 0x8017D6D0 not found
 error: symbol for 0x8017D6D0 not found
 error: symbol for 0x80349184 not found
 error: symbol for 0x80349184 not found
-error: symbol for 0x801B679C not found
 error: symbol for 0x801B67C8 not found
 error: symbol for 0x8034BBAC not found
 error: symbol for 0x8034BBAC not found
-error: symbol for 0x801B6804 not found
-error: symbol for 0x801B68D0 not found
 error: symbol for 0x80236358 not found
-error: symbol for 0x801B6940 not found
 error: symbol for 0x801B67C8 not found
 error: symbol for 0x8034BBAC not found
 error: symbol for 0x8034BBAC not found
