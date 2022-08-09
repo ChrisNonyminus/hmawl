@@ -74530,9 +74530,13 @@ lbl_80281FE0:
 	.4byte 0
 	.4byte 0
 	.4byte 0xBF800000
+.global lbl_80282054
+lbl_80282054:
 	.4byte 0
 	.4byte 0
 	.4byte 0x3F800000
+.global lbl_80282060
+lbl_80282060:
 	.4byte 0
 	.4byte 0x3F800000
 	.4byte 0
