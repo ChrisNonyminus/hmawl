@@ -80390,6 +80390,8 @@ lbl_802E0ED8:
 	.4byte lbl_801BC324
 	.4byte lbl_801BC34C
 	.4byte lbl_801BC1C0
+.global lbl_802E0F18
+lbl_802E0F18:
 	.4byte 0xFFFFFFFF
 	.4byte 0xFFFFFFFF
 	.4byte 0xFFFFFFFF

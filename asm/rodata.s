@@ -20439,6 +20439,8 @@ lbl_8024EC80:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024EC8C
+lbl_8024EC8C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -20799,10 +20801,14 @@ lbl_8024F04C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024F07C
+lbl_8024F07C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024F08C
+lbl_8024F08C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -21390,9 +21396,9 @@ lbl_8024F740:
 	.4byte 0
 	.4byte 0
 	.4byte 0
-	.4byte 0
 .global lbl_8024F800
 lbl_8024F800:
+	.4byte 0
 	.4byte 0
 	.4byte 0
 
@@ -21402,6 +21408,8 @@ lbl_8024F80C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024F818
+lbl_8024F818:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -21779,6 +21787,8 @@ lbl_8024FC50:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024FC5C
+lbl_8024FC5C:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -21789,6 +21799,8 @@ lbl_8024FC68:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024FC74
+lbl_8024FC74:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -23592,6 +23604,8 @@ lbl_80251270:
 	.4byte 0x1C011D07
 	.4byte 0
 	.4byte 0
+.global lbl_802512B4
+lbl_802512B4:
 	.4byte 0
 	.4byte 0x3F19999A
 	.4byte 0
@@ -23872,12 +23886,18 @@ lbl_80251578:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_80251584
+lbl_80251584:
 	.4byte 0
 	.4byte 0
 	.4byte 0x3F800000
+.global lbl_80251590
+lbl_80251590:
 	.4byte 0
 	.4byte 0
 	.4byte 0x3F800000
+.global lbl_8025159C
+lbl_8025159C:
 	.4byte 0
 	.4byte 0
 	.4byte 0x3FC90FDB
@@ -28586,6 +28606,8 @@ lbl_802557D8:
 	.4byte 0xBF800000
 	.4byte 0
 	.4byte 0xBF800000
+.global lbl_802557E4
+lbl_802557E4:
 	.4byte 0x3F800000
 	.4byte 0x3F800000
 	.4byte 0x3F800000
@@ -29317,6 +29339,8 @@ lbl_8025625C:
 	.4byte 0x00000044
 	.4byte 0x00000045
 	.4byte 0x00000046
+.global lbl_80256270
+lbl_80256270:
 	.4byte 0xBF800000
 	.4byte 0
 	.4byte 0xBF800000
@@ -29365,6 +29389,8 @@ lbl_802562B8:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_80256300
+lbl_80256300:
 	.4byte 0xBF800000
 	.4byte 0
 	.4byte 0xBF800000
@@ -29549,6 +29575,8 @@ lbl_802564E0:
 	.4byte 0x42F00000
 	.4byte 0
 	.4byte 0
+.global lbl_80256540
+lbl_80256540:
 	.4byte 0xBF800000
 	.4byte 0
 	.4byte 0xBF800000
@@ -29974,9 +30002,13 @@ lbl_80256A68:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_80256A74
+lbl_80256A74:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_80256A80
+lbl_80256A80:
 	.4byte 0
 	.4byte 0
 	.4byte 0
