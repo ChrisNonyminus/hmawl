@@ -2332,6 +2332,3 @@ lbl_80349E20:
 .global lbl_80349E28
 lbl_80349E28:
 	.skip 0x8
-
-
-;#	.skip 0x20 ;# shifting test
