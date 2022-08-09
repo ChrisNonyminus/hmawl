@@ -27,7 +27,7 @@ VERSION := us_r0
 
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
-SRC_DIRS := src src/os
+SRC_DIRS := src src/libraries src/libraries/os
 ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dolphin
 
 # Input files

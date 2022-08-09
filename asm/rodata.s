@@ -21333,6 +21333,8 @@ lbl_8024F728:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024F734
+lbl_8024F734:
 	.4byte 0
 	.4byte 0
 	.4byte 0
@@ -21389,6 +21391,8 @@ lbl_8024F740:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8024F800
+lbl_8024F800:
 	.4byte 0
 	.4byte 0
 
@@ -22040,10 +22044,6 @@ lbl_8024FFF4:
 lbl_80250000:
 	# ROM: 0x24D000
 	.4byte 0x0B0C0D0E
-
-.global lbl_80250004
-lbl_80250004:
-	# ROM: 0x24D004
 	.4byte 0x0F101112
 
 .global lbl_80250008
