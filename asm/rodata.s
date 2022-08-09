@@ -22060,8 +22060,6 @@ lbl_80250000:
 	.4byte 0x0B0C0D0E
 	.4byte 0x0F101112
 	.4byte 0x13141516
-.global lbl_8025000C
-lbl_8025000C:
 	.4byte 0x1718191A
 	.4byte 0x1B1C1D1E
 .global lbl_80250014
@@ -22100,8 +22098,6 @@ lbl_80250044:
 	.4byte 0
 	.4byte 0
 	.4byte 0x00010101
-.global lbl_8025005C
-lbl_8025005C:
 	.4byte 0x01010101
 	.4byte 0x01020304
 	.4byte 0x04040404
