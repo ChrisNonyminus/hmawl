@@ -317,6 +317,8 @@ lbl_8023E3B0:
 	.4byte 0
 	.4byte 0
 	.4byte 0
+.global lbl_8023E3D0
+lbl_8023E3D0:
 	.4byte 0x43314000
 	.4byte 0
 	.4byte 0x4309170A
