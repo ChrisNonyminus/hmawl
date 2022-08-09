@@ -723,8 +723,8 @@ lbl_8034A100:
 .global lbl_8034A108
 lbl_8034A108:
 	# ROM: 0x2E86E8
-	.4byte 0x8029F340
-	.4byte 0x8029F34C
+	.4byte lbl_8029F340
+	.4byte lbl_8029F34C
 
 .global lbl_8034A110
 lbl_8034A110:
