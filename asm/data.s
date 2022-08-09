@@ -51227,8 +51227,8 @@ lbl_802C5950:
 	.4byte 0x0AAC0814
 	.4byte 0x03000001
 	.4byte lbl_80348824
-	.asciz "\nh\t#"
-	.byte 0x02, 0x00, 0x01
+	.4byte 0x0A680923
+	.4byte 0x00020001
 	.4byte lbl_80348828
 	.4byte 0x0640031C
 	.4byte 0x03030001
