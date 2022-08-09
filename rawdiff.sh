@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 XXD_OPTIONS="-u -g 4"
 xxd -u -g 4 build/baserom.dol > baserom.dol.dump

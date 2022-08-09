@@ -613,7 +613,10 @@ lbl_80318B00:
 	.skip 0x20
 .global lbl_80318B20
 lbl_80318B20:
-	.skip 0x630
+	.skip 0x80
+.global lbl_80318BA0
+lbl_80318BA0:
+	.skip 0x5B0
 .global lbl_80319150
 lbl_80319150:
 	.skip 0x5D8

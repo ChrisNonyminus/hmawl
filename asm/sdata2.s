@@ -8785,7 +8785,7 @@ lbl_8034BEF4:
 .global lbl_8034BEF8
 lbl_8034BEF8:
 	# ROM: 0x2EA4D8
-	.4byte 0x80318BA0
+	.4byte lbl_80318BA0
 
 .global lbl_8034BEFC
 lbl_8034BEFC:

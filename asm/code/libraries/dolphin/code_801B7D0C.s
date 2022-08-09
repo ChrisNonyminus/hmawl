@@ -23619,8 +23619,8 @@ lbl_801CB364:
 /* 801CB370 001C80B0  7C 08 03 A6 */	mtlr r0
 /* 801CB374 001C80B4  4E 80 00 20 */	blr 
 
-.global func_801CB378
-func_801CB378:
+.global GXInit
+GXInit:
 /* 801CB378 001C80B8  7C 08 02 A6 */	mflr r0
 /* 801CB37C 001C80BC  90 01 00 04 */	stw r0, 4(r1)
 /* 801CB380 001C80C0  94 21 FF C0 */	stwu r1, -0x40(r1)
