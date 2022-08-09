@@ -66,20 +66,20 @@ lbl_803469F8:
 .global lbl_80346A00
 lbl_80346A00:
 	# ROM: 0x2E5E40
-	.4byte 0x802995AC  ;# ptr
-	.4byte 0x802995B8  ;# ptr
+	.4byte 0x802995AC
+	.4byte 0x802995B8
 
 .global lbl_80346A08
 lbl_80346A08:
 	# ROM: 0x2E5E48
-	.4byte 0x80299AF4  ;# ptr
-	.4byte 0x80299B04  ;# ptr
-	.4byte 0x80248738  ;# ptr
-	.4byte 0x80248750  ;# ptr
-	.4byte 0x80248768  ;# ptr
-	.4byte 0x80248AF8  ;# ptr
-	.4byte 0x80248B10  ;# ptr
-	.4byte 0x80248B28  ;# ptr
+	.4byte 0x80299AF4
+	.4byte 0x80299B04
+	.4byte 0x80248738
+	.4byte 0x80248750
+	.4byte 0x80248768
+	.4byte 0x80248AF8
+	.4byte 0x80248B10
+	.4byte 0x80248B28
 
 .global lbl_80346A28
 lbl_80346A28:
@@ -7921,126 +7921,126 @@ lbl_803484EC:
 	.4byte 0x00000004
 	.4byte 0x80348500
 	.4byte 0x00000002
-	.4byte 0x802C49F8  ;# ptr
+	.4byte 0x802C49F8
 	.4byte 0x00000002
-	.4byte 0x802C4A10  ;# ptr
+	.4byte 0x802C4A10
 	.4byte 0
 	.4byte 0x01060000
-	.4byte 0x802C4A28  ;# ptr
+	.4byte 0x802C4A28
 	.4byte 0x80348518
 	.4byte 0x00000001
-	.4byte 0x802C4A44  ;# ptr
+	.4byte 0x802C4A44
 	.4byte 0
 	.4byte 0x00F40000
 	.4byte 0x00000001
 	.4byte 0x00F40000
-	.4byte 0x802C4A50  ;# ptr
+	.4byte 0x802C4A50
 	.4byte 0x80348530
-	.4byte 0x802C4A6C  ;# ptr
+	.4byte 0x802C4A6C
 	.4byte 0x80348530
 	.4byte 0x80348538
 	.4byte 0x00000002
-	.4byte 0x802C4A88  ;# ptr
+	.4byte 0x802C4A88
 	.4byte 0x00000002
-	.4byte 0x802C4AA0  ;# ptr
-	.4byte 0x802C4AB8  ;# ptr
+	.4byte 0x802C4AA0
+	.4byte 0x802C4AB8
 	.4byte 0x00000001
-	.4byte 0x802C4AD4  ;# ptr
+	.4byte 0x802C4AD4
 	.4byte 0
 	.4byte 0x00F90000
 	.4byte 0x0000000A
 	.4byte 0x01000000
 	.4byte 0x00000001
-	.4byte 0x802C4B08  ;# ptr
+	.4byte 0x802C4B08
 	.4byte 0
 	.4byte 0x01310000
 	.4byte 0x80348588
 	.4byte 0x00000002
-	.4byte 0x802C4B14  ;# ptr
-	.4byte 0x802C4B2C  ;# ptr
+	.4byte 0x802C4B14
+	.4byte 0x802C4B2C
 	.4byte 0x00000002
-	.4byte 0x802C4B48  ;# ptr
-	.4byte 0x802C4B60  ;# ptr
+	.4byte 0x802C4B48
+	.4byte 0x802C4B60
 	.4byte 0x00000001
-	.4byte 0x802C4B7C  ;# ptr
+	.4byte 0x802C4B7C
 	.4byte 0
 	.4byte 0x00ED0000
-	.4byte 0x802C4B88  ;# ptr
+	.4byte 0x802C4B88
 	.4byte 0x803485B4
 	.4byte 0x00000001
-	.4byte 0x802C4BA4  ;# ptr
+	.4byte 0x802C4BA4
 	.4byte 0
 	.4byte 0x01300000
-	.4byte 0x802C4BB0  ;# ptr
+	.4byte 0x802C4BB0
 	.4byte 0x803485CC
 	.4byte 0x00000001
-	.4byte 0x802C4BCC  ;# ptr
+	.4byte 0x802C4BCC
 	.4byte 0
 	.4byte 0x01020000
 	.4byte 0x803485E4
-	.4byte 0x802C4BD8  ;# ptr
+	.4byte 0x802C4BD8
 	.4byte 0x00000002
-	.4byte 0x802C4BF4  ;# ptr
+	.4byte 0x802C4BF4
 	.4byte 0
 	.4byte 0x00040000
 	.4byte 0x00000001
 	.4byte 0x00040000
-	.4byte 0x802C4C0C  ;# ptr
-	.4byte 0x802C4C24  ;# ptr
+	.4byte 0x802C4C0C
+	.4byte 0x802C4C24
 	.4byte 0x803485FC
 	.4byte 0x80348604
 	.4byte 0x00000001
-	.4byte 0x802C4C40  ;# ptr
+	.4byte 0x802C4C40
 	.4byte 0x00000001
-	.4byte 0x802C4C4C  ;# ptr
+	.4byte 0x802C4C4C
 	.4byte 0x00000001
-	.4byte 0x802C4C58  ;# ptr
+	.4byte 0x802C4C58
 	.4byte 0
 	.4byte 0x00D90000
 	.4byte 0x80348634
 	.4byte 0x00000002
-	.4byte 0x802C4C64  ;# ptr
+	.4byte 0x802C4C64
 	.4byte 0
 	.4byte 0x00DF0000
 	.4byte 0x80348648
 	.4byte 0x00000001
-	.4byte 0x802C4C7C  ;# ptr
+	.4byte 0x802C4C7C
 	.4byte 0
 	.4byte 0x00F50000
 	.4byte 0x8034865C
 	.4byte 0x00000001
-	.4byte 0x802C4C88  ;# ptr
+	.4byte 0x802C4C88
 	.4byte 0x00000006
 	.4byte 0x00000008
 	.4byte 0x80348670
 	.4byte 0x80348674
 	.4byte 0x00000003
-	.4byte 0x802C4C94  ;# ptr
+	.4byte 0x802C4C94
 	.4byte 0x00000007
 	.4byte 0x80348688
 	.4byte 0x00000003
-	.4byte 0x802C4CB8  ;# ptr
+	.4byte 0x802C4CB8
 	.4byte 0
 	.4byte 0x00C40000
 	.4byte 0x80348698
 	.4byte 0x00000001
-	.4byte 0x802C4CDC  ;# ptr
+	.4byte 0x802C4CDC
 	.4byte 0
 	.4byte 0x00F30000
 	.4byte 0x803486AC
 	.4byte 0x00000001
-	.4byte 0x802C4CE8  ;# ptr
+	.4byte 0x802C4CE8
 	.4byte 0
 	.4byte 0x00C30000
 	.4byte 0x803486C0
 	.4byte 0
 	.4byte 0x012B0000
 	.4byte 0x803486CC
-	.4byte 0x802C4CF4  ;# ptr
+	.4byte 0x802C4CF4
 	.4byte 0x00000001
-	.4byte 0x802C4D10  ;# ptr
+	.4byte 0x802C4D10
 	.4byte 0x00000001
-	.4byte 0x802C4D1C  ;# ptr
+	.4byte 0x802C4D1C
 	.4byte 0
 	.4byte 0x00EB0000
 	.4byte 0x803486EC
@@ -8054,53 +8054,53 @@ lbl_803484EC:
 	.4byte 0x00B70000
 	.4byte 0x80348710
 	.4byte 0x00000001
-	.4byte 0x802C4D28  ;# ptr
+	.4byte 0x802C4D28
 	.4byte 0x00000001
-	.4byte 0x802C4D34  ;# ptr
+	.4byte 0x802C4D34
 	.4byte 0x00000001
-	.4byte 0x802C4D40  ;# ptr
+	.4byte 0x802C4D40
 	.4byte 0x00000001
-	.4byte 0x802C4D4C  ;# ptr
+	.4byte 0x802C4D4C
 	.4byte 0
 	.4byte 0x01050000
 	.4byte 0x8034873C
 	.4byte 0x00000001
-	.4byte 0x802C4D58  ;# ptr
+	.4byte 0x802C4D58
 	.4byte 0
 	.4byte 0x00EF0000
 	.4byte 0x80348750
 	.4byte 0x00000001
-	.4byte 0x802C4D64  ;# ptr
+	.4byte 0x802C4D64
 	.4byte 0
 	.4byte 0x01050000
 	.4byte 0x80348764
 	.4byte 0x00000001
-	.4byte 0x802C4D70  ;# ptr
+	.4byte 0x802C4D70
 	.4byte 0
 	.4byte 0x00EF0000
 	.4byte 0x80348778
 	.4byte 0x00000001
-	.4byte 0x802C4D7C  ;# ptr
+	.4byte 0x802C4D7C
 	.4byte 0
 	.4byte 0x00F20000
 	.4byte 0x8034878C
 	.4byte 0x00000001
-	.4byte 0x802C4D88  ;# ptr
+	.4byte 0x802C4D88
 	.4byte 0
 	.4byte 0x01050000
 	.4byte 0x803487A0
 	.4byte 0x00000001
-	.4byte 0x802C4D94  ;# ptr
+	.4byte 0x802C4D94
 	.4byte 0
 	.4byte 0x01050000
 	.4byte 0x803487B4
 	.4byte 0x00000001
-	.4byte 0x802C4DA0  ;# ptr
+	.4byte 0x802C4DA0
 	.4byte 0
 	.4byte 0x00F80000
 	.4byte 0x803487C8
 	.4byte 0x00000001
-	.4byte 0x802C4DAC  ;# ptr
+	.4byte 0x802C4DAC
 	.4byte 0
 
 .global lbl_803487E0
@@ -8146,12 +8146,12 @@ lbl_803487FC:
 .global lbl_80348800
 lbl_80348800:
 	# ROM: 0x2E7C40
-	.4byte 0x802C5778  ;# ptr
+	.4byte 0x802C5778
 
 .global lbl_80348804
 lbl_80348804:
 	# ROM: 0x2E7C44
-	.4byte 0x802C578C  ;# ptr
+	.4byte 0x802C578C
 	.4byte 0x00030004
 	.4byte 0x00050006
 	.4byte 0x00070000
@@ -8546,12 +8546,12 @@ lbl_803489B0:
 .global lbl_803489B8
 lbl_803489B8:
 	# ROM: 0x2E7DF8
-	.4byte 0x802CA0C0  ;# ptr
+	.4byte 0x802CA0C0
 
 .global lbl_803489BC
 lbl_803489BC:
 	# ROM: 0x2E7DFC
-	.4byte 0x802CA0CC  ;# ptr
+	.4byte 0x802CA0CC
 
 .global lbl_803489C0
 lbl_803489C0:
@@ -8629,9 +8629,9 @@ lbl_80348A09:
 	.4byte 0x2D14A02C
 	.4byte 0x439C2031
 	.4byte 0x00003F03
-	.4byte 0x802CBD60  ;# ptr
+	.4byte 0x802CBD60
 	.4byte 0x00003F06
-	.4byte 0x802CBF98  ;# ptr
+	.4byte 0x802CBF98
 	.4byte 0x2D15907C
 	.4byte 0x3494A044
 	.4byte 0x3494A044
@@ -8643,7 +8643,7 @@ lbl_80348A09:
 	.4byte 0x80348A50
 	.4byte 0x5296804A
 	.4byte 0x00003F05
-	.4byte 0x802CC4A4  ;# ptr
+	.4byte 0x802CC4A4
 	.4byte 0x2D14A02C
 	.4byte 0x2D15907D
 	.4byte 0x3494A07B
@@ -8734,7 +8734,7 @@ lbl_80348B78:
 .global lbl_80348B80
 lbl_80348B80:
 	# ROM: 0x2E7FC0
-	.4byte lbl_802DFC88  ;# ptr
+	.4byte lbl_802DFC88
 
 .global lbl_80348B84
 lbl_80348B84:
@@ -8772,7 +8772,7 @@ lbl_80348BA0:
 .global lbl_80348BA8
 lbl_80348BA8:
 	# ROM: 0x2E7FE8
-	.4byte lbl_801B69EC  ;# ptr
+	.4byte lbl_801B69EC
 	.4byte 0
 
 .global lbl_80348BB0
@@ -8795,7 +8795,7 @@ lbl_80348BC0:
 .global lbl_80348BC8
 lbl_80348BC8:
 	# ROM: 0x2E8008
-	.4byte 0x802E0E50  ;# ptr
+	.4byte 0x802E0E50
 
 .global lbl_80348BCC
 lbl_80348BCC:
@@ -8805,7 +8805,7 @@ lbl_80348BCC:
 .global lbl_80348BD0
 lbl_80348BD0:
 	# ROM: 0x2E8010
-	.4byte lbl_801BADEC  ;# ptr
+	.4byte lbl_801BADEC
 
 .global lbl_80348BD4
 lbl_80348BD4:
@@ -8837,7 +8837,7 @@ lbl_80348BE8:
 .global lbl_80348BF0
 lbl_80348BF0:
 	# ROM: 0x2E8030
-	.4byte lbl_802E1088  ;# ptr
+	.4byte lbl_802E1088
 
 .global lbl_80348BF4
 lbl_80348BF4:
@@ -8849,7 +8849,7 @@ lbl_80348BF4:
 .global lbl_80348C00
 lbl_80348C00:
 	# ROM: 0x2E8040
-	.4byte 0x802E1458  ;# ptr
+	.4byte 0x802E1458
 
 .global lbl_80348C04
 lbl_80348C04:
@@ -8874,7 +8874,7 @@ lbl_80348C10:
 .global lbl_80348C14
 lbl_80348C14:
 	# ROM: 0x2E8054
-	.4byte lbl_801C0F24  ;# ptr
+	.4byte lbl_801C0F24
 
 .global lbl_80348C18
 lbl_80348C18:
@@ -8889,31 +8889,31 @@ lbl_80348C1C:
 .global lbl_80348C20
 lbl_80348C20:
 	# ROM: 0x2E8060
-	.4byte 0x802E14B0  ;# ptr
+	.4byte 0x802E14B0
 	.4byte 0
 
 .global lbl_80348C28
 lbl_80348C28:
 	# ROM: 0x2E8068
-	.4byte 0x802E14F8  ;# ptr
+	.4byte 0x802E14F8
 	.4byte 0
 
 .global lbl_80348C30
 lbl_80348C30:
 	# ROM: 0x2E8070
-	.4byte 0x802E1540  ;# ptr
+	.4byte 0x802E1540
 	.4byte 0
 
 .global lbl_80348C38
 lbl_80348C38:
 	# ROM: 0x2E8078
-	.4byte lbl_802E1588  ;# ptr
+	.4byte lbl_802E1588
 	.4byte 0
 
 .global lbl_80348C40
 lbl_80348C40:
 	# ROM: 0x2E8080
-	.4byte 0x802E1748  ;# ptr
+	.4byte 0x802E1748
 	.4byte 0
 
 .global lbl_80348C48
@@ -8936,7 +8936,7 @@ lbl_80348C52:
 .global lbl_80348C58
 lbl_80348C58:
 	# ROM: 0x2E8098
-	.4byte lbl_802E1940  ;# ptr
+	.4byte lbl_802E1940
 	.4byte 0
 
 .global lbl_80348C60
@@ -9036,13 +9036,13 @@ lbl_80348CD0:
 .global lbl_80348CD8
 lbl_80348CD8:
 	# ROM: 0x2E8118
-	.4byte lbl_802E5FA0  ;# ptr
+	.4byte lbl_802E5FA0
 	.4byte 0
 
 .global lbl_80348CE0
 lbl_80348CE0:
 	# ROM: 0x2E8120
-	.4byte 0x802E6150  ;# ptr
+	.4byte 0x802E6150
 	.4byte 0
 
 .global lbl_80348CE8
@@ -9096,7 +9096,7 @@ lbl_80348D20:
 .global lbl_80348D28
 lbl_80348D28:
 	# ROM: 0x2E8168
-	.4byte 0x802E6348  ;# ptr
+	.4byte 0x802E6348
 	.4byte 0
 
 .global lbl_80348D30

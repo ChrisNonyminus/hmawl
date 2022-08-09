@@ -713,8 +713,8 @@ lbl_8034A100:
 .global lbl_8034A108
 lbl_8034A108:
 	# ROM: 0x2E86E8
-	.4byte 0x8029F340  ;# ptr
-	.4byte 0x8029F34C  ;# ptr
+	.4byte 0x8029F340
+	.4byte 0x8029F34C
 
 .global lbl_8034A110
 lbl_8034A110:
@@ -2678,8 +2678,8 @@ lbl_8034A7E8:
 .global lbl_8034A7F0
 lbl_8034A7F0:
 	# ROM: 0x2E8DD0
-	.4byte 0x802B25A4  ;# ptr
-	.4byte 0x802B25B0  ;# ptr
+	.4byte 0x802B25A4
+	.4byte 0x802B25B0
 
 .global lbl_8034A7F8
 lbl_8034A7F8:
@@ -5081,7 +5081,7 @@ lbl_8034B058:
 .global lbl_8034B060
 lbl_8034B060:
 	# ROM: 0x2E9640
-	.4byte lbl_80128124  ;# ptr
+	.4byte lbl_80128124
 	.4byte 0xA706AD04
 
 .global lbl_8034B068
@@ -7985,12 +7985,12 @@ lbl_8034BC10:
 .global lbl_8034BC18
 lbl_8034BC18:
 	# ROM: 0x2EA1F8
-	.4byte func_80180FF0  ;# ptr
+	.4byte func_80180FF0
 
 .global lbl_8034BC1C
 lbl_8034BC1C:
 	# ROM: 0x2EA1FC
-	.4byte func_8018101C  ;# ptr
+	.4byte func_8018101C
 
 .global lbl_8034BC20
 lbl_8034BC20:

@@ -4,97 +4,97 @@
 .global __init_cpp_exceptions_reference
 __init_cpp_exceptions_reference:
 	# ROM: 0x23AD80
-	.4byte ctor_80236514  ;# ptr
-	.4byte ctor_MapItemDataManager  ;# ptr
-	.4byte ctor_MapItemObjectManager  ;# ptr
-	.4byte ctor_80009938  ;# ptr
-	.4byte ctor_cls_8000D250  ;# ptr
-	.4byte ctor_SceneInit  ;# ptr
-	.4byte ctor_SceneWorldMap  ;# ptr
-	.4byte ctor_MapObject  ;# ptr
-	.4byte ctor_MapParticle  ;# ptr
-	.4byte ctor_cls_8001B97C  ;# ptr
-	.4byte ctor_MapCollision  ;# ptr
-	.4byte ctor_80021730  ;# ptr
-	.4byte ctor_800238D8  ;# ptr
-	.4byte ctor_80024858  ;# ptr
-	.4byte ctor_8002708C  ;# ptr
-	.4byte ctor_8002B700  ;# ptr
-	.4byte ctor_CharDesignData  ;# ptr
-	.4byte ctor_80032E38  ;# ptr
-	.4byte ctor_800388B4  ;# ptr
-	.4byte ctor_800454E4  ;# ptr
-	.4byte ctor_80046E0C  ;# ptr
-	.4byte ctor_80049D64  ;# ptr
-	.4byte ctor_8004AF68  ;# ptr
-	.4byte ctor_8004B1BC  ;# ptr
-	.4byte ctor_8004F9E8  ;# ptr
-	.4byte ctor_ObjectBoxStorage  ;# ptr
-	.4byte ctor_80082588  ;# ptr
-	.4byte ctor_80082B10  ;# ptr
-	.4byte ctor_800854F8  ;# ptr
-	.4byte ctor_800864B4  ;# ptr
-	.4byte ctor_80086D98  ;# ptr
-	.4byte ctor_800897E4  ;# ptr
-	.4byte ctor_8008A3D8  ;# ptr
-	.4byte ctor_8008B098  ;# ptr
-	.4byte ctor_8008BFF0  ;# ptr
-	.4byte ctor_8008D5F8  ;# ptr
-	.4byte ctor_80098AA0  ;# ptr
-	.4byte ctor_800A3C14  ;# ptr
-	.4byte ctor_800A5658  ;# ptr
-	.4byte ctor_800A7B64  ;# ptr
-	.4byte ctor_800AA700  ;# ptr
-	.4byte ctor_800BAF24  ;# ptr
-	.4byte ctor_800C3C20  ;# ptr
-	.4byte ctor_800D0F9C  ;# ptr
-	.4byte ctor_800D5D20  ;# ptr
-	.4byte ctor_800D6EA8  ;# ptr
-	.4byte ctor_800D6F80  ;# ptr
-	.4byte ctor_800D7CCC  ;# ptr
-	.4byte ctor_800DA0FC  ;# ptr
-	.4byte ctor_800DB7DC  ;# ptr
-	.4byte ctor_800DD078  ;# ptr
-	.4byte ctor_800DFCE8  ;# ptr
-	.4byte ctor_800E0ED8  ;# ptr
-	.4byte ctor_800EFFBC  ;# ptr
-	.4byte ctor_800F50D8  ;# ptr
-	.4byte ctor_800F7170  ;# ptr
-	.4byte ctor_800FAECC  ;# ptr
-	.4byte ctor_801048C4  ;# ptr
-	.4byte ctor_80107BA8  ;# ptr
-	.4byte ctor_8010B6AC  ;# ptr
-	.4byte ctor_80112D40  ;# ptr
-	.4byte ctor_80126730  ;# ptr
-	.4byte ctor_8012BDE8  ;# ptr
-	.4byte ctor_80130BB0  ;# ptr
-	.4byte ctor_80137D04  ;# ptr
-	.4byte ctor_801399EC  ;# ptr
-	.4byte ctor_8013B660  ;# ptr
-	.4byte ctor_80143650  ;# ptr
-	.4byte ctor_80144B4C  ;# ptr
-	.4byte ctor_80145E84  ;# ptr
-	.4byte ctor_8014A2B0  ;# ptr
-	.4byte ctor_8015131C  ;# ptr
-	.4byte ctor_80151D30  ;# ptr
-	.4byte ctor_801528AC  ;# ptr
-	.4byte ctor_80153F5C  ;# ptr
-	.4byte ctor_80154D10  ;# ptr
-	.4byte ctor_80156CF4  ;# ptr
-	.4byte ctor_80164270  ;# ptr
-	.4byte ctor_8016D4A0  ;# ptr
-	.4byte ctor_80171CD4  ;# ptr
-	.4byte ctor_80173A34  ;# ptr
-	.4byte ctor_801749F4  ;# ptr
-	.4byte ctor_80176EBC  ;# ptr
-	.4byte ctor_80178204  ;# ptr
-	.4byte ctor_80179B4C  ;# ptr
-	.4byte ctor_80182374  ;# ptr
-	.4byte ctor_8018B06C  ;# ptr
-	.4byte ctor_8018DE08  ;# ptr
-	.4byte ctor_8018FC28  ;# ptr
-	.4byte ctor_80193490  ;# ptr
-	.4byte ctor_801A8B5C  ;# ptr
-	.4byte ctor_801A8C0C  ;# ptr
-	.4byte ctor_801A9660  ;# ptr
+	.4byte ctor_80236514
+	.4byte ctor_MapItemDataManager
+	.4byte ctor_MapItemObjectManager
+	.4byte ctor_80009938
+	.4byte ctor_cls_8000D250
+	.4byte ctor_SceneInit
+	.4byte ctor_SceneWorldMap
+	.4byte ctor_MapObject
+	.4byte ctor_MapParticle
+	.4byte ctor_cls_8001B97C
+	.4byte ctor_MapCollision
+	.4byte ctor_80021730
+	.4byte ctor_800238D8
+	.4byte ctor_80024858
+	.4byte ctor_8002708C
+	.4byte ctor_8002B700
+	.4byte ctor_CharDesignData
+	.4byte ctor_80032E38
+	.4byte ctor_800388B4
+	.4byte ctor_800454E4
+	.4byte ctor_80046E0C
+	.4byte ctor_80049D64
+	.4byte ctor_8004AF68
+	.4byte ctor_8004B1BC
+	.4byte ctor_8004F9E8
+	.4byte ctor_ObjectBoxStorage
+	.4byte ctor_80082588
+	.4byte ctor_80082B10
+	.4byte ctor_800854F8
+	.4byte ctor_800864B4
+	.4byte ctor_80086D98
+	.4byte ctor_800897E4
+	.4byte ctor_8008A3D8
+	.4byte ctor_8008B098
+	.4byte ctor_8008BFF0
+	.4byte ctor_8008D5F8
+	.4byte ctor_80098AA0
+	.4byte ctor_800A3C14
+	.4byte ctor_800A5658
+	.4byte ctor_800A7B64
+	.4byte ctor_800AA700
+	.4byte ctor_800BAF24
+	.4byte ctor_800C3C20
+	.4byte ctor_800D0F9C
+	.4byte ctor_800D5D20
+	.4byte ctor_800D6EA8
+	.4byte ctor_800D6F80
+	.4byte ctor_800D7CCC
+	.4byte ctor_800DA0FC
+	.4byte ctor_800DB7DC
+	.4byte ctor_800DD078
+	.4byte ctor_800DFCE8
+	.4byte ctor_800E0ED8
+	.4byte ctor_800EFFBC
+	.4byte ctor_800F50D8
+	.4byte ctor_800F7170
+	.4byte ctor_800FAECC
+	.4byte ctor_801048C4
+	.4byte ctor_80107BA8
+	.4byte ctor_8010B6AC
+	.4byte ctor_80112D40
+	.4byte ctor_80126730
+	.4byte ctor_8012BDE8
+	.4byte ctor_80130BB0
+	.4byte ctor_80137D04
+	.4byte ctor_801399EC
+	.4byte ctor_8013B660
+	.4byte ctor_80143650
+	.4byte ctor_80144B4C
+	.4byte ctor_80145E84
+	.4byte ctor_8014A2B0
+	.4byte ctor_8015131C
+	.4byte ctor_80151D30
+	.4byte ctor_801528AC
+	.4byte ctor_80153F5C
+	.4byte ctor_80154D10
+	.4byte ctor_80156CF4
+	.4byte ctor_80164270
+	.4byte ctor_8016D4A0
+	.4byte ctor_80171CD4
+	.4byte ctor_80173A34
+	.4byte ctor_801749F4
+	.4byte ctor_80176EBC
+	.4byte ctor_80178204
+	.4byte ctor_80179B4C
+	.4byte ctor_80182374
+	.4byte ctor_8018B06C
+	.4byte ctor_8018DE08
+	.4byte ctor_8018FC28
+	.4byte ctor_80193490
+	.4byte ctor_801A8B5C
+	.4byte ctor_801A8C0C
+	.4byte ctor_801A9660
 	.4byte 0

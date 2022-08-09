@@ -1890,29 +1890,29 @@ __vt__18MapItemDataManager:
 	# ROM: 0x2941B8
 	.4byte 0
 	.4byte 0
-	.4byte func_800062F0  ;# ptr
-	.4byte func_800060D0  ;# ptr
+	.4byte func_800062F0
+	.4byte func_800060D0
 
 .global vtable_MapItemDataManager_3
 vtable_MapItemDataManager_3:
 	# ROM: 0x2941C8
 	.4byte 0
 	.4byte 0
-	.4byte func_800063F4  ;# ptr
+	.4byte func_800063F4
 
 .global __vt__12cls_802971D4
 __vt__12cls_802971D4:
 	# ROM: 0x2941D4
 	.4byte 0
 	.4byte 0
-	.4byte func_80006364  ;# ptr
+	.4byte func_80006364
 
 .global BaseObject_vtable
 BaseObject_vtable:
 	# ROM: 0x2941E0
 	.4byte 0
 	.4byte 0
-	.4byte func_800063AC  ;# ptr
+	.4byte func_800063AC
 	.4byte 0
 
 .global lbl_802971F0
@@ -1926,8 +1926,8 @@ lbl_80297208:
 	# ROM: 0x294208
 	.4byte 0
 	.4byte 0
-	.4byte func_800064C0  ;# ptr
-	.4byte lbl_800065A4  ;# ptr
+	.4byte func_800064C0
+	.4byte lbl_800065A4
 
 .section .bss, "wa"  # 0x802E8E00 - 0x8034CFA0
 .global lbl_802E8E00
