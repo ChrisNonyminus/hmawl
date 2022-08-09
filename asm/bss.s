@@ -943,4 +943,13 @@ lbl_803465A8:
 	.skip 0x10
 .global lbl_803465B8
 lbl_803465B8:
-	.skip 0x400
+	.skip 0x100
+.global lbl_803466B8
+lbl_803466B8:
+	.skip 0x100
+.global lbl_803467B8
+lbl_803467B8:
+	.skip 0x100
+.global lbl_803468B8
+lbl_803468B8:
+	.skip 0x100

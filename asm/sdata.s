@@ -9363,7 +9363,7 @@ lbl_80348BC0:
 .global lbl_80348BC8
 lbl_80348BC8:
 	# ROM: 0x2E8008
-	.4byte 0x802E0E50
+	.4byte lbl_802E0E50
 
 .global lbl_80348BCC
 lbl_80348BCC:
