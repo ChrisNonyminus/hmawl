@@ -4806,7 +4806,11 @@ lbl_8034AF54:
 lbl_8034AF58:
 	# ROM: 0x2E9538
 	.4byte 0x42B40000
+.global lbl_8034AF5C
+lbl_8034AF5C:
 	.4byte 0
+.global lbl_8034AF60
+lbl_8034AF60:
 	.4byte 0
 
 .global lbl_8034AF64
@@ -7949,7 +7953,11 @@ lbl_8034BBA0:
 lbl_8034BBA4:
 	# ROM: 0x2EA184
 	.4byte 0x000000FF
+.global lbl_8034BBA8
+lbl_8034BBA8:
 	.4byte 0x0000FFFF
+.global lbl_8034BBAC
+lbl_8034BBAC:
 	.4byte 0xFF0000FF
 
 .global lbl_8034BBB0
