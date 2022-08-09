@@ -249,10 +249,20 @@ lbl_80349F30:
 lbl_80349F34:
 	# ROM: 0x2E8514
 	.4byte 0x41C80000
+.global lbl_80349F38
+lbl_80349F38:
 	.4byte 0x04FF0000
+.global lbl_80349F3C
+lbl_80349F3C:
 	.4byte 0x04FF0000
+.global lbl_80349F40
+lbl_80349F40:
 	.4byte 0x04FF0000
+.global lbl_80349F44
+lbl_80349F44:
 	.4byte 0x04FF0000
+.global lbl_80349F48
+lbl_80349F48:
 	.4byte 0x0C5F1132
 	.4byte 0x03FF0000
 
@@ -2678,8 +2688,8 @@ lbl_8034A7E8:
 .global lbl_8034A7F0
 lbl_8034A7F0:
 	# ROM: 0x2E8DD0
-	.4byte 0x802B25A4
-	.4byte 0x802B25B0
+	.4byte lbl_802B25A4
+	.4byte lbl_802B25B0
 
 .global lbl_8034A7F8
 lbl_8034A7F8:
@@ -5095,36 +5105,98 @@ lbl_8034B070:
 	# ROM: 0x2E9650
 	.4byte 0
 	.4byte 0
+.global lbl_8034B078
+lbl_8034B078:
 	.4byte 0x0000FFFF
+.global lbl_8034B07C
+lbl_8034B07C:
 	.4byte 0x0009FFFF
+.global lbl_8034B080
+lbl_8034B080:
 	.4byte 0x001EFFFF
+.global lbl_8034B084
+lbl_8034B084:
 	.4byte 0x001CFFFF
+.global lbl_8034B088
+lbl_8034B088:
 	.4byte 0x0011FFFF
+.global lbl_8034B08C
+lbl_8034B08C:
 	.4byte 0x0007FFFF
+.global lbl_8034B090
+lbl_8034B090:
 	.4byte 0x0008FFFF
+.global lbl_8034B094
+lbl_8034B094:
 	.4byte 0x0006FFFF
+.global lbl_8034B098
+lbl_8034B098:
 	.4byte 0x0002FFFF
+.global lbl_8034B09C
+lbl_8034B09C:
 	.4byte 0x001BFFFF
+.global lbl_8034B0A0
+lbl_8034B0A0:
 	.4byte 0x0003FFFF
+.global lbl_8034B0A4
+lbl_8034B0A4:
 	.4byte 0x0015FFFF
+.global lbl_8034B0A8
+lbl_8034B0A8:
 	.4byte 0x0016FFFF
+.global lbl_8034B0AC
+lbl_8034B0AC:
 	.4byte 0x0017FFFF
+.global lbl_8034B0B0
+lbl_8034B0B0:
 	.4byte 0x0018FFFF
+.global lbl_8034B0B4
+lbl_8034B0B4:
 	.4byte 0x0014FFFF
+.global lbl_8034B0B8
+lbl_8034B0B8:
 	.4byte 0x0012FFFF
+.global lbl_8034B0BC
+lbl_8034B0BC:
 	.4byte 0x0013FFFF
+.global lbl_8034B0C0
+lbl_8034B0C0:
 	.4byte 0x001AFFFF
+.global lbl_8034B0C4
+lbl_8034B0C4:
 	.4byte 0x000AFFFF
+.global lbl_8034B0C8
+lbl_8034B0C8:
 	.4byte 0x000BFFFF
+.global lbl_8034B0CC
+lbl_8034B0CC:
 	.4byte 0x0001FFFF
+.global lbl_8034B0D0
+lbl_8034B0D0:
 	.4byte 0x000CFFFF
+.global lbl_8034B0D4
+lbl_8034B0D4:
 	.4byte 0x000DFFFF
+.global lbl_8034B0D8
+lbl_8034B0D8:
 	.4byte 0x000EFFFF
+.global lbl_8034B0DC
+lbl_8034B0DC:
 	.4byte 0x000FFFFF
+.global lbl_8034B0E0
+lbl_8034B0E0:
 	.4byte 0x0010FFFF
+.global lbl_8034B0E4
+lbl_8034B0E4:
 	.4byte 0x0004FFFF
+.global lbl_8034B0E8
+lbl_8034B0E8:
 	.4byte 0x0005FFFF
+.global lbl_8034B0EC
+lbl_8034B0EC:
 	.4byte 0x0019FFFF
+.global lbl_8034B0F0
+lbl_8034B0F0:
 	.4byte 0x001DFFFF
 
 .global lbl_8034B0F4
@@ -5147,6 +5219,8 @@ lbl_8034B100:
 	# ROM: 0x2E96E0
 	.4byte 0x3F4CCCCD
 	.4byte 0
+.global lbl_8034B108
+lbl_8034B108:
 	.4byte 0x001A0019
 	.4byte 0xFFFF0000
 
@@ -7467,6 +7541,8 @@ lbl_8034B9F8:
 	# ROM: 0x2E9FD8
 	.4byte 0x3F800000
 	.4byte 0
+.global lbl_8034BA00
+lbl_8034BA00:
 	.4byte 0x200F0000
 	.4byte 0
 
