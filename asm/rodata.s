@@ -88882,10 +88882,6 @@ lbl_8028F308:
 	.4byte 0x06000100
 	.4byte 0x01030201
 	.4byte 0x0203FF02
-
-.global lbl_80290004
-lbl_80290004:
-	# ROM: 0x28D004
 	.4byte 0xFF020220
 	.4byte 0x00040002
 	.4byte 0x01F70056
