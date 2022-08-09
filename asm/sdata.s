@@ -9093,11 +9093,11 @@ lbl_80348A24:
 .global lbl_80348A28
 lbl_80348A28:
 	.4byte 0x00003F03
-	.4byte 0x802CBD60
+	.4byte lbl_802CBD60
 .global lbl_80348A30
 lbl_80348A30:
 	.4byte 0x00003F06
-	.4byte 0x802CBF98
+	.4byte lbl_802CBF98
 .global lbl_80348A38
 lbl_80348A38:
 	.4byte 0x2D15907C
@@ -9127,7 +9127,7 @@ lbl_80348A5C:
 .global lbl_80348A60
 lbl_80348A60:
 	.4byte 0x00003F05
-	.4byte 0x802CC4A4
+	.4byte lbl_802CC4A4
 .global lbl_80348A68
 lbl_80348A68:
 	.4byte 0x2D14A02C
