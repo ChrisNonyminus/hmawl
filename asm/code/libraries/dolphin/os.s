@@ -7539,9 +7539,9 @@ func_801B69F0:
 /* 801B6A6C 001B37AC  4B FF C2 B9 */	bl OSSetCurrentContext
 /* 801B6A70 001B37B0  3C 60 80 36 */	lis r3, _stack_addr@ha
 /* 801B6A74 001B37B4  38 03 CF A0 */	addi r0, r3, _stack_addr@l
-/* 801B6A78 001B37B8  3C 60 80 35 */	lis r3, _stack_base@ha
+/* 801B6A78 001B37B8  3C 60 80 35 */	lis r3, _stack_end@ha
 /* 801B6A7C 001B37BC  90 1C 07 1C */	stw r0, 0x71c(r28)
-/* 801B6A80 001B37C0  38 03 CF A0 */	addi r0, r3, _stack_base@l
+/* 801B6A80 001B37C0  38 03 CF A0 */	addi r0, r3, _stack_end@l
 /* 801B6A84 001B37C4  90 1C 07 20 */	stw r0, 0x720(r28)
 /* 801B6A88 001B37C8  3C 60 DE AE */	lis r3, 0xDEADBABE@ha
 /* 801B6A8C 001B37CC  38 03 BA BE */	addi r0, r3, 0xDEADBABE@l
