@@ -22057,10 +22057,6 @@ lbl_80250000:
 	# ROM: 0x24D000
 	.4byte 0x0B0C0D0E
 	.4byte 0x0F101112
-
-.global lbl_80250008
-lbl_80250008:
-	# ROM: 0x24D008
 	.4byte 0x13141516
 	.4byte 0x1718191A
 	.4byte 0x1B1C1D1E
@@ -56069,10 +56065,6 @@ lbl_8026C728:
 	.4byte 0xFF22001B
 	.4byte 0
 	.4byte 0
-
-.global lbl_80270004
-lbl_80270004:
-	# ROM: 0x26D004
 	.4byte 0
 
 .global lbl_80270008
