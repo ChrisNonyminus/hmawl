@@ -58163,8 +58163,8 @@ lbl_802CBB5C:
 	.4byte 0x9ED6F84A
 .global lbl_802CBB6C
 lbl_802CBB6C:
-	.asciz "K\nPJS/"
-	.byte 0x4B
+	.4byte 0x4B0A504A
+	.4byte 0x532F004B
 	.4byte 0x7F92488D
 	.4byte 0x9615184B
 	.4byte 0xA978604A
@@ -60725,8 +60725,8 @@ lbl_802CBB6C:
 	.4byte 0x5F0C3075
 	.4byte 0x622C5876
 	.4byte 0x640D203D
-	.asciz "jMpaoO"
-	.byte 0x9E
+	.4byte 0x6A4D7061
+	.4byte 0x6F4F009E
 	.4byte 0x7BCFF089
 	.4byte 0x8531943E
 	.4byte 0x8DF2205E
@@ -65855,16 +65855,16 @@ lbl_802CBB6C:
 	.4byte 0x28190A0A
 	.4byte 0x05050005
 	.4byte 0x2819280A
-	.asciz "\n\n\n\n"
-	.byte 0x0A, 0x46, 0x00
+	.4byte 0x0A0A0A0A
+	.4byte 0x000A4600
 	.4byte 0x05050505
 	.4byte 0x000A0A0A
 	.4byte 0x00050505
 	.4byte 0x28190A0A
 	.4byte 0x05000505
 	.4byte 0x28193200
-	.asciz "\n\n\n\n"
-	.byte 0x0A, 0x37, 0x05
+	.4byte 0x0A0A0A0A
+	.4byte 0x000A3705
 	.4byte 0x0A0A1400
 	.4byte 0x003C050F
 	.4byte 0x00140000
@@ -65875,8 +65875,8 @@ lbl_802CBB6C:
 	.4byte 0x140A1400
 	.4byte 0x003C0A00
 	.4byte 0x0A000F05
-	.asciz "-\n\n\n"
-	.byte 0x14, 0x05, 0x55
+	.4byte 0x2D0A0A0A
+	.4byte 0x00140555
 	.4byte 0
 	.4byte 0x0A05320A
 	.4byte 0x0A000014
@@ -65917,8 +65917,8 @@ lbl_802CBB6C:
 	.4byte 0x0F0A2300
 	.4byte 0x001E051E
 	.4byte 0x0A190000
-	.asciz "F\n\n\n"
-	.byte 0x00, 0x00, 0x3C
+	.4byte 0x460A0A0A
+	.4byte 0x0000003C
 	.4byte 0x0A0A0A00
 	.4byte 0x000A280A
 	.4byte 0x000A0028
@@ -69661,8 +69661,8 @@ lbl_802CBB6C:
 	.4byte 0x0A500A32
 	.4byte 0x141E1E32
 	.4byte 0x14142D23
-	.asciz "<(AK"
-	.byte 0xA3, 0x00, 0x8A
+	.4byte 0x3C28414B
+	.4byte 0x00A3008A
 	.4byte 0x0042007B
 	.4byte 0x00A50098
 	.4byte 0x00360089
@@ -71818,8 +71818,8 @@ lbl_802CBB6C:
 	.4byte 0x5A28003C
 	.4byte 0x3C141446
 	.4byte 0x0F0F372D
-	.asciz "<(PK"
-	.byte 0x8B, 0x00, 0xA5
+	.4byte 0x3C28504B
+	.4byte 0x008B00A5
 	.4byte 0x002F0078
 	.4byte 0x00790056
 	.4byte 0x00010000
@@ -75510,8 +75510,8 @@ lbl_802CBB6C:
 	.4byte 0x0F190A32
 	.4byte 0x19140F28
 	.4byte 0x001E1432
-	.asciz "\n(2d"
-	.byte 0x00, 0x37, 0x1E
+	.4byte 0x0A283264
+	.4byte 0x0000371E
 	.4byte 0x0F321919
 	.4byte 0x2D280F0F
 	.4byte 0x1E370F37
