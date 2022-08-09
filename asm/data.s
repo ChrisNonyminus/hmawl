@@ -80647,8 +80647,12 @@ lbl_802E14A0:
 lbl_802E14B0:
 	.asciz "<< Dolphin SDK - AI\trelease build: Apr 17 2003 12:33:54 (0x2301) >>"
 	.4byte 0
+.global lbl_802E14F8
+lbl_802E14F8:
 	.asciz "<< Dolphin SDK - AR\trelease build: Apr 17 2003 12:33:55 (0x2301) >>"
 	.4byte 0
+.global lbl_802E1540
+lbl_802E1540:
 	.asciz "<< Dolphin SDK - ARQ\trelease build: Apr 17 2003 12:33:56 (0x2301) >>"
 	.balign 4
 
@@ -80681,6 +80685,8 @@ lbl_802E1608:
 	.asciz "__DSP_add_task() : Added task    : 0x%08X\n"
 	.balign 4
 	.4byte 0
+.global lbl_802E1748
+lbl_802E1748:
 	.asciz "<< Dolphin SDK - CARD\trelease build: Apr 17 2003 12:34:19 (0x2301) >>"
 	.balign 4
 
@@ -85550,6 +85556,8 @@ lbl_802E60B8:
 	.asciz "SISetSamplingRate: unknown TV format. Use default."
 	.balign 4
 	.4byte 0
+.global lbl_802E6150
+lbl_802E6150:
 	.asciz "<< Dolphin SDK - EXI\trelease build: Apr 17 2003 12:33:17 (0x2301) >>"
 	.balign 4
 	.asciz "Memory Card 59"
