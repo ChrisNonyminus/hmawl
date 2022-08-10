@@ -175,7 +175,10 @@ print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 EMULATOR ?= dolphin-emu-nogui
 DVD_ROOT := GYWEE9/files
 DVD_SYS  := GYWEE9/sys
-DVD_FILES := $(DVD_SYS)/main.dol
+DVD_FILES := $(DVD_SYS)/main.dol $(DVD_ROOT)/wlp0.rel $(DVD_ROOT)/wlp1.rel $(DVD_ROOT)/wlp2.rel 
+
+$(DVD_ROOT)/%.rel: $(BUILD_DIR)/%.rel
+	cp $< $@
 
 $(DVD_SYS)/main.dol: $(DOL)
 	cp $< $@
