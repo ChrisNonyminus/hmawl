@@ -34,10 +34,14 @@ ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dol
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)
 C_FILES := $(wildcard $(SRC_DIRS)/*.c)
 CPP_FILES := $(wildcard $(SRC_DIRS)/*.cpp)
-LDSCRIPT := $(BUILD_DIR)/ldscript.lcf
+DOL_LCF := static.lcf
+REL_LCF := partial.lcf
 
 # Output files
 DOL := $(BUILD_DIR)/main.dol
+WLP0 := $(BUILD_DIR)/wlp0.rel
+WLP1 := $(BUILD_DIR)/wlp1.rel
+WLP2 := $(BUILD_DIR)/wlp2.rel
 ELF := $(DOL:.dol=.elf)
 MAP := $(BUILD_DIR)/$(TARGET)_$(VERSION).map
 
@@ -70,6 +74,7 @@ CC      := $(WINE) tools/mwcc_compiler/$(OS_MWCC_VERSION)/mwcceppc.exe
 # 
 LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
+ELF2REL := tools/elf2rel
 SHA1SUM := sha1sum
 PYTHON  := python3
 
@@ -77,7 +82,8 @@ PYTHON  := python3
 INCLUDES := -i include/
 
 ASFLAGS := -mgekko -I asm -I include
-LDFLAGS := -map $(MAP) -fp hard -nodefaults
+DOL_LDFLAGS := -nodefaults -fp hard
+REL_LDFLAGS := -nodefaults -fp hard -r -m _prolog -g
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
 
 # RECIPES
@@ -85,7 +91,8 @@ CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -m
 # Default target #
 default: all
 
-all: $(DOL)
+all: $(DOL) $(WLP0) $(WLP1) $(WLP2)
+	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
@@ -99,17 +106,60 @@ $(LDSCRIPT): ldscript.lcf
 
 $(DOL): $(ELF) | tools
 	$(QUIET) $(ELF2DOL) $< $@
-	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
+
+# wlp0
+WLP0_SOURCES := \
+				asm/rels/wlp0.s
+WLP0_OBJS := $(addsuffix .o,$(basename $(WLP0_SOURCES)))
+
+$(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF)
+	@echo Linking relocatable module $@
+	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP0_OBJS) -map $(@:.plf=.map) -o $@
+
+# wlp1
+WLP1_SOURCES := \
+				asm/rels/wlp1.s
+WLP1_OBJS := $(addsuffix .o,$(basename $(WLP1_SOURCES)))
+
+$(BUILD_DIR)/wlp1.plf: $(WLP1_OBJS) $(REL_LCF)
+	@echo Linking relocatable module $@
+	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP1_OBJS) -map $(@:.plf=.map) -o $@
+
+# wlp2
+WLP2_SOURCES := \
+				asm/rels/wlp2.s
+WLP2_OBJS := $(addsuffix .o,$(basename $(WLP2_SOURCES)))
+
+$(BUILD_DIR)/wlp2.plf: $(WLP2_OBJS) $(REL_LCF)
+	@echo Linking relocatable module $@
+	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP2_OBJS) -map $(@:.plf=.map) -o $@
+
+
+$(WLP0): ELF2REL_ARGS := -i 1 -o 0x0 -l 0x23 -c 22
+$(WLP1): ELF2REL_ARGS := -i 2 -o 0x23 -l 0x23 -c 22
+$(WLP2): ELF2REL_ARGS := -i 3 -o 0x46 -l 0x23 -c 21
+
 
 clean:
 	rm -fdr $(BUILD_DIR)
 	$(MAKE) -C tools clean
+	find . -name '*.o' -exec rm {} +
 
 tools:
 	$(MAKE) -C tools
 
+$(ELF2REL): tools/elf2rel.c
+	@echo Building tool $@
+	$(QUIET) gcc -O3 -Wall -s -o $@ $^
+
+# dol
 $(ELF): $(O_FILES) $(LDSCRIPT)
-	$(QUIET) $(LD) $(LDFLAGS) $(O_FILES) -o $@ -lcf $(LDSCRIPT)
+	$(QUIET) $(LD) $(DOL_LDFLAGS) $(O_FILES) -o $@ -lcf $(DOL_LCF) -map $(@:.elf=.map)
+
+# rels
+%.rel: %.plf $(ELF) $(ELF2REL)
+	@echo Converting $(filter %.plf,$^) to $@
+	$(QUIET) $(ELF2REL) $(filter %.plf,$^) $(ELF) $@ $(ELF2REL_ARGS)
 
 $(BUILD_DIR)/%.o: %.s
 	$(QUIET) $(AS) $(ASFLAGS) -o $@ $<

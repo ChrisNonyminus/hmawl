@@ -1,3 +1,4 @@
+/* Linker configuration for building a static (.dol) module */
 MEMORY
 {
     text : origin = 0x80003100
