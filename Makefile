@@ -91,7 +91,7 @@ CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -m
 # Default target #
 default: all
 
-all: $(DOL)
+all: $(DOL) $(WLP0) $(WLP1) $(WLP2)
 	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
