@@ -101810,5 +101810,3 @@ lbl_80296FE0:
 	.4byte 0x2C6A6C2F
 	.4byte 0x3F90AD3A
 	.4byte 0xE322DA11
-	.4byte 0
-	.4byte 0

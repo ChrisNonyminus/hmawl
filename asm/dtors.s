@@ -11,7 +11,3 @@ lbl_8023DF00:
 	.4byte lbl_802364E0
 	.4byte func_8023590C
 	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0

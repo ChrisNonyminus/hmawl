@@ -113,6 +113,3 @@ lbl_80005954:
 	.4byte 0
 	.4byte 0
 	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0

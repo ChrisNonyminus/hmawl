@@ -13895,7 +13895,3 @@ lbl_8034CC08:
 	# ROM: 0x2EB1E8
 	.4byte 0
 	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0
-	.4byte 0

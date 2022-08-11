@@ -227,5 +227,3 @@ lbl_800057C0:
 	.4byte 0
 	.4byte 0x82000008
 	.4byte lbl_80235B88
-	.4byte 0
-	.4byte 0

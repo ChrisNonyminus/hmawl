@@ -1445,4 +1445,4 @@ lbl_803467B8:
 
 .global lbl_803468B8
 lbl_803468B8:
-	.skip 0x108
+	.skip 0x100

@@ -101,5 +101,3 @@ lbl_8023DD80:
 	.4byte lbl_801A8C0C
 	.4byte lbl_801A9660
 	.4byte 0
-	.4byte 0
-	.4byte 0

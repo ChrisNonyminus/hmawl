@@ -94990,4 +94990,3 @@ lbl_802E8DB8:
 	.4byte lbl_80239DB8
 	.4byte lbl_80239DB8
 	.4byte lbl_80239DA0
-	.4byte 0
