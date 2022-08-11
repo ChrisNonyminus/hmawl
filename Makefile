@@ -109,7 +109,12 @@ $(DOL): $(ELF) | tools
 
 # wlp0
 WLP0_SOURCES := \
-				asm/rels/wlp0.s
+				asm/wlp0/text.s \
+				asm/wlp0/ctors.s \
+				asm/wlp0/dtors.s \
+				asm/wlp0/rodata.s \
+				asm/wlp0/data.s \
+				asm/wlp0/bss.s
 WLP0_OBJS := $(addsuffix .o,$(basename $(WLP0_SOURCES)))
 
 $(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF)
