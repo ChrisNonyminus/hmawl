@@ -694,3 +694,12 @@ ctor_MapItemObjectManager:
 /* 800079E0 00004720  7C 08 03 A6 */	mtlr r0
 /* 800079E4 00004724  38 21 00 10 */	addi r1, r1, 0x10
 /* 800079E8 00004728  4E 80 00 20 */	blr 
+
+
+.section .sdata2, "a"  # 0x80349E40 - 0x8034CC20
+
+.global lbl_80349E48
+lbl_80349E48:
+	# ROM: 0x2E8428
+	.4byte 0
+	.4byte 0

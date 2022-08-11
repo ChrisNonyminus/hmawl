@@ -2,12 +2,6 @@
 
 .section .sdata2, "a"  # 0x80349E40 - 0x8034CC20
 
-.global lbl_80349E48
-lbl_80349E48:
-	# ROM: 0x2E8428
-	.4byte 0
-	.4byte 0
-
 .global lbl_80349E50
 lbl_80349E50:
 	# ROM: 0x2E8430

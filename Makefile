@@ -83,7 +83,7 @@ INCLUDES := -i include/
 
 ASFLAGS := -mgekko -I asm -I include
 DOL_LDFLAGS := -nodefaults -fp hard
-REL_LDFLAGS := -nodefaults -fp hard -r -m _prolog -g
+REL_LDFLAGS := -nodefaults -fp hard -r -m _prolog -g -sdata 0
 CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
 
 # RECIPES
