@@ -155,6 +155,43 @@ if unresolvedSection != 0:
     labels[sectionInfo[unresolvedSection]
            ['offset'] + unresolved] = '_unresolved'
 
+# to dsiassemble rels that use other rels, at the moment you have to:
+# - disassemble the "first" rel (in other words, the one rel that doesn't use any other rels and is the "core" rel used by other rels)
+# - glabel any "important" function in that "core" rel that is known to be used by other rels (give it a name that won't conflict with any default labels in the other rels)
+# - build the "core" rel into a plf.
+# - populate the below dictionaries accordingly
+
+# hardcoded offset to address dictionary. this stinks but is the only way I can imagine getting this working (for now)
+wlp2CodeAddrs = {
+    0x00007630: 0x80984564,
+    0x0002088C: 0x8099D7C0,
+    0x00002D0C: 0x8097FC40,
+    0x00002F88: 0x8097FEBC,
+    0x00003060: 0x8097FF94,
+    0x0001D278: 0x8099A1AC,
+    0x0001D32C: 0x8099A260,
+    0x0001CE70: 0x80999DA4,
+    0x0001D4CC: 0x8099A400
+}
+# labeling the hardcoded addresses. Again, sucks, but necessary.
+labels[0x80984564] = 'wlp2_00007724'
+labels[0x8099D7C0] = 'wlp2_00020980'
+labels[0x8097FC40] = 'wlp2_00002E00'
+labels[0x8097FEBC] = 'wlp2_0000307C'
+labels[0x8097FF94] = 'wlp2_00003154'
+labels[0x8099A1AC] = 'wlp2_0001D36C'
+labels[0x8099A260] = 'wlp2_0001D420'
+labels[0x80999DA4] = 'wlp2_0001CF64'
+labels[0x8099A400] = 'wlp2_0001D5C0'
+# dictionary for a specific module's sections' addresses; section number gets section's address dictionary
+wlp2SectionAddrs = {
+    1: wlp2CodeAddrs
+}
+# dictinoary for all the above. module number gets module's dictionary
+moduleDicts = {
+    3: wlp2SectionAddrs
+}
+
 
 def read_relocation_info(module, o):
     currSection = None
@@ -176,12 +213,24 @@ def read_relocation_info(module, o):
                 if symAddr not in labels:
                     print('error: symbol for 0x%08X not found' % symAddr)
                     missingSymbols = True
-            else:  # rel
-                if module != id:
+            elif module != id:
+
+                if module in moduleDicts and section in moduleDicts[module]:
+                    if addend not in moduleDicts[module][section]:
+                        print('error: symbol for offset %08X from section %u in module %u not found' %
+                              (addend, section, module))
+                        missingSymbols = True
+                    symAddr = moduleDicts[module][section][addend]
+                    if symAddr not in labels:
+                        print('error: symbol for 0x%08X not found' % symAddr)
+                        missingSymbols = True
+                    pass
+                else:
                     # TODO: find a way to disassemble rels that use other rels
                     print('error: symbol for offset %08X from section %u in module %u not found' %
                           (addend, section, module))
                     missingSymbols = True
+            else:  # rel
                 symAddr = sectionInfo[section]['offset'] + addend
                 labels[symAddr] = 'lbl_%08X' % symAddr
 

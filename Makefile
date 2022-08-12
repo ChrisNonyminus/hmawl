@@ -91,7 +91,7 @@ CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nod
 # Default target #
 default: all
 
-all: $(DOL) $(WLP2)
+all: $(DOL) $(WLP2) $(WLP0) $(WLP1)
 	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
@@ -108,18 +108,14 @@ $(DOL): $(ELF) | tools
 	$(QUIET) $(ELF2DOL) $< $@
 
 # wlp0
-WLP0_SOURCES := \
-				asm/rels/wlp0.s
-WLP0_OBJS := $(addsuffix .o,$(basename $(WLP0_SOURCES)))
+WLP0_OBJS := $(BUILD_DIR)/asm/rels/wlp0.o
 
-$(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF)
+$(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF) 
 	@echo Linking relocatable module $@
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP0_OBJS) -map $(@:.plf=.map) -o $@
 
 # wlp1
-WLP1_SOURCES := \
-				asm/rels/wlp1.s
-WLP1_OBJS := $(addsuffix .o,$(basename $(WLP1_SOURCES)))
+WLP1_OBJS := $(BUILD_DIR)/asm/rels/wlp1.o
 
 $(BUILD_DIR)/wlp1.plf: $(WLP1_OBJS) $(REL_LCF)
 	@echo Linking relocatable module $@
@@ -132,9 +128,11 @@ $(BUILD_DIR)/wlp2.plf: $(WLP2_OBJS) $(REL_LCF)
 	@echo Linking relocatable module $@
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP2_OBJS) -map $(@:.plf=.map) -o $@
 
+$(WLP0):  | $(BUILD_DIR)/wlp2.plf $(BUILD_DIR)/wlp1.plf
+$(WLP1):  | $(BUILD_DIR)/wlp2.plf $(BUILD_DIR)/wlp0.plf
 
-$(WLP0): ELF2REL_ARGS := -i 1 -o 0x0 -l 0x23 -c 22
-$(WLP1): ELF2REL_ARGS := -i 2 -o 0x23 -l 0x23 -c 22
+$(WLP0): ELF2REL_ARGS := -i 1 -o 0x0 -l 0x23 -c 22 -m $(BUILD_DIR)/wlp0.plf $(BUILD_DIR)/wlp1.plf $(BUILD_DIR)/wlp2.plf
+$(WLP1): ELF2REL_ARGS := -i 2 -o 0x23 -l 0x23 -c 22 -m $(BUILD_DIR)/wlp0.plf $(BUILD_DIR)/wlp1.plf $(BUILD_DIR)/wlp2.plf
 $(WLP2): ELF2REL_ARGS := -i 3 -o 0x46 -l 0x23 -c 21
 
 
@@ -148,14 +146,14 @@ tools:
 
 $(ELF2REL): tools/elf2rel.c
 	@echo Building tool $@
-	$(QUIET) gcc -O3 -Wall -s -o $@ $^
+	$(QUIET) gcc -g -Wall -s -o $@ $^
 
 # dol
 $(ELF): $(O_FILES) $(LDSCRIPT)
 	$(QUIET) $(LD) $(DOL_LDFLAGS) $(O_FILES) -o $@ -lcf $(DOL_LCF) -map $(@:.elf=.map)
 
 # rels
-%.rel: %.plf $(ELF) $(ELF2REL)
+%.rel: %.plf | $(ELF) $(ELF2REL)
 	@echo Converting $(filter %.plf,$^) to $@
 	$(QUIET) $(ELF2REL) $(filter %.plf,$^) $(ELF) $@ $(ELF2REL_ARGS)
 

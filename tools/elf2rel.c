@@ -183,8 +183,8 @@ struct Module {
   size_t strtabSize;    // size of ELF string table
 };
 
-static struct Module dolModule;
 static struct Module relModule;
+static struct Module allModules[10];
 static struct RelImportEntry *imports;
 static int importsCount = 0;
 static int minSectionCount = 0;
@@ -308,17 +308,32 @@ static void add_reloc_entry(const struct Module *module,
   } else // symbol is in another module (the DOL)
   {
     const char *name = symbol_name(&relModule, &sym);
-    if (!lookup_symbol_by_name(&dolModule, name, &sym)) {
-      undefinedSymError = 1;
+    for (int m = 0; m < 10; m++) {
+      if (allModules[m].filename == NULL || m == module->moduleId) {
+        continue;
+      }
+      if (!lookup_symbol_by_name(&allModules[m], name, &sym) ||
+          sym.st_value == 0) {
+        undefinedSymError = 1;
+      } else {
+        undefinedSymError = 0;
+        moduleId = m;
+        break;
+      }
+    }
+    if (undefinedSymError) {
       fprintf(stderr, "could not find symbol '%s' in any module\n", name);
       return;
     }
-    if (sym.st_shndx >= dolModule.ehdr.e_shnum)
+    if (sym.st_shndx >= allModules[moduleId].ehdr.e_shnum)
       fatal_error("bad section index %i\n", sym.st_shndx);
 
     rentry.symbolSection = sym.st_shndx;
-    rentry.symbolAddr = sym.st_value + reloc->r_addend;
-    moduleId = dolModule.moduleId;
+    if (moduleId == 0) {
+      rentry.symbolAddr = sym.st_value + reloc->r_addend;
+    } else {
+      rentry.symbolAddr = sym.st_value + reloc->r_addend;
+    }
   }
 
   import = get_import_for_module_id(moduleId);
@@ -562,14 +577,19 @@ static void patch_code_relocs(struct RelHeader *relHdr, int sectionId,
   // by default.
   if (relHdr->unresolvedSection == 0)
     return;
-  import = get_import_for_module_id(0);
-  assert(import != NULL);
-  for (i = 0, reloc = &import->relocs[0]; i < import->relocsCount;
-       i++, reloc++) {
-    if (reloc->patchSection == sectionId && reloc->type == R_PPC_REL24) {
-      assert(reloc->patchOffset < size);
-      patch_rel24_branch_offset(code + reloc->patchOffset,
-                                relHdr->unresolvedOffset - reloc->patchOffset);
+  for (int m = 0; m < 10; m++) {
+
+    import = get_import_for_module_id(m);
+    if (import == NULL)
+      continue;
+    for (i = 0, reloc = &import->relocs[0]; i < import->relocsCount;
+         i++, reloc++) {
+      if (reloc->patchSection == sectionId && reloc->type == R_PPC_REL24) {
+        assert(reloc->patchOffset < size);
+        patch_rel24_branch_offset(code + reloc->patchOffset,
+                                  relHdr->unresolvedOffset -
+                                      reloc->patchOffset);
+      }
     }
   }
 }
@@ -807,45 +827,69 @@ int main(int argc, char **argv) {
         strcmp(argv[i], "--pad-section-count") == 0) {
       if (i + 1 < argc && parse_number(argv[i + 1], &minSectionCount))
         i++;
-      else
+      else {
+        printf("WARNING: Must enter pad section count if using -c\n");
         goto usage;
+      }
     } else if (strcmp(argv[i], "-i") == 0 ||
                strcmp(argv[i], "--module-id") == 0) {
       if (i + 1 < argc && parse_number(argv[i + 1], &moduleId))
         i++;
-      else
+      else {
+        printf("WARNING: Must enter module id\n");
         goto usage;
+      }
     } else if (strcmp(argv[i], "-o") == 0 ||
                strcmp(argv[i], "--name-offset") == 0) {
       if (i + 1 < argc && parse_number(argv[i + 1], &nameOffset))
         i++;
-      else
+      else {
+        printf("WARNING: Must enter name offset\n");
         goto usage;
+      }
     } else if (strcmp(argv[i], "-l") == 0 ||
                strcmp(argv[i], "--name-length") == 0) {
       if (i + 1 < argc && parse_number(argv[i + 1], &nameLen))
         i++;
-      else
+      else {
+        printf("WARNING: Must enter: name length\n");
         goto usage;
+      }
+    } else if (strcmp(argv[i], "-m") == 0 ||
+               strcmp(argv[i], "--modules") == 0) {
+      int nextModule = allModules[0].filename == NULL ? 0 : 1;
+      while (i + nextModule < argc) {
+        allModules[nextModule].filename = argv[i + nextModule];
+        nextModule++;
+      }
+      break;
     } else {
       if (relModule.filename == NULL)
         relModule.filename = argv[i];
-      else if (dolModule.filename == NULL)
-        dolModule.filename = argv[i];
+      else if (allModules[0].filename == NULL)
+        allModules[0].filename = argv[i];
       else if (relName == NULL)
         relName = argv[i];
-      else
+      else {
+        printf("WARNING: unknown arg: %s\n", argv[i]);
         goto usage;
+      }
     }
   }
-  if (relModule.filename == NULL || dolModule.filename == NULL ||
-      relName == NULL)
+  if (relModule.filename == NULL || allModules[0].filename == NULL ||
+      relName == NULL) {
+    printf("WARNING: a filename was null\n");
     goto usage;
+  }
 
   open_module(&relModule);
-  open_module(&dolModule);
+  for (int m = 0; m < 10; m++) {
+    if (m == moduleId || allModules[m].filename == NULL)
+      continue;
+    open_module(&allModules[m]);
+    allModules[m].moduleId = m;
+  }
 
-  dolModule.moduleId = 0;
   relModule.moduleId = moduleId;
 
   module_read_relocs(&relModule);
@@ -856,10 +900,14 @@ int main(int argc, char **argv) {
   write_rel_file(&relModule, &relHdr, relName);
 
   fclose(relModule.file);
-  fclose(dolModule.file);
+  for (int m = 0; m < 10; m++) {
+    if (m == moduleId || allModules[m].filename == NULL)
+      continue;
+    fclose(allModules[m].file);
+    free(allModules[m].strtab);
+    free(allModules[m].symtab);
+  }
 
-  free(dolModule.strtab);
-  free(dolModule.symtab);
   for (i = 0; i < importsCount; i++)
     free(imports[i].relocs);
   free(imports);
@@ -878,7 +926,9 @@ usage:
           "header to\n"
           "                               <offset>\n"
           "  -l, --name-length <len>      sets the name length in the rel "
-          "header to <len>\n",
+          "header to <len>\n"
+          "  -m, --modules <modules...>   all module elfs, in order\n"
+          "                               (MUST BE AFTER ALL ARGS/OPTIONS)\n",
           argv[0]);
   return 1;
 }
