@@ -110,21 +110,21 @@ $(DOL): $(ELF) | tools
 # wlp0
 WLP0_OBJS := $(BUILD_DIR)/asm/rels/wlp0.o
 
-$(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF) 
+$(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF) $(ELF)
 	@echo Linking relocatable module $@
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP0_OBJS) -map $(@:.plf=.map) -o $@
 
 # wlp1
 WLP1_OBJS := $(BUILD_DIR)/asm/rels/wlp1.o
 
-$(BUILD_DIR)/wlp1.plf: $(WLP1_OBJS) $(REL_LCF)
+$(BUILD_DIR)/wlp1.plf: $(WLP1_OBJS) $(REL_LCF) $(ELF)
 	@echo Linking relocatable module $@
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP1_OBJS) -map $(@:.plf=.map) -o $@
 
 # wlp2
 WLP2_OBJS := $(BUILD_DIR)/asm/rels/wlp2.o
 
-$(BUILD_DIR)/wlp2.plf: $(WLP2_OBJS) $(REL_LCF)
+$(BUILD_DIR)/wlp2.plf: $(WLP2_OBJS) $(REL_LCF) $(ELF)
 	@echo Linking relocatable module $@
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP2_OBJS) -map $(@:.plf=.map) -o $@
 
