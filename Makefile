@@ -28,7 +28,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/libraries src/libraries/os
-ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dolphin
+ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dolphin asm/rels
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)
@@ -51,10 +51,10 @@ O_FILES := $(INIT_O_FILES) $(EXTAB_O_FILES) $(EXTABINDEX_O_FILES) $(TEXT_O_FILES
 
 # TOOLS
 
-MWCC_VERSION = GC/2.6
-MWLD_VERSION = GC/1.1
+MWCC_VERSION ?= GC/2.6
+MWLD_VERSION ?= GC/2.6
 #version used by _start.c for the compiler
-OS_MWCC_VERSION = GC/1.2.5
+OS_MWCC_VERSION ?= GC/1.2.5
 
 # Programs
 ifeq ($(WINDOWS),1)
@@ -70,7 +70,7 @@ endif
 AS      := $(DEVKITPPC)/bin/powerpc-eabi-as
 OBJCOPY := $(DEVKITPPC)/bin/powerpc-eabi-objcopy
 CPP     := $(DEVKITPPC)/bin/powerpc-eabi-cpp -P
-CC      := $(WINE) tools/mwcc_compiler/$(OS_MWCC_VERSION)/mwcceppc.exe
+CC      := $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc.exe
 # 
 LD      := $(WINE) tools/mwcc_compiler/$(MWLD_VERSION)/mwldeppc.exe
 ELF2DOL := tools/elf2dol
@@ -83,15 +83,15 @@ INCLUDES := -i include/
 
 ASFLAGS := -mgekko -I asm -I include
 DOL_LDFLAGS := -nodefaults -fp hard
-REL_LDFLAGS := -nodefaults -fp hard -r -m _prolog -g -sdata 0
-CFLAGS  := -Cpp_exceptions off -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
+REL_LDFLAGS := -nodefaults -fp hard -r1 -m _prolog
+CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
 
 # RECIPES
 
 # Default target #
 default: all
 
-all: $(DOL) $(WLP0) $(WLP1) $(WLP2)
+all: $(DOL) $(WLP2)
 	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
 
 ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
@@ -109,12 +109,7 @@ $(DOL): $(ELF) | tools
 
 # wlp0
 WLP0_SOURCES := \
-				asm/wlp0/text.s \
-				asm/wlp0/ctors.s \
-				asm/wlp0/dtors.s \
-				asm/wlp0/rodata.s \
-				asm/wlp0/data.s \
-				asm/wlp0/bss.s
+				asm/rels/wlp0.s
 WLP0_OBJS := $(addsuffix .o,$(basename $(WLP0_SOURCES)))
 
 $(BUILD_DIR)/wlp0.plf: $(WLP0_OBJS) $(REL_LCF)
@@ -131,9 +126,7 @@ $(BUILD_DIR)/wlp1.plf: $(WLP1_OBJS) $(REL_LCF)
 	$(QUIET) $(LD) -lcf $(REL_LCF) $(REL_LDFLAGS) $(WLP1_OBJS) -map $(@:.plf=.map) -o $@
 
 # wlp2
-WLP2_SOURCES := \
-				asm/rels/wlp2.s
-WLP2_OBJS := $(addsuffix .o,$(basename $(WLP2_SOURCES)))
+WLP2_OBJS := $(BUILD_DIR)/asm/rels/wlp2.o
 
 $(BUILD_DIR)/wlp2.plf: $(WLP2_OBJS) $(REL_LCF)
 	@echo Linking relocatable module $@
@@ -166,11 +159,18 @@ $(ELF): $(O_FILES) $(LDSCRIPT)
 	@echo Converting $(filter %.plf,$^) to $@
 	$(QUIET) $(ELF2REL) $(filter %.plf,$^) $(ELF) $@ $(ELF2REL_ARGS)
 
+# relocatable modules must not use the small data sections
+%.plf: CFLAGS += -sdata 0 -sdata2 0 -g
+%.plf: CPPFLAGS += -sdata 0 -sdata2 0 -g
+
 $(BUILD_DIR)/%.o: %.s
 	$(QUIET) $(AS) $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: %.c
 	$(QUIET) $(CC) $(CFLAGS) -c -o $@ $<
+
+$(BUILD_DIR)/%.o: %.cpp
+	$(QUIET) $(CC) $(CPPFLAGS) -c -o $@ $<
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 

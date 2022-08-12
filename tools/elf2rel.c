@@ -1,3 +1,5 @@
+// TODO: allow a rel module to import from other rels
+
 #include <assert.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -751,11 +753,15 @@ static void write_rel_file(struct Module *module, struct RelHeader *relHdr,
   relHdr->importTableSize = importsCount * 8;
 
   // 3.5. Write fixed values. VERSION 2/3 only!
-  relHdr->align = 0x20;    // TODO: Read me from a section.
-  relHdr->bssAlign = 0x40; // TODO: Read me from bss section.
-  relHdr->fixSize =
-      relHdr->relocationTableOffset; // Only 1 REL is used, so we can just do
-                                     // this as a hack.
+  Elf32_Shdr dataShdr;
+  module_get_section_header(module, 5, &dataShdr);
+  Elf32_Shdr bssShdr;
+  module_get_section_header(module, 6, &bssShdr);
+  relHdr->align =
+      dataShdr.sh_addralign; // TODO: Find a better way to read non-bss align.
+  relHdr->bssAlign =
+      bssShdr.sh_addralign; // TODO: Find a better way to read bss align.
+  relHdr->fixSize = relHdr->relocationTableOffset;
 
   // 4. Write REL header.
 

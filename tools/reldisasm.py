@@ -177,6 +177,11 @@ def read_relocation_info(module, o):
                     print('error: symbol for 0x%08X not found' % symAddr)
                     missingSymbols = True
             else:  # rel
+                if module != id:
+                    # TODO: find a way to disassemble rels that use other rels
+                    print('error: symbol for offset %08X from section %u in module %u not found' %
+                          (addend, section, module))
+                    missingSymbols = True
                 symAddr = sectionInfo[section]['offset'] + addend
                 labels[symAddr] = 'lbl_%08X' % symAddr
 
