@@ -28,7 +28,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/libraries src/libraries/os
-ASM_DIRS := asm asm/code asm/code/game asm/code/libraries asm/code/libraries/dolphin asm/rels
+ASM_DIRS := asm asm/main asm/rels
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)
@@ -93,6 +93,7 @@ default: all
 
 all: $(DOL) $(WLP2) $(WLP0) $(WLP1)
 	$(QUIET) $(SHA1SUM) -c $(TARGET)_$(VERSION).sha1
+	$(QUIET) $(PYTHON) calcprogress.py $(DOL) $(DOL:.dol=.map)
 
 ALL_DIRS := build $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
