@@ -2,7 +2,7 @@
 
 .section .text, "ax"  # 0x80005980 - 0x8023DD80 ; 0x00238400
 
-/* PPCArch.c START */ 
+/* PPCArch.o START */ 
 
 .global PPCMfmsr
 PPCMfmsr:
@@ -140,4 +140,4 @@ PPCSetFpNonIEEEMode:
 /* 801B0B24 001AD864  FF A0 00 4C */	mtfsb1 29
 /* 801B0B28 001AD868  4E 80 00 20 */	blr
 
-/* PPCArch.c END */
+/* PPCArch.o END */
