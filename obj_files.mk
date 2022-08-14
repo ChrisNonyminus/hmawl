@@ -6,6 +6,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/code_80005980.o\
 				\
 				$(BUILD_DIR)/asm/main/libraries/base/PPCArch.o\
 				\
+				$(BUILD_DIR)/asm/main/libraries/dolphin/os.o\
 				$(BUILD_DIR)/asm/main/libraries/dolphin.o\
 				\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin/dobj.o\
