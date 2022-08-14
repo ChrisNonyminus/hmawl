@@ -3,11 +3,11 @@
 .section .ctors, "wa"  # 0x8023DD80 - 0x8023DF00 ; 0x00000180
 
 
-.global lbl_8023DD80
-lbl_8023DD80:
+.global __init_cpp_exceptions_reference
+__init_cpp_exceptions_reference:
 
 	# ROM: 0x23AD80
-	.4byte lbl_80236514
+	.4byte __init_cpp_exceptions
 	.4byte lbl_8000705C
 	.4byte lbl_80007978
 	.4byte lbl_80009938

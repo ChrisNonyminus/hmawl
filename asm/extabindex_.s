@@ -101,12 +101,12 @@ lbl_800057E0:
 	.4byte 0x00000100
 	.4byte lbl_800057C0
 
-.global lbl_80005954
-lbl_80005954:
+.global eti_init_info
+eti_init_info:
 
 	# ROM: 0x23AD54
 	.4byte lbl_800057E0
-	.4byte lbl_80005954
+	.4byte eti_init_info
 	.4byte func_801770A8
 	.4byte 0x000BEC98
 	.4byte 0
