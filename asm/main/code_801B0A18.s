@@ -8116,7 +8116,7 @@ lbl_802355C0:
 /* 802355C8 00232308  90 01 00 14 */	stw r0, 0x14(r1)
 /* 802355CC 0023230C  93 E1 00 0C */	stw r31, 0xc(r1)
 /* 802355D0 00232310  7C 9F 23 78 */	mr r31, r4
-/* 802355D4 00232314  4B F8 16 05 */	bl func_801B6BD8
+/* 802355D4 00232314  4B F8 16 05 */	bl OSEnableScheduler
 /* 802355D8 00232318  7F E3 FB 78 */	mr r3, r31
 /* 802355DC 0023231C  38 80 05 00 */	li r4, 0x500
 /* 802355E0 00232320  4B FF FB 6D */	bl func_8023514C
@@ -8754,8 +8754,8 @@ lbl_80235D9C:
 /* 80235D9C 00232ADC  7D 89 03 A6 */	mtctr r12
 /* 80235DA0 00232AE0  4E 80 04 20 */	bctr
 
-.global func_80235DA4
-func_80235DA4:
+.global _cvt_fp2unsigned
+_cvt_fp2unsigned:
 /* 80235DA4 00232AE4  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 80235DA8 00232AE8  3C 80 80 29 */	lis r4, lbl_80296C10@h
 /* 80235DAC 00232AEC  60 84 6C 10 */	ori r4, r4, lbl_80296C10@l
@@ -11900,8 +11900,8 @@ lbl_802383AC:
 /* 802383B8 002350F8  38 21 00 20 */	addi r1, r1, 0x20
 /* 802383BC 002350FC  4E 80 00 20 */	blr
 
-.global func_802383C0
-func_802383C0:
+.global vprintf
+vprintf:
 /* 802383C0 00235100  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 802383C4 00235104  7C 08 02 A6 */	mflr r0
 /* 802383C8 00235108  3C A0 80 2F */	lis r5, lbl_802E8768@ha
