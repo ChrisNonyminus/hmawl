@@ -1,8 +1,10 @@
 INIT_O_FILES := $(BUILD_DIR)/asm/init.o 
 EXTAB_O_FILES := $(BUILD_DIR)/asm/extab_.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex_.o
-TEXT_O_FILES := $(BUILD_DIR)/asm/main/code_80005980.o\
-				$(BUILD_DIR)/asm/main/code_80007114.o\
+TEXT_O_FILES := $(BUILD_DIR)/asm/main/game/code_80005980.o\
+				$(BUILD_DIR)/asm/main/game/code_80007114.o\
+				$(BUILD_DIR)/asm/main/game/code_800E0660.o\
+				$(BUILD_DIR)/asm/main/game/code_800F3228.o\
 				\
 				$(BUILD_DIR)/asm/main/libraries/base/PPCArch.o\
 				\
@@ -16,7 +18,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/code_80005980.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin/mobj.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin.o\
 				\
-				$(BUILD_DIR)/asm/main/code_801B0A18.o
+				$(BUILD_DIR)/asm/main/libraries/code_801B0A18.o
 CTORS_O_FILES := $(BUILD_DIR)/asm/ctors.o
 DTORS_O_FILES := $(BUILD_DIR)/asm/dtors.o
 RODATA_O_FILES :=

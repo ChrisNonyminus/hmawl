@@ -28,7 +28,7 @@ VERSION := us_r0
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
 SRC_DIRS := src src/libraries src/libraries/os
-ASM_DIRS := asm asm/main asm/rels asm/main/libraries asm/main/libraries/base asm/main/libraries/sysdolphin asm/main/libraries/dolphin
+ASM_DIRS := asm asm/main asm/rels asm/main/libraries asm/main/libraries/base asm/main/libraries/sysdolphin asm/main/libraries/dolphin asm/main/game
 
 # Input files
 S_FILES := $(wildcard $(ASM_DIRS)/*.s)
