@@ -7,7 +7,7 @@
 lbl_8023DF00:
 
 	# ROM: 0x23AF00
-	.4byte func_8023590C
+	.4byte __destroy_global_chain
 	.4byte __fini_cpp_exceptions
-	.4byte func_8023590C
+	.4byte __destroy_global_chain
 	.4byte 0

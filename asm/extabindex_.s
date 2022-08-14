@@ -85,19 +85,19 @@ lbl_800057E0:
 	.4byte func_801AB9CC
 	.4byte 0x00000070
 	.4byte lbl_80005788
-	.4byte func_8023599C
+	.4byte __destroy_new_array
 	.4byte 0x0000007C
 	.4byte lbl_80005790
-	.4byte func_80235A18
+	.4byte __destroy_arr
 	.4byte 0x00000078
 	.4byte lbl_80005798
-	.4byte func_80235A90
+	.4byte __construct_array
 	.4byte 0x000000F8
 	.4byte lbl_800057A0
-	.4byte lbl_80235B88
+	.4byte __dt__26__partial_array_destructorFv
 	.4byte 0x000000B8
 	.4byte lbl_800057B8
-	.4byte func_80235C40
+	.4byte __construct_new_array
 	.4byte 0x00000100
 	.4byte lbl_800057C0
 

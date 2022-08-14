@@ -208,7 +208,7 @@ lbl_800057A0:
 	.4byte 0x00000010
 	.4byte 0
 	.4byte 0x82000008
-	.4byte lbl_80235B88
+	.4byte __dt__26__partial_array_destructorFv
 
 .global lbl_800057B8
 lbl_800057B8:
@@ -226,4 +226,4 @@ lbl_800057C0:
 	.4byte 0x00000010
 	.4byte 0
 	.4byte 0x82000008
-	.4byte lbl_80235B88
+	.4byte __dt__26__partial_array_destructorFv
