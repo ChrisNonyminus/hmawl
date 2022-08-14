@@ -12,6 +12,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/code_80005980.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin/tobj.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin/state.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin/tev.o\
+				$(BUILD_DIR)/asm/main/libraries/sysdolphin/mobj.o\
 				$(BUILD_DIR)/asm/main/libraries/sysdolphin.o\
 				\
 				$(BUILD_DIR)/asm/main/code_801B0A18.o
