@@ -7,7 +7,7 @@
 __init_cpp_exceptions_reference:
 
 	# ROM: 0x23AD80
-	.4byte lbl_80236514
+	.4byte __init_cpp_exceptions
 	.4byte lbl_8000705C
 	.4byte lbl_80007978
 	.4byte lbl_80009938
