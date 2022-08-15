@@ -840,8 +840,8 @@ func_80178FDC:
 /* 80178FF0 00175D30  38 21 00 20 */	addi r1, r1, 0x20
 /* 80178FF4 00175D34  4E 80 00 20 */	blr
 
-.global __nwa__FUl
-__nwa__FUl:
+.global __nwa__FUlPCcl
+__nwa__FUlPCcl:
 /* 80178FF8 00175D38  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80178FFC 00175D3C  7C 08 02 A6 */	mflr r0
 /* 80179000 00175D40  90 01 00 24 */	stw r0, 0x24(r1)
