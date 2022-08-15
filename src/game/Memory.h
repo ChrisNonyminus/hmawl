@@ -1,7 +1,7 @@
 #ifndef _GAME_MEMORY_H_
 #define _GAME_MEMORY_H_
 
-#include <dolphin/os.h>
+#include "dolphin/os.h"
 
 struct Memory {
   static Memory *Initialize();

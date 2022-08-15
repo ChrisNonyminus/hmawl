@@ -27,7 +27,7 @@ VERSION := us_r0
 
 BUILD_DIR := build/$(TARGET)_$(VERSION)
 
-SRC_DIRS := src src/libraries src/libraries/os
+SRC_DIRS := src src/libraries src/libraries/os src/game
 ASM_DIRS := asm asm/main asm/rels asm/main/libraries asm/main/libraries/base asm/main/libraries/sysdolphin asm/main/libraries/dolphin asm/main/game
 
 # Input files
@@ -79,7 +79,7 @@ SHA1SUM := sha1sum
 PYTHON  := python3
 
 # Options
-INCLUDES := -i include/
+INCLUDES := -i include/ -i src/game/
 
 ASFLAGS := -mgekko -I asm -I include
 DOL_LDFLAGS := -nodefaults -fp hard
