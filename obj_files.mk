@@ -9,6 +9,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/game/code_80005980.o\
 				$(BUILD_DIR)/src/game/Memory.o\
 				$(BUILD_DIR)/asm/main/game/Memory.o\
 				$(BUILD_DIR)/asm/main/game/code_80179F18.o\
+				$(BUILD_DIR)/asm/main/game/code_8017AB2C.o\
 				$(BUILD_DIR)/asm/main/game/CKernel.o\
 				$(BUILD_DIR)/asm/main/game/code_80182578.o\
 				\
