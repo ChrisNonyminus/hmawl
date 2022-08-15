@@ -840,8 +840,8 @@ func_80178FDC:
 /* 80178FF0 00175D30  38 21 00 20 */	addi r1, r1, 0x20
 /* 80178FF4 00175D34  4E 80 00 20 */	blr
 
-.global NewA__6MemoryFlPCcl
-NewA__6MemoryFlPCcl:
+.global __nwa__FUl
+__nwa__FUl:
 /* 80178FF8 00175D38  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80178FFC 00175D3C  7C 08 02 A6 */	mflr r0
 /* 80179000 00175D40  90 01 00 24 */	stw r0, 0x24(r1)
@@ -951,8 +951,8 @@ func_8017914C:
 /* 80179160 00175EA0  38 21 00 20 */	addi r1, r1, 0x20
 /* 80179164 00175EA4  4E 80 00 20 */	blr
 
-.global __dla__FPv
-__dla__FPv:
+.global __dl__FPv
+__dl__FPv:
 /* 80179168 00175EA8  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8017916C 00175EAC  7C 08 02 A6 */	mflr r0
 /* 80179170 00175EB0  90 01 00 24 */	stw r0, 0x24(r1)
@@ -1097,8 +1097,8 @@ func_8017932C:
 /* 8017933C 0017607C  38 21 00 20 */	addi r1, r1, 0x20
 /* 80179340 00176080  4E 80 00 20 */	blr
 
-.global __dl__FPv
-__dl__FPv:
+.global __dla__FPv
+__dla__FPv:
 /* 80179344 00176084  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80179348 00176088  7C 08 02 A6 */	mflr r0
 /* 8017934C 0017608C  90 01 00 24 */	stw r0, 0x24(r1)
