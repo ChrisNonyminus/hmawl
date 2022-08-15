@@ -1,5 +1,3 @@
-// TODO: allow a rel module to import from other rels
-
 #include <assert.h>
 #include <errno.h>
 #include <stdarg.h>

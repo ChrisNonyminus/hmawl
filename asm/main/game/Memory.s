@@ -2056,6 +2056,81 @@ lbl_802C9D34:
 
 .section .bss, "", @nobits  # 0x802E8E00 - 0x803469C0 ; 0x0005DBC0
 
+.global lbl_802FC8B8
+lbl_802FC8B8:
+	.skip 0xC
+
+.global lbl_802FC8C4
+lbl_802FC8C4:
+	.skip 0xC0C
+
+.global lbl_802FD4D0
+lbl_802FD4D0:
+	.skip 0x2C
+
+.global lbl_802FD4FC
+lbl_802FD4FC:
+	.skip 0x2B04
+
+.global lbl_80300000
+lbl_80300000:
+	.skip 0x4
+
+.global lbl_80300004
+lbl_80300004:
+	.skip 0x4
+
+.global lbl_80300008
+lbl_80300008:
+	.skip 0x4
+
+.global lbl_8030000C
+lbl_8030000C:
+	.skip 0x4
+
+.global lbl_80300010
+lbl_80300010:
+	.skip 0x4
+
+.global lbl_80300014
+lbl_80300014:
+	.skip 0x4
+
+.global lbl_80300018
+lbl_80300018:
+	.skip 0xFFE8
+
+.global lbl_80310000
+lbl_80310000:
+	.skip 0x4
+
+.global lbl_80310004
+lbl_80310004:
+	.skip 0x4
+
+.global lbl_80310008
+lbl_80310008:
+	.skip 0x4
+
+.global lbl_8031000C
+lbl_8031000C:
+	.skip 0x4
+
+.global lbl_80310010
+lbl_80310010:
+	.skip 0x4
+
+.global lbl_80310014
+lbl_80310014:
+	.skip 0x4
+
+.global lbl_80310018
+lbl_80310018:
+	.skip 0x4
+
+.global lbl_8031001C
+lbl_8031001C:
+	.skip 0x54E0
 
 .global lbl_803154FC
 lbl_803154FC:
