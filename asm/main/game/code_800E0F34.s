@@ -23,8 +23,8 @@ lbl_800E0F34:
 /* 800E0F68 000DDCA8  38 21 00 10 */	addi r1, r1, 0x10
 /* 800E0F6C 000DDCAC  4E 80 00 20 */	blr
 
-.global lbl_800E0F70
-lbl_800E0F70:
+.global SetAlphaBlending__Fv ;# https://decomp.me/scratch/cPeCD
+SetAlphaBlending__Fv:
 /* 800E0F70 000DDCB0  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800E0F74 000DDCB4  7C 08 02 A6 */	mflr r0
 /* 800E0F78 000DDCB8  38 60 00 01 */	li r3, 0x1
@@ -32,37 +32,37 @@ lbl_800E0F70:
 /* 800E0F80 000DDCC0  90 01 00 14 */	stw r0, 0x14(r1)
 /* 800E0F84 000DDCC4  38 A0 00 05 */	li r5, 0x5
 /* 800E0F88 000DDCC8  38 C0 00 00 */	li r6, 0x0
-/* 800E0F8C 000DDCCC  48 0F 0E E5 */	bl func_801D1E70
+/* 800E0F8C 000DDCCC  48 0F 0E E5 */	bl GXSetBlendMode
 /* 800E0F90 000DDCD0  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800E0F94 000DDCD4  38 60 00 00 */	li r3, 0x0
 /* 800E0F98 000DDCD8  7C 08 03 A6 */	mtlr r0
 /* 800E0F9C 000DDCDC  38 21 00 10 */	addi r1, r1, 0x10
 /* 800E0FA0 000DDCE0  4E 80 00 20 */	blr
 
-.global lbl_800E0FA4
-lbl_800E0FA4:
+.global SetPixelProcessingMode__Fv ;# https://decomp.me/scratch/19uvv
+SetPixelProcessingMode__Fv:
 /* 800E0FA4 000DDCE4  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800E0FA8 000DDCE8  7C 08 02 A6 */	mflr r0
 /* 800E0FAC 000DDCEC  38 60 00 01 */	li r3, 0x1
 /* 800E0FB0 000DDCF0  38 80 00 07 */	li r4, 0x7
 /* 800E0FB4 000DDCF4  90 01 00 14 */	stw r0, 0x14(r1)
 /* 800E0FB8 000DDCF8  38 A0 00 01 */	li r5, 0x1
-/* 800E0FBC 000DDCFC  48 0F 0F 61 */	bl func_801D1F1C
+/* 800E0FBC 000DDCFC  48 0F 0F 61 */	bl GXSetZMode
 /* 800E0FC0 000DDD00  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800E0FC4 000DDD04  38 60 00 00 */	li r3, 0x0
 /* 800E0FC8 000DDD08  7C 08 03 A6 */	mtlr r0
 /* 800E0FCC 000DDD0C  38 21 00 10 */	addi r1, r1, 0x10
 /* 800E0FD0 000DDD10  4E 80 00 20 */	blr
 
-.global lbl_800E0FD4
-lbl_800E0FD4:
+.global SetZModeLEqual__Fv ;# https://decomp.me/scratch/s9924
+SetZModeLEqual__Fv:
 /* 800E0FD4 000DDD14  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 800E0FD8 000DDD18  7C 08 02 A6 */	mflr r0
 /* 800E0FDC 000DDD1C  38 60 00 01 */	li r3, 0x1
 /* 800E0FE0 000DDD20  38 80 00 03 */	li r4, 0x3
 /* 800E0FE4 000DDD24  90 01 00 14 */	stw r0, 0x14(r1)
 /* 800E0FE8 000DDD28  38 A0 00 01 */	li r5, 0x1
-/* 800E0FEC 000DDD2C  48 0F 0F 31 */	bl func_801D1F1C
+/* 800E0FEC 000DDD2C  48 0F 0F 31 */	bl GXSetZMode
 /* 800E0FF0 000DDD30  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 800E0FF4 000DDD34  38 60 00 00 */	li r3, 0x0
 /* 800E0FF8 000DDD38  7C 08 03 A6 */	mtlr r0
@@ -10080,7 +10080,7 @@ func_800E9A00:
 /* 800E9A1C 000E675C  38 80 00 04 */	li r4, 0x4
 /* 800E9A20 000E6760  38 A0 00 05 */	li r5, 0x5
 /* 800E9A24 000E6764  38 C0 00 00 */	li r6, 0x0
-/* 800E9A28 000E6768  48 0E 84 49 */	bl func_801D1E70
+/* 800E9A28 000E6768  48 0E 84 49 */	bl GXSetBlendMode
 /* 800E9A2C 000E676C  38 60 00 07 */	li r3, 0x7
 /* 800E9A30 000E6770  38 80 00 00 */	li r4, 0x0
 /* 800E9A34 000E6774  38 A0 00 01 */	li r5, 0x1
@@ -10136,7 +10136,7 @@ func_800E9A00:
 /* 800E9AFC 000E683C  38 80 00 01 */	li r4, 0x1
 /* 800E9B00 000E6840  38 A0 00 00 */	li r5, 0x0
 /* 800E9B04 000E6844  38 C0 00 00 */	li r6, 0x0
-/* 800E9B08 000E6848  48 0E 83 69 */	bl func_801D1E70
+/* 800E9B08 000E6848  48 0E 83 69 */	bl GXSetBlendMode
 /* 800E9B0C 000E684C  38 60 00 04 */	li r3, 0x4
 /* 800E9B10 000E6850  38 80 00 00 */	li r4, 0x0
 /* 800E9B14 000E6854  38 A0 00 01 */	li r5, 0x1
@@ -22212,7 +22212,7 @@ lbl_802BB238:
 	.4byte 0
 	.4byte lbl_800F0D4C
 	.4byte lbl_800094E8
-	.4byte lbl_800E0F70
+	.4byte SetAlphaBlending__Fv
 
 .global lbl_802BB24C
 lbl_802BB24C:
@@ -22232,7 +22232,7 @@ lbl_802BB260:
 	.4byte 0
 	.4byte lbl_800F0E84
 	.4byte lbl_800094E8
-	.4byte lbl_800E0FD4
+	.4byte SetZModeLEqual__Fv
 
 .global lbl_802BB274
 lbl_802BB274:
@@ -22242,7 +22242,7 @@ lbl_802BB274:
 	.4byte 0
 	.4byte lbl_800F0F20
 	.4byte lbl_800094E8
-	.4byte lbl_800E0FA4
+	.4byte SetPixelProcessingMode__Fv
 
 .global lbl_802BB288
 lbl_802BB288:
