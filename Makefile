@@ -85,6 +85,7 @@ ASFLAGS := -mgekko -I asm -I include
 DOL_LDFLAGS := -nodefaults -fp hard
 REL_LDFLAGS := -nodefaults -fp hard -r1 -m _prolog
 CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
+CPPFLAGS := -O4,p -fp hard -inline auto -proc gekko -Cpp_exceptions off -enum int -RTTI off -nodefaults -lang=c++ -msgstyle gcc $(INCLUDES)
 
 # RECIPES
 
