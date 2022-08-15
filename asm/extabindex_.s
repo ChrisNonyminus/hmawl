@@ -7,7 +7,7 @@
 lbl_800057E0:
 
 	# ROM: 0x23ABE0
-	.4byte func_801770A8
+	.4byte OSPanic
 	.4byte 0x00000050
 	.4byte lbl_800056C0
 	.4byte func_801782F4
@@ -107,7 +107,7 @@ eti_init_info:
 	# ROM: 0x23AD54
 	.4byte lbl_800057E0
 	.4byte eti_init_info
-	.4byte func_801770A8
+	.4byte OSPanic
 	.4byte 0x000BEC98
 	.4byte 0
 	.4byte 0
