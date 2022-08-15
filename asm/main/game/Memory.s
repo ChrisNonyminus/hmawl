@@ -3,8 +3,8 @@
 .section .text, "ax"
 
 
-.global func_801784F0
-func_801784F0:
+.global Initialize__6MemoryFv ;# https://decomp.me/scratch/nT6BV
+Initialize__6MemoryFv:
 /* 801784F0 00175230  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 801784F4 00175234  7C 08 02 A6 */	mflr r0
 /* 801784F8 00175238  90 01 00 24 */	stw r0, 0x24(r1)
@@ -24,7 +24,7 @@ func_801784F0:
 /* 80178530 00175270  7F C4 F3 78 */	mr r4, r30
 /* 80178534 00175274  7F A5 EB 78 */	mr r5, r29
 /* 80178538 00175278  7F C6 F3 78 */	mr r6, r30
-/* 8017853C 0017527C  48 00 00 1D */	bl func_80178558
+/* 8017853C 0017527C  48 00 00 1D */	bl InitializeWithArena__6MemoryFPUcUlPUcUl
 /* 80178540 00175280  39 61 00 20 */	addi r11, r1, 0x20
 /* 80178544 00175284  48 0B D9 DD */	bl _restgpr_29
 /* 80178548 00175288  80 01 00 24 */	lwz r0, 0x24(r1)
@@ -32,8 +32,8 @@ func_801784F0:
 /* 80178550 00175290  38 21 00 20 */	addi r1, r1, 0x20
 /* 80178554 00175294  4E 80 00 20 */	blr
 
-.global func_80178558
-func_80178558:
+.global InitializeWithArena__6MemoryFPUcUlPUcUl
+InitializeWithArena__6MemoryFPUcUlPUcUl:
 /* 80178558 00175298  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8017855C 0017529C  7C 08 02 A6 */	mflr r0
 /* 80178560 001752A0  90 01 00 24 */	stw r0, 0x24(r1)
