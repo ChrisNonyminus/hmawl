@@ -729,8 +729,8 @@ func_80178E78:
 /* 80178E80 00175BC0  38 60 00 00 */	li r3, 0x0
 /* 80178E84 00175BC4  4E 80 00 20 */	blr
 
-.global func_80178E88
-func_80178E88:
+.global __nw__FUl
+__nw__FUl:
 /* 80178E88 00175BC8  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80178E8C 00175BCC  7C 08 02 A6 */	mflr r0
 /* 80178E90 00175BD0  90 01 00 24 */	stw r0, 0x24(r1)
@@ -840,8 +840,8 @@ func_80178FDC:
 /* 80178FF0 00175D30  38 21 00 20 */	addi r1, r1, 0x20
 /* 80178FF4 00175D34  4E 80 00 20 */	blr
 
-.global func_80178FF8
-func_80178FF8:
+.global __nwa__FUl
+__nwa__FUl:
 /* 80178FF8 00175D38  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 80178FFC 00175D3C  7C 08 02 A6 */	mflr r0
 /* 80179000 00175D40  90 01 00 24 */	stw r0, 0x24(r1)
