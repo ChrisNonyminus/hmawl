@@ -5,6 +5,8 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/game/code_80005980.o\
 				$(BUILD_DIR)/asm/main/game/code_80007114.o\
 				$(BUILD_DIR)/asm/main/game/code_800E0F34.o\
 				$(BUILD_DIR)/asm/main/game/code_800F3228.o\
+				$(BUILD_DIR)/asm/main/game/SystemTask.o\
+				$(BUILD_DIR)/asm/main/game/code_801784F0.o\
 				$(BUILD_DIR)/asm/main/game/CKernel.o\
 				$(BUILD_DIR)/asm/main/game/code_80182578.o\
 				\
