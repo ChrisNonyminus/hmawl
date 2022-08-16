@@ -30385,8 +30385,8 @@ func_8019B7A0:
 /* 8019B7A0 001984E0  88 63 00 18 */	lbz r3, 0x18(r3)
 /* 8019B7A4 001984E4  4E 80 00 20 */	blr
 
-.global func_8019B7A8
-func_8019B7A8:
+.global __ct__17UnkStruct8019B7A8Fv
+__ct__17UnkStruct8019B7A8Fv:
 /* 8019B7A8 001984E8  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8019B7AC 001984EC  7C 08 02 A6 */	mflr r0
 /* 8019B7B0 001984F0  3C 80 80 2D */	lis r4, lbl_802CB2E0@ha

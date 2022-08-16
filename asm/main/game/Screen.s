@@ -2,8 +2,8 @@
 
 .section .text, "ax"
 
-.global func_8017A3A0 ;# https://decomp.me/scratch/xx2qY
-func_8017A3A0:
+.global __ct__6ScreenFv ;# https://decomp.me/scratch/AK4hP
+__ct__6ScreenFv:
 /* 8017A3A0 001770E0  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017A3A4 001770E4  7C 08 02 A6 */	mflr r0
 /* 8017A3A8 001770E8  90 01 00 14 */	stw r0, 0x14(r1)
@@ -11,9 +11,9 @@ func_8017A3A0:
 /* 8017A3B0 001770F0  7C 7F 1B 78 */	mr r31, r3
 /* 8017A3B4 001770F4  38 7F 00 7C */	addi r3, r31, 0x7c
 /* 8017A3B8 001770F8  93 ED A7 F4 */	stw r31, g_screen@sda21(r13)
-/* 8017A3BC 001770FC  48 02 13 ED */	bl func_8019B7A8
+/* 8017A3BC 001770FC  48 02 13 ED */	bl __ct__17UnkStruct8019B7A8Fv
 /* 8017A3C0 00177100  7F E3 FB 78 */	mr r3, r31
-/* 8017A3C4 00177104  48 00 00 1D */	bl func_8017A3E0
+/* 8017A3C4 00177104  48 00 00 1D */	bl func_8017A3E0__6ScreenFv
 /* 8017A3C8 00177108  80 01 00 14 */	lwz r0, 0x14(r1)
 /* 8017A3CC 0017710C  7F E3 FB 78 */	mr r3, r31
 /* 8017A3D0 00177110  83 E1 00 0C */	lwz r31, 0xc(r1)
@@ -21,8 +21,8 @@ func_8017A3A0:
 /* 8017A3D8 00177118  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017A3DC 0017711C  4E 80 00 20 */	blr
 
-.global func_8017A3E0
-func_8017A3E0:
+.global func_8017A3E0__6ScreenFv
+func_8017A3E0__6ScreenFv:
 /* 8017A3E0 00177120  94 21 FF D0 */	stwu r1, -0x30(r1)
 /* 8017A3E4 00177124  7C 08 02 A6 */	mflr r0
 /* 8017A3E8 00177128  3C 80 80 2D */	lis r4, lbl_802C9D60@ha
