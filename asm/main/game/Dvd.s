@@ -202,8 +202,8 @@ __ct__7DvdFileFPcl:
 /* 8017ADE4 00177B24  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017ADE8 00177B28  4E 80 00 20 */	blr
 
-.global func_8017ADEC
-func_8017ADEC:
+.global __dt__7DvdFile
+__dt__7DvdFile:
 /* 8017ADEC 00177B2C  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017ADF0 00177B30  7C 08 02 A6 */	mflr r0
 /* 8017ADF4 00177B34  90 01 00 14 */	stw r0, 0x14(r1)
@@ -336,8 +336,8 @@ func_8017AF74:
 /* 8017AF7C 00177CBC  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017AF80 00177CC0  4E 80 00 20 */	blr
 
-.global func_8017AF84
-func_8017AF84:
+.global Read__7DvdFileFPvUll
+Read__7DvdFileFPvUll:
 /* 8017AF84 00177CC4  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8017AF88 00177CC8  7C 08 02 A6 */	mflr r0
 /* 8017AF8C 00177CCC  3D 00 80 2D */	lis r8, lbl_802C9EC0@ha
@@ -1026,7 +1026,7 @@ __vt__7DvdFile:
 	.4byte lbl_8017B5B8
 	.4byte lbl_8017B5B4
 	.4byte lbl_8017B5B0
-	.4byte func_8017ADEC
+	.4byte __dt__7DvdFile
 	.4byte lbl_8017B160
 
 .global lbl_802C9EC0
