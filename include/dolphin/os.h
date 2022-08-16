@@ -14,6 +14,10 @@ void OSSetArenaLo(void *);
 
 #define ROUND_DOWN_PTR(x, align) ((void *)(((u32)(x)) & (~((align)-1))))
 
+#define ROUND_UP(x, align) (((((u32)(x)) + (align)-1) & (~((align)-1))))
+
+#define ROUND_DOWN(x, align) ((((u32)(x)) & (~((align)-1))))
+
 #ifdef __cplusplus
 }
 #endif
