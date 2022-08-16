@@ -11,6 +11,7 @@ TEXT_O_FILES := $(BUILD_DIR)/asm/main/game/code_80005980.o\
 				$(BUILD_DIR)/src/game/Memory.o\
 				$(BUILD_DIR)/asm/main/game/Memory.o\
 				$(BUILD_DIR)/asm/main/game/code_80179F18.o\
+				$(BUILD_DIR)/src/game/Screen.o\
 				$(BUILD_DIR)/asm/main/game/Screen.o\
 				$(BUILD_DIR)/asm/main/game/Dvd.o\
 				$(BUILD_DIR)/asm/main/game/code_8017B5F0.o\

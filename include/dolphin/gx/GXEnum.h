@@ -4,7 +4,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include <dolphin/types.h>
+#include "dolphin/types.h"
 
 typedef u8 GXBool;
 

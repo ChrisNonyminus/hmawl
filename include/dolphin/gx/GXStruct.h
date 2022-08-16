@@ -3,7 +3,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include <dolphin/types.h>
+#include "dolphin/types.h"
 
 #define VI_TVMODE(format, interlace) (((format) << 2) + (interlace))
 
