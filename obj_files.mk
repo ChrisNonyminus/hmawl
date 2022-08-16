@@ -3,6 +3,7 @@ EXTAB_O_FILES := $(BUILD_DIR)/asm/extab_.o
 EXTABINDEX_O_FILES := $(BUILD_DIR)/asm/extabindex_.o
 TEXT_O_FILES := $(BUILD_DIR)/asm/main/game/code_80005980.o\
 				$(BUILD_DIR)/asm/main/game/code_80007114.o\
+				$(BUILD_DIR)/asm/main/game/code_80011EA0.o\
 				$(BUILD_DIR)/asm/main/game/code_800E0F34.o\
 				$(BUILD_DIR)/asm/main/game/code_800F3228.o\
 				$(BUILD_DIR)/asm/main/game/SystemTask.o\

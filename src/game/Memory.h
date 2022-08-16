@@ -9,6 +9,6 @@ struct Memory {
 };
 void *operator new(size_t size, const char *filename, s32 line);
 void *operator new[](size_t size, const char *filename, s32 line);
-void *operator delete(size_t size);
-void *operator delete[](size_t size);
+void operator delete(void *addr);
+void operator delete[](void *addr);
 #endif
