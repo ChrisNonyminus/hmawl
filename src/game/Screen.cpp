@@ -23,7 +23,7 @@ FUNC_DECLARE(VIGetNextField);
 FUNC_DECLARE(func_8019B8F8);
 
 // internal
-FUNC_DECLARE(func_8017AA34);
+FUNC_DECLARE(func_8017AA34__6ScreenFv);
 DECLARE_EXTERN(s32, lbl_803494B0);
 DECLARE_EXTERN(u8, lbl_803494B4);
 DECLARE_EXTERN(f32, lbl_8034BA60);
@@ -74,7 +74,7 @@ void Screen::func_8017A3E0() {
   GXSetDispCopyGamma(GX_GM_1_0);
   GXSetBlendMode(GX_BM_BLEND, GX_BL_SRCALPHA, GX_BL_INVSRCALPHA, GX_LO_CLEAR);
   GXSetAlphaCompare(GX_GREATER, 0, GX_AOP_AND, GX_GREATER, 0);
-  GXSetZCompLoc(0);
+  GXSetZCompLoc(GX_FALSE);
   int fbSize = (u16)ROUND_UP(gx1C->fbWidth, 16) * yscale * 2;
   pvoid0 = new ("Screen.cpp", 154) u8[fbSize];
   dword4 = new ("Screen.cpp", 155) u8[fbSize];
@@ -94,19 +94,18 @@ void Screen::func_8017A3E0() {
   struc7C.func_8019B8D4();
 }
 
+void Screen::func_8017A6F0() {
+  func_8017AA34();
+  GXInvalidateVtxCache();
+  GXInvalidateTexAll();
+  GXSetBlendMode(GX_BM_BLEND, GX_BL_SRCALPHA, GX_BL_INVSRCALPHA, GX_LO_CLEAR);
+  GXSetAlphaCompare(GX_GREATER, 0, GX_AOP_AND, GX_GREATER, 0);
+  GXSetZCompLoc(GX_FALSE);
+}
+
 //
 // Not yet decompiled:
 //
-
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A6F0__6ScreenFv() {
-  nofralloc
-#include "asm/func_8017A6F0__6ScreenFv.s"
-}
-#pragma pop
-#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -191,7 +190,7 @@ extern "C" asm void func_8017A948() {
 #pragma push
 #pragma optimization_level 0
 #pragma optimizewithasm off
-extern "C" asm void func_8017AA34() {
+extern "C" asm void func_8017AA34__6ScreenFv() {
   nofralloc
 #include "asm/func_8017AA34.s"
 }

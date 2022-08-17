@@ -23,6 +23,7 @@ struct Screen : ScreenBase {
   void func_8017A884(u8 r, u8 g, u8 b, u8 a); // func_8017A884 (sets color)
   void func_8017A6F0();                       // func_8017A6F0
   void func_8017A74C();                       // func_8017A74C
+  void func_8017AA34();                       // func_8017AA34
 
   u8 *pvoid0;                // 0x0 // framebuffer maybe?
   u8 *dword4;                // 0x4 // framebuffer maybe?

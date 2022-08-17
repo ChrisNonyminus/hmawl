@@ -216,7 +216,7 @@ func_8017A6F0__6ScreenFv:
 /* 8017A6F0 00177430  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017A6F4 00177434  7C 08 02 A6 */	mflr r0
 /* 8017A6F8 00177438  90 01 00 14 */	stw r0, 0x14(r1)
-/* 8017A6FC 0017743C  48 00 03 39 */	bl func_8017AA34
+/* 8017A6FC 0017743C  48 00 03 39 */	bl func_8017AA34__6ScreenFv
 /* 8017A700 00177440  48 05 30 05 */	bl GXInvalidateVtxCache
 /* 8017A704 00177444  48 05 5C B1 */	bl GXInvalidateTexAll
 /* 8017A708 00177448  38 60 00 01 */	li r3, 0x1
@@ -457,8 +457,8 @@ lbl_8017AA10:
 /* 8017AA2C 0017776C  38 21 00 40 */	addi r1, r1, 0x40
 /* 8017AA30 00177770  4E 80 00 20 */	blr
 
-.global func_8017AA34
-func_8017AA34:
+.global func_8017AA34__6ScreenFv
+func_8017AA34__6ScreenFv:
 /* 8017AA34 00177774  94 21 FF E0 */	stwu r1, -0x20(r1)
 /* 8017AA38 00177778  7C 08 02 A6 */	mflr r0
 /* 8017AA3C 0017777C  90 01 00 24 */	stw r0, 0x24(r1)
