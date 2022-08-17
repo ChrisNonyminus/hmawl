@@ -28,7 +28,7 @@ struct Screen : ScreenBase {
   GXColor color14;           // 0x14
   u32 dword18;               // 0x18
   GXRenderModeObj *gx1C;     // 0x1C
-  u8 unk20[60];              // 0x20
+  GXRenderModeObj gx20;      // 0x20
   u16 word5C;                // 0x5C
   float float60;             // 0x60
   u8 unk64[0x18];            // 0x64
