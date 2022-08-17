@@ -4735,6 +4735,422 @@ lbl_80348991:
 	.4byte 0
 
 
+.section .sdata2, "wa"
+
+
+.global lbl_8034BA68
+lbl_8034BA68:
+
+	# ROM: 0x2EA048
+	.4byte 0
+
+.global lbl_8034BA6C
+lbl_8034BA6C:
+
+	# ROM: 0x2EA04C
+	.4byte 0xC0000000
+
+.global lbl_8034BA70
+lbl_8034BA70:
+
+	# ROM: 0x2EA050
+	.4byte 0x3F000000
+
+.global lbl_8034BA74
+lbl_8034BA74:
+
+	# ROM: 0x2EA054
+	.4byte 0x40000000
+
+.global lbl_8034BA78
+lbl_8034BA78:
+
+	# ROM: 0x2EA058
+	.4byte 0
+	.4byte 0
+
+.global lbl_8034BA80
+lbl_8034BA80:
+
+	# ROM: 0x2EA060
+	.4byte 0
+
+.global lbl_8034BA84
+lbl_8034BA84:
+
+	# ROM: 0x2EA064
+	.4byte 0x3F800000
+
+.global lbl_8034BA88
+lbl_8034BA88:
+
+	# ROM: 0x2EA068
+	.4byte 0x3FE00000
+	.4byte 0
+
+.global lbl_8034BA90
+lbl_8034BA90:
+
+	# ROM: 0x2EA070
+	.4byte 0x40080000
+	.4byte 0
+
+.global lbl_8034BA98
+lbl_8034BA98:
+
+	# ROM: 0x2EA078
+	.4byte 0x3C23D70A
+
+.global lbl_8034BA9C
+lbl_8034BA9C:
+
+	# ROM: 0x2EA07C
+	.4byte 0x3D4CCCCD
+
+.global lbl_8034BAA0
+lbl_8034BAA0:
+
+	# ROM: 0x2EA080
+	.4byte 0x3F800000
+
+.global lbl_8034BAA4
+lbl_8034BAA4:
+
+	# ROM: 0x2EA084
+	.4byte 0xBF800000
+
+.global lbl_8034BAA8
+lbl_8034BAA8:
+
+	# ROM: 0x2EA088
+	.4byte 0
+	.4byte 0
+
+.global lbl_8034BAB0
+lbl_8034BAB0:
+
+	# ROM: 0x2EA090
+	.4byte 0
+
+.global lbl_8034BAB4
+lbl_8034BAB4:
+
+	# ROM: 0x2EA094
+	.4byte 0x3F800000
+
+.global lbl_8034BAB8
+lbl_8034BAB8:
+
+	# ROM: 0x2EA098
+	.4byte 0x447A0000
+	.4byte 0
+
+.global lbl_8034BAC0
+lbl_8034BAC0:
+
+	# ROM: 0x2EA0A0
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BAC8
+lbl_8034BAC8:
+
+	# ROM: 0x2EA0A8
+	.4byte 0
+
+.global lbl_8034BACC
+lbl_8034BACC:
+
+	# ROM: 0x2EA0AC
+	.4byte 0x3F800000
+
+.global lbl_8034BAD0
+lbl_8034BAD0:
+
+	# ROM: 0x2EA0B0
+	.4byte 0x447A0000
+	.4byte 0
+
+.global lbl_8034BAD8
+lbl_8034BAD8:
+
+	# ROM: 0x2EA0B8
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BAE0
+lbl_8034BAE0:
+
+	# ROM: 0x2EA0C0
+	.4byte 0x43300000
+	.4byte 0x80000000
+
+.global lbl_8034BAE8
+lbl_8034BAE8:
+
+	# ROM: 0x2EA0C8
+	.4byte 0
+
+.global lbl_8034BAEC
+lbl_8034BAEC:
+
+	# ROM: 0x2EA0CC
+	.4byte 0x3F800000
+
+.global lbl_8034BAF0
+lbl_8034BAF0:
+
+	# ROM: 0x2EA0D0
+	.4byte 0x447A0000
+	.4byte 0
+
+.global lbl_8034BAF8
+lbl_8034BAF8:
+
+	# ROM: 0x2EA0D8
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BB00
+lbl_8034BB00:
+
+	# ROM: 0x2EA0E0
+	.4byte 0x3F800000
+
+.global lbl_8034BB04
+lbl_8034BB04:
+
+	# ROM: 0x2EA0E4
+	.4byte 0
+
+.global lbl_8034BB08
+lbl_8034BB08:
+
+	# ROM: 0x2EA0E8
+	.4byte 0x3DB2B8C2
+
+.global lbl_8034BB0C
+lbl_8034BB0C:
+
+	# ROM: 0x2EA0EC
+	.4byte 0x41000000
+
+.global lbl_8034BB10
+lbl_8034BB10:
+
+	# ROM: 0x2EA0F0
+	.4byte 0x41800000
+	.4byte 0
+
+.global lbl_8034BB18
+lbl_8034BB18:
+
+	# ROM: 0x2EA0F8
+	.4byte 0
+
+.global lbl_8034BB1C
+lbl_8034BB1C:
+
+	# ROM: 0x2EA0FC
+	.4byte 0x3F800000
+
+.global lbl_8034BB20
+lbl_8034BB20:
+
+	# ROM: 0x2EA100
+	.4byte 0x447A0000
+	.4byte 0
+
+.global lbl_8034BB28
+lbl_8034BB28:
+
+	# ROM: 0x2EA108
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BB30
+lbl_8034BB30:
+
+	# ROM: 0x2EA110
+	.4byte 0
+
+.global lbl_8034BB34
+lbl_8034BB34:
+
+	# ROM: 0x2EA114
+	.4byte 0x3F800000
+
+.global lbl_8034BB38
+lbl_8034BB38:
+
+	# ROM: 0x2EA118
+	.4byte 0x3FE00000
+	.4byte 0
+
+.global lbl_8034BB40
+lbl_8034BB40:
+
+	# ROM: 0x2EA120
+	.4byte 0x40080000
+	.4byte 0
+
+.global lbl_8034BB48
+lbl_8034BB48:
+
+	# ROM: 0x2EA128
+	.4byte 0
+	.4byte 0
+
+.global lbl_8034BB50
+lbl_8034BB50:
+
+	# ROM: 0x2EA130
+	.4byte 0
+	.4byte 0
+
+.global lbl_8034BB58
+lbl_8034BB58:
+
+	# ROM: 0x2EA138
+	.4byte 0x43300000
+	.4byte 0x80000000
+
+.global lbl_8034BB60
+lbl_8034BB60:
+
+	# ROM: 0x2EA140
+	.4byte 0x41F1999A
+
+.global lbl_8034BB64
+lbl_8034BB64:
+
+	# ROM: 0x2EA144
+	.4byte 0x3FAAAAAB
+
+.global lbl_8034BB68
+lbl_8034BB68:
+
+	# ROM: 0x2EA148
+	.4byte 0x3F800000
+
+.global lbl_8034BB6C
+lbl_8034BB6C:
+
+	# ROM: 0x2EA14C
+	.4byte 0x461C4000
+
+.global lbl_8034BB70
+lbl_8034BB70:
+
+	# ROM: 0x2EA150
+	.4byte 0
+	.4byte 0
+
+.global lbl_8034BB78
+lbl_8034BB78:
+
+	# ROM: 0x2EA158
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BB80
+lbl_8034BB80:
+
+	# ROM: 0x2EA160
+	.4byte 0x3F800000
+
+.global lbl_8034BB84
+lbl_8034BB84:
+
+	# ROM: 0x2EA164
+	.4byte 0
+
+.global lbl_8034BB88
+lbl_8034BB88:
+
+	# ROM: 0x2EA168
+	.4byte 0x4096CBE4
+
+.global lbl_8034BB8C
+lbl_8034BB8C:
+
+	# ROM: 0x2EA16C
+	.4byte 0x40490FDB
+
+.global lbl_8034BB90
+lbl_8034BB90:
+
+	# ROM: 0x2EA170
+	.4byte 0x3FC90FDB
+
+.global lbl_8034BB94
+lbl_8034BB94:
+
+	# ROM: 0x2EA174
+	.4byte 0x3F000000
+
+.global lbl_8034BB98
+lbl_8034BB98:
+
+	# ROM: 0x2EA178
+	.4byte 0x40000000
+
+.global lbl_8034BB9C
+lbl_8034BB9C:
+
+	# ROM: 0x2EA17C
+	.4byte 0x42C80000
+
+.global lbl_8034BBA0
+lbl_8034BBA0:
+
+	# ROM: 0x2EA180
+	.4byte 0xFFFFFFFF
+
+.global lbl_8034BBA4
+lbl_8034BBA4:
+
+	# ROM: 0x2EA184
+	.4byte 0x000000FF
+
+.global lbl_8034BBA8
+lbl_8034BBA8:
+	.4byte 0x0000FFFF
+
+.global lbl_8034BBAC
+lbl_8034BBAC:
+	.4byte 0xFF0000FF
+
+.global lbl_8034BBB0
+lbl_8034BBB0:
+
+	# ROM: 0x2EA190
+	.4byte 0
+
+.global lbl_8034BBB4
+lbl_8034BBB4:
+
+	# ROM: 0x2EA194
+	.4byte 0xFFFFFFFF
+
+.global lbl_8034BBB8
+lbl_8034BBB8:
+
+	# ROM: 0x2EA198
+	.4byte 0x000000FF
+
+.global lbl_8034BBBC
+lbl_8034BBBC:
+
+	# ROM: 0x2EA19C
+	.4byte 0x0F0700FF
+
+.global lbl_8034BBC0
+lbl_8034BBC0:
+
+	# ROM: 0x2EA1A0
+	.4byte 0x1D1E0F1F
+
 
 .section .sbss, "", @nobits  # 0x80348FE0 - 0x80349E40 ; 0x00000E60
 

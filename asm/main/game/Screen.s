@@ -560,6 +560,37 @@ lbl_80348980:
 	.4byte 0
 
 
+.section .sdata2, "wa"
+
+
+.global lbl_8034BA50
+lbl_8034BA50:
+
+	# ROM: 0x2EA030
+	.4byte 0
+
+.global lbl_8034BA54
+lbl_8034BA54:
+
+	# ROM: 0x2EA034
+	.4byte 0x3F800000
+
+.global lbl_8034BA58
+lbl_8034BA58:
+
+	# ROM: 0x2EA038
+	.4byte 0x43300000
+	.4byte 0
+
+.global lbl_8034BA60
+lbl_8034BA60:
+
+	# ROM: 0x2EA040
+	.4byte 0x3A800000
+	.4byte 0
+
+
+
 .section .sbss, "", @nobits  # 0x80348FE0 - 0x80349E40 ; 0x00000E60
 
 .global lbl_803494B0
