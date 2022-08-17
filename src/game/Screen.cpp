@@ -13,14 +13,12 @@
 // external
 FUNC_DECLARE(GXInvalidateTexAll);
 FUNC_DECLARE(GXInvalidateVtxCache);
-FUNC_DECLARE(GXSetDrawSync);
-FUNC_DECLARE(GXReadDrawSync);
 FUNC_DECLARE(GXGetProjectionv);
 FUNC_DECLARE(GXSetProjectionv);
 FUNC_DECLARE(VIGetNextField);
 
 // external (but not library symbols)
-FUNC_DECLARE(func_8019B8F8);
+FUNC_DECLARE(func_8019B8F8__17UnkStruct8019B7A8Fv);
 
 // internal
 FUNC_DECLARE(func_8017AA34__6ScreenFv);
@@ -103,29 +101,24 @@ void Screen::func_8017A6F0() {
   GXSetZCompLoc(GX_FALSE);
 }
 
+void Screen::func_8017A74C() { GXSetDrawSync(word5C); }
+
+void Screen::func_8017A770(u32 arg1) {
+  while (word5C != GXReadDrawSync())
+    ;
+  struc7C.func_8019B8F8();
+  GXSetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
+  GXSetColorUpdate(GX_TRUE);
+  GXCopyDisp(pvoid8, GX_TRUE);
+  if (word5C == 1)
+    word5C = 2;
+  else
+    word5C = 1;
+}
+
 //
 // Not yet decompiled:
 //
-
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A74C__6ScreenFv() {
-  nofralloc
-#include "asm/func_8017A74C__6ScreenFv.s"
-}
-#pragma pop
-#pragma peephole on
-
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A770() {
-  nofralloc
-#include "asm/func_8017A770.s"
-}
-#pragma pop
-#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0

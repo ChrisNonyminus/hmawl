@@ -51,6 +51,9 @@ void GXSetZCompLoc(GXBool before_tex);
 void GXSetDither(GXBool dither);
 void GXSetAlphaCompare(GXCompare comp0, u8 ref0, GXAlphaOp op, GXCompare comp1,
                        u8 ref1);
+
+void GXSetDrawSync(u16);
+u16 GXReadDrawSync(void);
 #ifdef __cplusplus
 }
 #endif
