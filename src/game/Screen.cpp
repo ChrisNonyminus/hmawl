@@ -106,7 +106,7 @@ extern "C" asm void func_8017A6F0__6ScreenFv() {
 #include "asm/func_8017A6F0__6ScreenFv.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -116,7 +116,7 @@ extern "C" asm void func_8017A74C__6ScreenFv() {
 #include "asm/func_8017A74C__6ScreenFv.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -126,7 +126,7 @@ extern "C" asm void func_8017A770() {
 #include "asm/func_8017A770.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -136,7 +136,7 @@ extern "C" asm void func_8017A7F8() {
 #include "asm/func_8017A7F8.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -146,7 +146,7 @@ extern "C" asm void func_8017A884__6ScreenFUcUcUcUc() {
 #include "asm/func_8017A884__6ScreenFUcUcUcUc.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -156,7 +156,7 @@ extern "C" asm void func_8017A8C8__6ScreenFUl() {
 #include "asm/func_8017A8C8__6ScreenFUl.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -166,7 +166,7 @@ extern "C" asm void func_8017A900() {
 #include "asm/func_8017A900.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -176,7 +176,7 @@ extern "C" asm void func_8017A924() {
 #include "asm/func_8017A924.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -186,7 +186,7 @@ extern "C" asm void func_8017A948() {
 #include "asm/func_8017A948.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -196,7 +196,7 @@ extern "C" asm void func_8017AA34() {
 #include "asm/func_8017AA34.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
 
 #pragma push
 #pragma optimization_level 0
@@ -206,4 +206,4 @@ extern "C" asm void func_8017AAF8() {
 #include "asm/func_8017AAF8.s"
 }
 #pragma pop
-#pragma peephole
+#pragma peephole on
