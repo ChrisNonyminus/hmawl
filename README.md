@@ -14,9 +14,8 @@ Unfortunately, the disassembled rels, when built, do not 100% match the original
 
 # Building
 1. Download DEVKITPROPPC, python3, and gcc.
-2. Obtain a clean DOL of HMAWL US and place it in the base working directory and name it baserom.dol.
-3. Download GC_WII_COMPILERS.zip and extract it to tools/mwcc_compiler/.
-4. Run the make command.
+2. Download GC_WII_COMPILERS.zip and extract it to tools/mwcc_compiler/.
+3. Run the make command.
 
 # Contributions
 Contributions and PRs are more than welcome!
