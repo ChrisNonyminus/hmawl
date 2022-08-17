@@ -78,14 +78,17 @@ ELF2REL := tools/elf2rel
 SHA1SUM := sha1sum
 PYTHON  := python3
 
+INCLUDE_DIRS := src/game include
+SYSTEM_INCLUDE_DIRS := include
+
 # Options
-INCLUDES := -i include/ -i src/game/
+INCLUDES := $(addprefix -i ,$(INCLUDE_DIRS) $(dir $^)) -I- $(addprefix -i ,$(SYSTEM_INCLUDE_DIRS))
 
 ASFLAGS := -mgekko -I asm -I include
 DOL_LDFLAGS := -nodefaults -fp hard
 REL_LDFLAGS := -nodefaults -fp hard -r1 -m _prolog
-CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nodefaults -msgstyle gcc $(INCLUDES)
-CPPFLAGS := -O4,s -fp hard -inline auto -proc gekko -Cpp_exceptions off -enum int -RTTI off -nodefaults -lang=c++ -msgstyle gcc $(INCLUDES)
+CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nodefaults $(INCLUDES) -pragma 'cats off'
+CPPFLAGS := -O4,s -fp hard -inline auto -proc gekko -Cpp_exceptions off -enum int -RTTI off -nodefaults -lang=c++ $(INCLUDES) -pragma 'cats off'
 
 # RECIPES
 

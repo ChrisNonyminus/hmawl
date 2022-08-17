@@ -913,7 +913,7 @@ lbl_8017B5E8:
 
 
 .section .data, "wa"  # 0x80297080 - 0x802E8E00 ; 0x00051D80
-
+.balign 8
 
 .global lbl_802C9D70
 lbl_802C9D70:

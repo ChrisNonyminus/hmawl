@@ -17,14 +17,18 @@ struct ScreenBase {
 };
 
 struct Screen : ScreenBase {
-  Screen();             // func_8017A3A0
-  void func_8017A3E0(); // func_8017A3E0
+  Screen();                                   // func_8017A3A0
+  void func_8017A3E0();                       // func_8017A3E0
+  void func_8017A8C8(u32);                    // func_8017A8C8
+  void func_8017A884(u8 r, u8 g, u8 b, u8 a); // func_8017A884 (sets color)
+  void func_8017A6F0();                       // func_8017A6F0
+  void func_8017A74C();                       // func_8017A74C
 
-  void *pvoid0;              // 0x0
-  u32 dword4;                // 0x4
-  void *pvoid8;              // 0x8
-  u32 dwordC;                // 0xC
-  u32 dword10;               // 0x10
+  u8 *pvoid0;                // 0x0 // framebuffer maybe?
+  u8 *dword4;                // 0x4 // framebuffer maybe?
+  u8 *pvoid8;                // 0x8 // framebuffer maybe?
+  u8 *dataC;                 // 0xC
+  GXFifoObj *fifo10;         // 0x10
   GXColor color14;           // 0x14
   u32 dword18;               // 0x18
   GXRenderModeObj *gx1C;     // 0x1C
@@ -34,5 +38,4 @@ struct Screen : ScreenBase {
   u8 unk64[0x18];            // 0x64
   UnkStruct8019B7A8 struc7C; // 0x7C
 };
-
 #endif

@@ -66,6 +66,14 @@ typedef struct {
   u32 dummy[16];
 } GXLightObj;
 
+typedef struct {
+  u8 pad[128];
+} GXFifoObj;
+
+extern GXRenderModeObj GXNtsc480IntDf;
+extern GXRenderModeObj GXMpal480IntDf;
+extern GXRenderModeObj GXPal528IntDf;
+
 #ifdef __cplusplus
 }
 #endif

@@ -9,6 +9,8 @@ void *OSGetArenaHi(void);
 void *OSGetArenaLo(void);
 void OSSetArenaLo(void *);
 
+void OSPanic(char *file, int line, char *msg, ...);
+
 #define ROUND_UP_PTR(x, align)                                                 \
   ((void *)((((u32)(x)) + (align)-1) & (~((align)-1))))
 

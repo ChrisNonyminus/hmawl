@@ -192,6 +192,6 @@ if __name__ == "__main__":
 
     print("main.dol Progress:")
     print(
-        f"\tCode sections: {decomp_code_size} / {dol_code_size} bytes in src ({codeCompletionPcnt:%})")
+        f"\tCode sections: {decomp_code_size} / {dol_code_size} bytes in src ({codeCompletionPcnt:%})")  # TODO: take into account asm includes of non-decompiled functions in cpp files
     print(
         f"\tData sections: {decomp_data_size} / {dol_data_size} bytes in src ({dataCompletionPcnt:%})")
