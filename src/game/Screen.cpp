@@ -20,7 +20,6 @@ FUNC_DECLARE(func_8019B8F8__17UnkStruct8019B7A8Fv);
 FUNC_DECLARE(func_8017AA34__6ScreenFv);
 static int lbl_803494B0;
 static char lbl_803494B4;
-DECLARE_EXTERN(f32, lbl_8034BA60);
 
 //
 // Decompiled:
