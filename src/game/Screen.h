@@ -18,18 +18,18 @@ struct ScreenBase {
 
 struct Screen : ScreenBase {
   Screen();                                   // func_8017A3A0
-  void func_8017A3E0();                       // func_8017A3E0
-  void func_8017A8C8(u32);                    // func_8017A8C8
-  void func_8017A884(u8 r, u8 g, u8 b, u8 a); // func_8017A884 (sets color)
+  void Init();                                // func_8017A3E0
+  void SetClearZ(u32);                        // func_8017A8C8
+  void SetClearColor(u8 r, u8 g, u8 b, u8 a); // func_8017A884 (sets color)
   void func_8017A6F0();                       // func_8017A6F0
-  void func_8017A74C();                       // func_8017A74C
-  void func_8017AA34();                       // func_8017AA34
-  void func_8017A770(u32 arg1);               // func_8017A770
-  void *func_8017A7F8();                      // func_8017A7F8
-  void func_8017A900();                       // func_8017A900
-  void func_8017A924();                       // func_8017A924
-  void func_8017A948(f32, f32);               // func_8017A948
-  void func_8017AAF8();                       // func_8017AAF8
+  void SetDrawSync();                         // func_8017A74C
+  void UpdateViewport();                      // func_8017AA34
+  void ReadDrawSync(u32 arg1);                // func_8017A770
+  void *UpdateFrameBuffer();                  // func_8017A7F8
+  void GetProjection();                       // func_8017A900
+  void SetProjection();                       // func_8017A924
+  void UpdateViewport(f32, f32);              // func_8017A948
+  void Scissor();                             // func_8017AAF8
 
   u8 *pvoid0;                // 0x00 // framebuffer maybe?
   u8 *dword4;                // 0x04 // framebuffer maybe?

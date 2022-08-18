@@ -71176,7 +71176,7 @@ lbl_00040D40:
 /* 00040D70 80630000 */ lwz r3, 0(r3)
 /* 00040D74 38C00000 */ li r6, 0
 /* 00040D78 38E000FF */ li r7, 0xff
-/* 00040D7C 48004E0D */ bl func_8017A884__6ScreenFUcUcUcUc
+/* 00040D7C 48004E0D */ bl SetClearColor__6ScreenFUcUcUcUc
 /* 00040D80 80DF008C */ lwz r6, 0x8c(r31)
 /* 00040D84 387F0050 */ addi r3, r31, 0x50
 /* 00040D88 809F0094 */ lwz r4, 0x94(r31)

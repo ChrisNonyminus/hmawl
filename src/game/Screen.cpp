@@ -17,7 +17,6 @@ FUNC_DECLARE(GXInvalidateVtxCache);
 FUNC_DECLARE(func_8019B8F8__17UnkStruct8019B7A8Fv);
 
 // internal
-FUNC_DECLARE(func_8017AA34__6ScreenFv);
 static int lbl_803494B0;
 static char lbl_803494B4;
 
@@ -25,11 +24,11 @@ static char lbl_803494B4;
 // Decompiled:
 //
 
-Screen::Screen() { func_8017A3E0(); }
+Screen::Screen() { Init(); }
 
 char lbl_80348980[] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-void Screen::func_8017A3E0() {
+void Screen::Init() {
   dataC = new ("Screen.cpp", 114) u8[0x60000];
   fifo10 = GXInit(dataC, 0x60000);
   __GXSetIndirectMask(0);
@@ -78,17 +77,17 @@ void Screen::func_8017A3E0() {
   VIWaitForRetrace();
   if ((gx1C->viTVmode & 1))
     VIWaitForRetrace();
-  func_8017A8C8(0xFFFFFF);
-  func_8017A884(0, 0, 0, 255);
+  SetClearZ(0xFFFFFF);
+  SetClearColor(0, 0, 0, 255);
   word5C = 1;
   VISetBlack(0);
   func_8017A6F0();
-  func_8017A74C();
+  SetDrawSync();
   struc7C.func_8019B8D4();
 }
 
 void Screen::func_8017A6F0() {
-  func_8017AA34();
+  UpdateViewport();
   GXInvalidateVtxCache();
   GXInvalidateTexAll();
   GXSetBlendMode(GX_BM_BLEND, GX_BL_SRCALPHA, GX_BL_INVSRCALPHA, GX_LO_CLEAR);
@@ -96,9 +95,9 @@ void Screen::func_8017A6F0() {
   GXSetZCompLoc(GX_FALSE);
 }
 
-void Screen::func_8017A74C() { GXSetDrawSync(word5C); }
+void Screen::SetDrawSync() { GXSetDrawSync(word5C); }
 
-void Screen::func_8017A770(u32 arg1) {
+void Screen::ReadDrawSync(u32 arg1) {
   while (word5C != GXReadDrawSync())
     ;
   struc7C.func_8019B8F8();
@@ -112,7 +111,7 @@ void Screen::func_8017A770(u32 arg1) {
 }
 
 #ifdef NONMATCHING
-void *Screen::func_8017A7F8() {
+void *Screen::UpdateFrameBuffer() {
   if (!lbl_803494B4) {
     lbl_803494B0 = 0;
     lbl_803494B4 = 1;
@@ -135,7 +134,7 @@ void *Screen::func_8017A7F8() {
 #pragma push
 #pragma optimization_level 0
 #pragma optimizewithasm off
-extern "C" asm void func_8017A7F8__6ScreenFv() {
+extern "C" asm void UpdateFrameBuffer__6ScreenFv() {
   nofralloc
 #include "asm/func_8017A7F8.s" // https://decomp.me/scratch/SDpsE
 }
@@ -143,7 +142,7 @@ extern "C" asm void func_8017A7F8__6ScreenFv() {
 #pragma peephole on
 #endif
 
-void Screen::func_8017A884(u8 r, u8 g, u8 b, u8 a) {
+void Screen::SetClearColor(u8 r, u8 g, u8 b, u8 a) {
   color14.r = r;
   color14.g = g;
   color14.b = b;
@@ -151,16 +150,16 @@ void Screen::func_8017A884(u8 r, u8 g, u8 b, u8 a) {
   GXSetCopyClear(color14, dword18);
 }
 
-void Screen::func_8017A8C8(u32 arg) {
+void Screen::SetClearZ(u32 arg) {
   dword18 = arg;
   GXSetCopyClear(color14, dword18);
 }
 
-void Screen::func_8017A900() { return GXGetProjectionv(&float60); }
+void Screen::GetProjection() { return GXGetProjectionv(&float60); }
 
-void Screen::func_8017A924() { return GXSetProjectionv(&float60); }
+void Screen::SetProjection() { return GXSetProjectionv(&float60); }
 
-void Screen::func_8017A948(f32 nearz, f32 farz) {
+void Screen::UpdateViewport(f32 nearz, f32 farz) {
   GXRenderModeObj *mode = gx1C;
   if (mode->field_rendering) {
     u32 field = VIGetNextField();
@@ -172,7 +171,7 @@ void Screen::func_8017A948(f32 nearz, f32 farz) {
   }
 }
 
-void Screen::func_8017AA34() {
+void Screen::UpdateViewport() {
   GXRenderModeObj *mode = gx1C;
   if (mode->field_rendering) {
     u32 field = VIGetNextField();
@@ -184,6 +183,4 @@ void Screen::func_8017AA34() {
   }
 }
 
-void Screen::func_8017AAF8() {
-  GXSetScissor(0, 0, gx1C->fbWidth, gx1C->efbHeight);
-}
+void Screen::Scissor() { GXSetScissor(0, 0, gx1C->fbWidth, gx1C->efbHeight); }
