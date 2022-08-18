@@ -25,19 +25,21 @@ struct Screen : ScreenBase {
   void func_8017A74C();                       // func_8017A74C
   void func_8017AA34();                       // func_8017AA34
   void func_8017A770(u32 arg1);               // func_8017A770
+  void *func_8017A7F8();                      // func_8017A7F8
+  void func_8017A900();                       // func_8017A900
 
-  u8 *pvoid0;                // 0x0 // framebuffer maybe?
-  u8 *dword4;                // 0x4 // framebuffer maybe?
-  u8 *pvoid8;                // 0x8 // framebuffer maybe?
-  u8 *dataC;                 // 0xC
-  GXFifoObj *fifo10;         // 0x10
-  GXColor color14;           // 0x14
-  u32 dword18;               // 0x18
-  GXRenderModeObj *gx1C;     // 0x1C
-  GXRenderModeObj gx20;      // 0x20
-  u16 word5C;                // 0x5C
-  float float60;             // 0x60
+  u8 *pvoid0;                // 0x00 // framebuffer maybe?
+  u8 *dword4;                // 0x04 // framebuffer maybe?
+  u8 *pvoid8;                // 0x08 // framebuffer maybe?
+  u8 *dataC;                 // 0x0C // fifo data?
+  GXFifoObj *fifo10;         // 0x10 // return value of GXInit
+  GXColor color14;           // 0x14 // clear color
+  u32 dword18;               // 0x18 // clear_z
+  GXRenderModeObj *gx1C;     // 0x1C // pointer to gx20
+  GXRenderModeObj gx20;      // 0x20 // the initialized object for GX rendering
+  u16 word5C;                // 0x5C // drawsync token
+  float float60;             // 0x60 // projection?
   u8 unk64[0x18];            // 0x64
-  UnkStruct8019B7A8 struc7C; // 0x7C
+  UnkStruct8019B7A8 struc7C; // 0x7C // ????
 };
 #endif

@@ -289,8 +289,8 @@ lbl_8017A7E4:
 /* 8017A7F0 00177530  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017A7F4 00177534  4E 80 00 20 */	blr
 
-.global func_8017A7F8
-func_8017A7F8:
+.global func_8017A7F8__6ScreenFv
+func_8017A7F8__6ScreenFv:
 /* 8017A7F8 00177538  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017A7FC 0017753C  7C 08 02 A6 */	mflr r0
 /* 8017A800 00177540  90 01 00 14 */	stw r0, 0x14(r1)
@@ -369,8 +369,8 @@ func_8017A8C8__6ScreenFUl:
 /* 8017A8F8 00177638  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017A8FC 0017763C  4E 80 00 20 */	blr
 
-.global func_8017A900
-func_8017A900:
+.global func_8017A900__6ScreenFv
+func_8017A900__6ScreenFv:
 /* 8017A900 00177640  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017A904 00177644  7C 08 02 A6 */	mflr r0
 /* 8017A908 00177648  38 63 00 60 */	addi r3, r3, 0x60
@@ -582,15 +582,3 @@ lbl_8034BA60:
 	# ROM: 0x2EA040
 	.4byte 0x3A800000
 	.4byte 0
-
-
-
-.section .sbss, "", @nobits  # 0x80348FE0 - 0x80349E40 ; 0x00000E60
-
-.global lbl_803494B0
-lbl_803494B0:
-	.skip 0x4
-
-.global lbl_803494B4
-lbl_803494B4:
-	.skip 0x4

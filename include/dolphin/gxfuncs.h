@@ -54,6 +54,8 @@ void GXSetAlphaCompare(GXCompare comp0, u8 ref0, GXAlphaOp op, GXCompare comp1,
 
 void GXSetDrawSync(u16);
 u16 GXReadDrawSync(void);
+
+void GXGetProjectionv(f32 *p);
 #ifdef __cplusplus
 }
 #endif

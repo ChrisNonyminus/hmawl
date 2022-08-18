@@ -11,7 +11,7 @@ ifneq ($(findstring MSYS,$(shell uname)),)
 endif
 
 GENERATE_MAP ?= 0
-NON_MATCHING ?= 0
+NONMATCHING ?= 0
 
 VERBOSE ?= 0
 MAX_ERRORS ?= 0     # 0 = no maximum
@@ -89,6 +89,10 @@ DOL_LDFLAGS := -nodefaults -fp hard
 REL_LDFLAGS := -nodefaults -fp hard -r1 -m _prolog
 CFLAGS  := -Cpp_exceptions off -enum int -proc gekko -fp hard -O4,p -lang=c -nodefaults $(INCLUDES) -pragma 'cats off'
 CPPFLAGS := -O4,s -fp hard -inline auto -proc gekko -Cpp_exceptions off -enum int -RTTI off -nodefaults -lang=c++ $(INCLUDES) -pragma 'cats off'
+ifeq ($(NON_MATCHING),1)
+CFLAGS += -DNONMATCHING
+CPPFLAGS += -DNONMATCHING
+endif
 
 # RECIPES
 

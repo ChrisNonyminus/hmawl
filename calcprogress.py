@@ -3,7 +3,7 @@
 ################################################################################
 #                                 Description                                  #
 ################################################################################
-# calcprogress: Used to calculate the progress of the Melee decompilation.     #
+# calcprogress: Used to calculate the progress of the HMAWL decompilation.     #
 # Prints to stdout for now, but eventually will have some form of storage,     #
 # i.e. CSV, so that it can be used for a webpage display.                      #
 #                                                                              #

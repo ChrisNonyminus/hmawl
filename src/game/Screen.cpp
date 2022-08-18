@@ -13,7 +13,6 @@
 // external
 FUNC_DECLARE(GXInvalidateTexAll);
 FUNC_DECLARE(GXInvalidateVtxCache);
-FUNC_DECLARE(GXGetProjectionv);
 FUNC_DECLARE(GXSetProjectionv);
 FUNC_DECLARE(VIGetNextField);
 
@@ -22,8 +21,8 @@ FUNC_DECLARE(func_8019B8F8__17UnkStruct8019B7A8Fv);
 
 // internal
 FUNC_DECLARE(func_8017AA34__6ScreenFv);
-DECLARE_EXTERN(s32, lbl_803494B0);
-DECLARE_EXTERN(u8, lbl_803494B4);
+static int lbl_803494B0;
+static char lbl_803494B4;
 DECLARE_EXTERN(f32, lbl_8034BA60);
 
 //
@@ -119,46 +118,52 @@ void Screen::func_8017A770(u32 arg1) {
 //
 // Not yet decompiled:
 //
-
+#ifdef NONMATCHING
+void *Screen::func_8017A7F8() {
+  if (!lbl_803494B4) {
+    lbl_803494B0 = 0;
+    lbl_803494B4 = 1;
+  }
+  VISetNextFrameBuffer(pvoid8);
+  if (!lbl_803494B0) {
+    lbl_803494B0 = 1;
+  } else {
+    VIFlush();
+    VIWaitForRetrace();
+  }
+  u8 *ret;
+  if (pvoid8 == (ret = pvoid0)) // Is this really what they did?
+    pvoid8 = dword4;
+  else
+    pvoid8 = ret;
+  return ret;
+}
+#else
 #pragma push
 #pragma optimization_level 0
 #pragma optimizewithasm off
-extern "C" asm void func_8017A7F8() {
+extern "C" asm void func_8017A7F8__6ScreenFv() {
   nofralloc
-#include "asm/func_8017A7F8.s"
+#include "asm/func_8017A7F8.s" // https://decomp.me/scratch/SDpsE
 }
 #pragma pop
 #pragma peephole on
+#endif
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A884__6ScreenFUcUcUcUc() {
-  nofralloc
-#include "asm/func_8017A884__6ScreenFUcUcUcUc.s"
+void Screen::func_8017A884(u8 r, u8 g, u8 b, u8 a) {
+  color14.r = r;
+  color14.g = g;
+  color14.b = b;
+  color14.a = a;
+  GXSetCopyClear(color14, dword18);
 }
-#pragma pop
-#pragma peephole on
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A8C8__6ScreenFUl() {
-  nofralloc
-#include "asm/func_8017A8C8__6ScreenFUl.s"
+void Screen::func_8017A8C8(u32 arg) {
+  dword18 = arg;
+  GXSetCopyClear(color14, dword18);
 }
-#pragma pop
-#pragma peephole on
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A900() {
-  nofralloc
-#include "asm/func_8017A900.s"
-}
-#pragma pop
-#pragma peephole on
+void Screen::func_8017A900() { return GXGetProjectionv(&float60); }
 
 #pragma push
 #pragma optimization_level 0
