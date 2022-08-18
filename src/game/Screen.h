@@ -27,6 +27,9 @@ struct Screen : ScreenBase {
   void func_8017A770(u32 arg1);               // func_8017A770
   void *func_8017A7F8();                      // func_8017A7F8
   void func_8017A900();                       // func_8017A900
+  void func_8017A924();                       // func_8017A924
+  void func_8017A948(f32, f32);               // func_8017A948
+  void func_8017AAF8();                       // func_8017AAF8
 
   u8 *pvoid0;                // 0x00 // framebuffer maybe?
   u8 *dword4;                // 0x04 // framebuffer maybe?

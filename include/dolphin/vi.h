@@ -7,6 +7,7 @@ extern "C" {
 
 #include "dolphin/gx/GXStruct.h"
 
+u32 VIGetNextField(void);
 void VIInit(void);
 void VIConfigure(GXRenderModeObj *rm);
 void VIFlush(void);

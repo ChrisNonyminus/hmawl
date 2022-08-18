@@ -56,6 +56,9 @@ void GXSetDrawSync(u16);
 u16 GXReadDrawSync(void);
 
 void GXGetProjectionv(f32 *p);
+void GXSetProjectionv(f32 *p);
+
+void GXInvalidateTexAll(void);
 #ifdef __cplusplus
 }
 #endif

@@ -381,8 +381,8 @@ func_8017A900__6ScreenFv:
 /* 8017A91C 0017765C  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017A920 00177660  4E 80 00 20 */	blr
 
-.global func_8017A924
-func_8017A924:
+.global func_8017A924__6ScreenFv
+func_8017A924__6ScreenFv:
 /* 8017A924 00177664  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017A928 00177668  7C 08 02 A6 */	mflr r0
 /* 8017A92C 0017766C  38 63 00 60 */	addi r3, r3, 0x60
@@ -393,8 +393,8 @@ func_8017A924:
 /* 8017A940 00177680  38 21 00 10 */	addi r1, r1, 0x10
 /* 8017A944 00177684  4E 80 00 20 */	blr
 
-.global func_8017A948
-func_8017A948:
+.global func_8017A948__6ScreenFff
+func_8017A948__6ScreenFff:
 /* 8017A948 00177688  94 21 FF C0 */	stwu r1, -0x40(r1)
 /* 8017A94C 0017768C  7C 08 02 A6 */	mflr r0
 /* 8017A950 00177690  90 01 00 44 */	stw r0, 0x44(r1)
@@ -511,8 +511,8 @@ lbl_8017AAE4:
 /* 8017AAF0 00177830  38 21 00 20 */	addi r1, r1, 0x20
 /* 8017AAF4 00177834  4E 80 00 20 */	blr
 
-.global func_8017AAF8
-func_8017AAF8:
+.global func_8017AAF8__6ScreenFv
+func_8017AAF8__6ScreenFv:
 /* 8017AAF8 00177838  94 21 FF F0 */	stwu r1, -0x10(r1)
 /* 8017AAFC 0017783C  7C 08 02 A6 */	mflr r0
 /* 8017AB00 00177840  38 80 00 00 */	li r4, 0x0
@@ -574,7 +574,6 @@ lbl_8034BA58:
 	.4byte 0x43300000
 	.4byte 0
 
-.endif
 
 .global lbl_8034BA60
 lbl_8034BA60:
@@ -582,3 +581,5 @@ lbl_8034BA60:
 	# ROM: 0x2EA040
 	.4byte 0x3A800000
 	.4byte 0
+
+.endif

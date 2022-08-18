@@ -11,10 +11,7 @@
 //
 
 // external
-FUNC_DECLARE(GXInvalidateTexAll);
 FUNC_DECLARE(GXInvalidateVtxCache);
-FUNC_DECLARE(GXSetProjectionv);
-FUNC_DECLARE(VIGetNextField);
 
 // external (but not library symbols)
 FUNC_DECLARE(func_8019B8F8__17UnkStruct8019B7A8Fv);
@@ -115,9 +112,6 @@ void Screen::func_8017A770(u32 arg1) {
     word5C = 1;
 }
 
-//
-// Not yet decompiled:
-//
 #ifdef NONMATCHING
 void *Screen::func_8017A7F8() {
   if (!lbl_803494B4) {
@@ -165,42 +159,32 @@ void Screen::func_8017A8C8(u32 arg) {
 
 void Screen::func_8017A900() { return GXGetProjectionv(&float60); }
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A924() {
-  nofralloc
-#include "asm/func_8017A924.s"
-}
-#pragma pop
-#pragma peephole on
+void Screen::func_8017A924() { return GXSetProjectionv(&float60); }
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017A948() {
-  nofralloc
-#include "asm/func_8017A948.s"
+void Screen::func_8017A948(f32 nearz, f32 farz) {
+  GXRenderModeObj *mode = gx1C;
+  if (mode->field_rendering) {
+    u32 field = VIGetNextField();
+    GXSetViewportJitter(0.0f, 0.0f, (float)mode->fbWidth,
+                        (float)mode->xfbHeight, nearz, farz, field);
+  } else {
+    GXSetViewport(0.0f, 0.0f, (float)mode->fbWidth, (float)mode->xfbHeight,
+                  nearz, farz);
+  }
 }
-#pragma pop
-#pragma peephole on
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017AA34__6ScreenFv() {
-  nofralloc
-#include "asm/func_8017AA34.s"
+void Screen::func_8017AA34() {
+  GXRenderModeObj *mode = gx1C;
+  if (mode->field_rendering) {
+    u32 field = VIGetNextField();
+    GXSetViewportJitter(0.0f, 0.0f, (float)mode->fbWidth,
+                        (float)mode->xfbHeight, 0.0009765625, 1.0, field);
+  } else {
+    GXSetViewport(0.0f, 0.0f, (float)mode->fbWidth, (float)mode->xfbHeight,
+                  0.0009765625, 1.0);
+  }
 }
-#pragma pop
-#pragma peephole on
 
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void func_8017AAF8() {
-  nofralloc
-#include "asm/func_8017AAF8.s"
+void Screen::func_8017AAF8() {
+  GXSetScissor(0, 0, gx1C->fbWidth, gx1C->efbHeight);
 }
-#pragma pop
-#pragma peephole on

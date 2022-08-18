@@ -4736,7 +4736,7 @@ lbl_80348991:
 
 
 .section .sdata2, "wa"
-
+.balign 8
 
 .global lbl_8034BA68
 lbl_8034BA68:
