@@ -12317,8 +12317,8 @@ lbl_80213D3C:
 /* 80213D9C 00210ADC  38 21 00 20 */	addi r1, r1, 0x20
 /* 80213DA0 00210AE0  4E 80 00 20 */	blr
 
-.global func_80213DA4
-func_80213DA4:
+.global HSD_PadInit
+HSD_PadInit:
 /* 80213DA4 00210AE4  94 21 FF 90 */	stwu r1, -0x70(r1)
 /* 80213DA8 00210AE8  7C 08 02 A6 */	mflr r0
 /* 80213DAC 00210AEC  90 01 00 74 */	stw r0, 0x74(r1)
