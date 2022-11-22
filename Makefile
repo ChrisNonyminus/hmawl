@@ -184,7 +184,7 @@ print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 
 # Recipe: RUN
 
-EMULATOR ?= dolphin-emu-nogui
+EMULATOR ?= dolphin-emu
 DVD_ROOT := GYWEE9/files
 DVD_SYS  := GYWEE9/sys
 DVD_FILES := $(DVD_SYS)/main.dol $(DVD_ROOT)/wlp0.rel $(DVD_ROOT)/wlp1.rel $(DVD_ROOT)/wlp2.rel 
@@ -196,4 +196,11 @@ $(DVD_SYS)/main.dol: $(DOL)
 	cp $< $@
 
 run: $(DVD_FILES)
-	$(EMULATOR) $(DVD_SYS)/main.dol
+	$(EMULATOR) -b -e $(DVD_SYS)/main.dol
+
+test_baserom: 
+	cp baserom.dol $(DVD_SYS)/main.dol
+	cp wlp0.rel $(DVD_ROOT)/wlp0.rel
+	cp wlp1.rel $(DVD_ROOT)/wlp1.rel
+	cp wlp2.rel $(DVD_ROOT)/wlp2.rel
+	$(EMULATOR) -e $(DVD_SYS)/main.dol

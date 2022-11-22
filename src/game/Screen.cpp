@@ -110,7 +110,6 @@ void Screen::ReadDrawSync(u32 arg1) {
     word5C = 1;
 }
 
-#ifdef NONMATCHING
 void *Screen::UpdateFrameBuffer() {
   if (!lbl_803494B4) {
     lbl_803494B0 = 0;
@@ -124,23 +123,12 @@ void *Screen::UpdateFrameBuffer() {
     VIWaitForRetrace();
   }
   u8 *ret;
-  if (pvoid8 == (ret = pvoid0)) // Is this really what they did?
+  if (pvoid8 == (ret = pvoid0))
     pvoid8 = dword4;
   else
     pvoid8 = ret;
   return ret;
 }
-#else
-#pragma push
-#pragma optimization_level 0
-#pragma optimizewithasm off
-extern "C" asm void UpdateFrameBuffer__6ScreenFv() {
-  nofralloc
-#include "asm/func_8017A7F8.s" // https://decomp.me/scratch/SDpsE
-}
-#pragma pop
-#pragma peephole on
-#endif
 
 void Screen::SetClearColor(u8 r, u8 g, u8 b, u8 a) {
   color14.r = r;
